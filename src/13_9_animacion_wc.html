@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muévete (2)</title>
+    <style>
+      figura-web {
+        position: fixed;
+        font-size: 60px;
+      }
+    </style>
+    <script>
+      class FiguraWeb extends HTMLElement {
+        connectedCallback() {
+          this.x = 0;
+          this.y = parseInt(this.getAttribute("y"), 10);
+          this.velocidad = parseInt(this.getAttribute("velocidad"), 10);
+        }
+        muévete() {
+          this.style.right = `${this.x}px`;
+          this.style.top = `${this.y}px`;
+          this.x = this.x > document.documentElement.clientWidth ?
+            0 :
+            this.x + this.velocidad;
+        }
+      }
+      customElements.define("figura-web", FiguraWeb);
+    </script>
+  </head>
+  <body>
+    <h1>Muévete (2)</h1>
+    <figura-web id="fantasma" y="0" velocidad="20">&#x1F47B;</figura-web>
+    <figura-web id="sonrisa" y="100" velocidad="10">😁</figura-web>
+    <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+    <script>
+      setInterval(() => {
+        fantasma.muévete();
+        sonrisa.muévete();
+      }, 120);
+    </script>
+  </body>
+</html>

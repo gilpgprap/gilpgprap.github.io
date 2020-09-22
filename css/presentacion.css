@@ -1,0 +1,57 @@
+[slot="diapositiva"] {
+  display: none;
+}
+
+[slot="diapositiva"]:target {
+  display: block;
+}
+
+[slot="diapositiva"] .cortina {
+  z-index: 2;
+}
+
+.desplaza [slot="diapositiva"]:target .cortina,
+[slot="diapositiva"].desplaza:target .cortina {
+  animation-duration: 3s;
+  animation-name: desplaza;
+}
+
+[slot="diapositiva"] header {
+  position: sticky;
+  z-index: 1;
+  top: 0.5rem;
+}
+
+header a {
+  background-color: var(--color-fondo);
+}
+
+@media screen and (max-width: 799px) {
+  header {
+    flex-flow: column;
+    align-items: flex-end;
+  }
+
+  header a,
+  header select {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 800px) {
+
+  header {
+    justify-content: flex-end;
+  }
+
+  header a,
+  header select {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width:999px) {
+  [slot="diapositiva"] header {
+    top: 2rem;
+  }
+}

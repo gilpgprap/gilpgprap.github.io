@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cuál te gusta más?</title>
+    <style>
+      span {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      img {
+        width: 40vw;
+      }
+    </style>
+  </head>
+  <body>
+    <form action=javascript:gatito();>
+      <h1>¿Cuál te gusta más?</h1>
+      <p>
+        <span>
+          <output id=outGatito>0</output> votos.
+          <button>Vota</button>
+          <br>
+          <img src="https://media.giphy.com/media/uWYjSbkIE2XIMIc7gh/giphy.gif"
+            alt="Gatito">
+        </span>
+        <span>
+          <output id=outPerrito>0</output> votos.
+          <button formaction="javascript:perrito();">Vota</button>
+          <br>
+          <img src="https://media.giphy.com/media/rXzOY4RpSA0Ug/giphy.gif"
+            alt="Perrito">
+        </span>
+      </p>
+    </form>
+    <footer>
+      <p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p>
+    </footer>
+    <script>
+      let votosParaGatito = 0;
+      let votosParaPerrito = 0;
+      function gatito() {
+        votosParaGatito++;
+        outGatito.value = votosParaGatito;
+      }
+      function perrito() {
+        votosParaPerrito++;
+        outPerrito.value = votosParaPerrito;
+      }
+    </script>
+  </body>
+</html>

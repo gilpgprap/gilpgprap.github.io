@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo</title>
+  </head>
+  <body>
+    <!--
+    action="javascript:calcula();"
+        Cuando la forma se active, se ejecuta una parte de la etiqueta <script>
+        que aparece más abajo y se llama "function saluda()". -->
+    <form action="javascript:saluda();">
+      <h1>Saludo</h1>
+      <p>
+        <label>
+          Nombre
+          <!--
+          id="inNombre"
+            identificador del campo de captura. Se puede usar desde el script
+            más abajo. -->
+          <input type="text" id="inNombre" required>
+        </label>
+      </p>
+      <p><button>Calcular</button></p>
+      <p><output id=outSaludo></output></p>
+    </form>
+    <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+    <script>
+      /** Función que realiza el cálculo cuando se activa la forma. */
+      function saluda() {
+        /* Recupera el texto capturado en "inNombre" y lo asigna a la constante
+         * "nombre". */
+        const nombre = inNombre.value;
+        const saludo = `Hola ${nombre}.`;
+        // Despliega el saludo en el elemento "outSaludo".
+        outSaludo.value = saludo;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Voto o Votos</title>
+  </head>
+  <body>
+    <div class="cuerpo">
+      <h1>Voto o Votos</h1>
+      <form action="javascript:procesa();">
+        <p>
+          <label>
+            Número
+            <input id="inpNúmero" type="number" min="0" required>
+          </label>
+        </p>
+        <p><button id="submit">Procesa</button></p>
+        <p><output id=outMensaje></output></p>
+      </form>
+      <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+      <script>
+        function procesa() {
+          const número = inpNúmero.valueAsNumber;
+          let mensaje = `${número}`;
+          if (número === 1) {
+            mensaje += " voto.";
+          } else {
+            mensaje += " votos.";
+          }
+          outMensaje.value = mensaje;
+        }
+      </script>
+    </div>
+  </body>
+</html>

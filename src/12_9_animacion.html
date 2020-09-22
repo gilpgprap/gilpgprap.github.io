@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muévete</title>
+    <style>
+      .figura {
+        position: fixed;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Muévete</h1>
+    <div id="figura1" class="figura">&#x1f98b;</div>
+    <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+    <script>
+      // Declara la variable "r" que es visible en la función "graf".
+      let r = 0;
+      // invoca a la función graf cada 120 milisegundos.
+      setInterval(graf, 120);
+      function graf() {
+        const x = 20 * Math.sin(r) + 40;
+        const y = 30 * Math.cos(r) + 60;
+        figura1.style.left = `${x}px`;
+        figura1.style.bottom = `${y}px`;
+        r += 0.3;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="module" src="cmp/base.js"></script>
+    <script type="module" src="cmp/mi-presentacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/presentacion.css">
+
+    <script src="fonts/fmathFormulaFonts.js"></script>
+		<script src="fmathFormulaC.js"></script>
+		<script src="menu/basicContext.min.js"></script>
+		<script src="menu/basicModal.min.js"></script>
+
+		<link rel="stylesheet" href="menu/default.min.css">
+		<link rel="stylesheet" href="menu/basicContext.min.css">
+		<link rel="stylesheet" href="menu/basicModal.min.css">
+
+		<link rel="stylesheet" href="allBrowserSolution.css">
+    <script type="module">
+      import { SelDiapositivaBase } from "./lib/SelDiapositivaBase.js";
+      customElements.define("mi-selector", class extends SelDiapositivaBase {
+        /** @override
+         * @returns {string} */
+        get html() {
+          return (/* html */
+            `<select>
+              <option value=intro>Tipos de Datos</option>
+              <option value=digitales>Señales Digitales</option>
+              <option value=numeracion>Sistemas de Numeración</option>
+              <option value=number>Number</option>
+              <option value=flotantes>Números de Punto Flotante</option>
+              <option value=numericos>Operadores Numéricos</option>
+              <option value=codificacion>Codificación de Caracteres</option>
+              <option value=String>String</option>
+              <option value=texto>Operadores de Texto</option>
+              <option value=Boolean>Boolean</option>
+              <option value=logicos>Ejemplo de Operadores Lógicos</option>
+              <option value=Relacionales>Operadores Relacionales</option>
+              <option value=Asignacion>Asignación</option>
+              <option value=Precedencia>Precedencia de Operadores</option>
+              <option value=Expresiones>Expresiones</option>
+            </select>`);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="cortina"></div>
+    <mi-menu></mi-menu>
+    <mi-presentacion class="desplaza">
+      <mi-selector slot=selector></mi-selector>
+      <div id=intro slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h1></h1>
+      </div>
+      <section id=digitales slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Las computadoras usan señales digitales, que pueden tomar uno de 2
+            valores de voltaje. A uno de los valores se le llama <dfn>1</dfn> y
+            al otro se le llama <dfn>0</dfn>.
+          </p>
+        </div>
+      </section>
+      <section id=numeracion slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            La computadora maneja secuencias de 1 y 0. Un número se puede
+            construír combinando símbolos.
+          </p>
+          <table class="cebra">
+            <caption>Números en distintos sistemas de numeración.</caption>
+            <thead>
+              <tr>
+                <th>Número</th>
+                <th>Decimal</th>
+                <th>Binario</th>
+                <th>Hexadecimal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td class="num">0</td>
+                <td class="num">0</td>
+                <td class="num">0</td>
+              </tr>
+              <tr>
+                <td>0'</td>
+                <td class="num">1</td>
+                <td class="num">1</td>
+                <td class="num">1</td>
+              </tr>
+              <tr>
+                <td>0''</td>
+                <td class="num">2</td>
+                <td class="num">10</td>
+                <td class="num">2</td>
+              </tr>
+              <tr>
+                <td>0'''</td>
+                <td class="num">3</td>
+                <td class="num">11</td>
+                <td class="num">3</td>
+              </tr>
+              <tr>
+                <td>0''''</td>
+                <td class="num">4</td>
+                <td class="num">100</td>
+                <td class="num">4</td>
+              </tr>
+              <tr>
+                <td>0'''''</td>
+                <td class="num">5</td>
+                <td class="num">101</td>
+                <td class="num">5</td>
+              </tr>
+              <tr>
+                <td>0''''''</td>
+                <td class="num">6</td>
+                <td class="num">110</td>
+                <td class="num">6</td>
+              </tr>
+              <tr>
+                <td>0'''''''</td>
+                <td class="num">7</td>
+                <td class="num">111</td>
+                <td class="num">7</td>
+              </tr>
+              <tr>
+                <td>0''''''''</td>
+                <td class="num">8</td>
+                <td class="num">1000</td>
+                <td class="num">8</td>
+              </tr>
+              <tr>
+                <td>0'''''''''</td>
+                <td class="num">9</td>
+                <td class="num">1001</td>
+                <td class="num">9</td>
+              </tr>
+              <tr>
+                <td>0''''''''''</td>
+                <td class="num">10</td>
+                <td class="num">1010</td>
+                <td class="num">A</td>
+              </tr>
+              <tr>
+                <td>0'''''''''''</td>
+                <td class="num">11</td>
+                <td class="num">1011</td>
+                <td class="num">B</td>
+              </tr>
+              <tr>
+                <td>0''''''''''''</td>
+                <td class="num">12</td>
+                <td class="num">1100</td>
+                <td class="num">C</td>
+              </tr>
+              <tr>
+                <td>0'''''''''''''</td>
+                <td class="num">13</td>
+                <td class="num">1101</td>
+                <td class="num">D</td>
+              </tr>
+              <tr>
+                <td>0''''''''''''''</td>
+                <td class="num">14</td>
+                <td class="num">1110</td>
+                <td class="num">E</td>
+              </tr>
+              <tr>
+                <td>0'''''''''''''''</td>
+                <td class="num">15</td>
+                <td class="num">1111</td>
+                <td class="num">F</td>
+              </tr>
+              <tr>
+                <td>0''''''''''''''''</td>
+                <td class="num">16</td>
+                <td class="num">10000</td>
+                <td class="num">10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id=number slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <figure>
+            <img alt="Estructura"
+              src="img/IEEE_754_Double_Floating_Point_Format.svg">
+            <figcaption>Estructura de un número.</figcaption>
+          </figure>
+          <h3>Características</h3>
+          <ul>
+            <li><p>IEEE 754.</p></li>
+            <li><p>Son límites, porque el conjunto debe ser finito.</p></li>
+            <li>
+              <p>
+                <code class="language-javascript">1.0</code>
+                representa a
+                <code class="language-javascript">1.0</code>
+                y números muy cercanos a
+                <code class="language-javascript">1.0</code>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Incluye a los enteros como
+                <code class="language-javascript">1</code>,
+                <code class="language-javascript">2</code>,
+                <code class="language-javascript">101</code>.
+              </p>
+            </li>
+            <li><p><code class="language-javascript">Infinity</code>.</p></li>
+            <li>
+              <p>
+                <code class="language-javascript">NaN</code>:
+                <code class="language-javascript">0 / 0</code>,
+                <code class="language-javascript">Math.sqrt(-1)</code>
+              </p>
+            </li>
+            <li>
+              <p>
+                <code class="language-javascript">+0</code>
+                y
+                <code class="language-javascript">-0</code>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id=flotantes slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>Es una forma de representar números muy grandes o muy pequeños.</p>
+          <p>
+            El símbolo
+            <code class="language-javascript">E</code>
+            seguido sin espacios de un número representa el desplazamiento del
+            punto decimal.
+          </p>
+          <ul>
+            <li>
+              <p>
+                Si el desplazamiento es positivo, el punto se mueve a la
+                derecha.
+              </p>
+            </li>
+            <li>
+              <p>
+                Si el desplazamiento es negativo, el punto se mueve a la
+                izquierda.
+              </p>
+            </li>
+          </ul>
+          <h3>Ejemplos</h3>
+          <ul>
+            <li>
+              <code class="language-javascript">3e-1 === 3E-1 === 0.3</code>
+            </li>
+            <li>
+              <code class="language-javascript">-2.33e-3 === -2.33E-3 === -0.00233</code>
+            </li>
+            <li>
+              <code class="language-javascript">-1.59e3 === -1.59E3 === -1590</code>
+            </li>
+            <li>
+              <code class="language-javascript">8.57e4 === 8.57E4 === 85700</code>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id=numericos slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <table>
+          <tr>
+            <td class=nums data-total="17"></td>
+            <td class=cod><div><div><div><span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">x</span>&nbsp;=&nbsp;<span style="color: #098658;">5</span>;</div><div><span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">y</span>&nbsp;=&nbsp;<span style="color: #098658;">2</span>;</div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #0070c1;">x</span>&nbsp;+&nbsp;<span style="color: #0070c1;">y</span>);&nbsp;<span style="color: #008000;">//&nbsp;Suma&nbsp;-&gt;&nbsp;7</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #0070c1;">x</span>&nbsp;-&nbsp;<span style="color: #098658;">2</span>);&nbsp;<span style="color: #008000;">//&nbsp;Resta&nbsp;-&gt;&nbsp;3</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">5</span>&nbsp;*&nbsp;<span style="color: #0070c1;">y</span>);&nbsp;<span style="color: #008000;">//&nbsp;Multiplicación&nbsp;-&gt;&nbsp;10</span></div><div><span style="color: #008000;">//console.log(5&nbsp;**&nbsp;2);&nbsp;//&nbsp;Potencia&nbsp;-&gt;&nbsp;25</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">5</span>&nbsp;/&nbsp;<span style="color: #098658;">2</span>);&nbsp;<span style="color: #008000;">//&nbsp;División&nbsp;-&gt;&nbsp;2.5</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">5</span>&nbsp;%&nbsp;<span style="color: #098658;">2</span>);&nbsp;<span style="color: #008000;">//&nbsp;Módulo&nbsp;o&nbsp;residuo&nbsp;-&gt;&nbsp;1</span></div><div><span style="color: #0000ff;">let</span>&nbsp;<span style="color: #001080;">z</span>&nbsp;=&nbsp;<span style="color: #098658;">0</span>;</div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(++<span style="color: #001080;">z</span>);&nbsp;<span style="color: #008000;">//&nbsp;Postincremento&nbsp;-&gt;&nbsp;1</span></div><div><span style="color: #008000;">//&nbsp;z&nbsp;===&nbsp;1</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #001080;">z</span>++);&nbsp;<span style="color: #008000;">//&nbsp;Preincremento&nbsp;-&gt;&nbsp;1</span></div><div><span style="color: #008000;">//&nbsp;z&nbsp;===&nbsp;2</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #001080;">z</span>--);&nbsp;<span style="color: #008000;">//&nbsp;Predecremento&nbsp;-&gt;&nbsp;2</span></div><div><span style="color: #008000;">//&nbsp;z&nbsp;===&nbsp;1</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(--<span style="color: #001080;">z</span>);&nbsp;<span style="color: #008000;">//&nbsp;Postdecremento&nbsp;-&gt;&nbsp;0</span></div><div><span style="color: #008000;">//&nbsp;z&nbsp;===&nbsp;0</span></div></div></div></div></td>
+          </tr>
+        </table>
+        <div class="marco-lectura">
+          <p>Python Tutor no soporta
+            <code class="language-javascript">**</code>
+            pero los navegadores más usados si.
+          </p>
+          <p>
+            <a href="http://www.pythontutor.com/javascript.html#code=const%20x%20%3D%205%3B%0Aconst%20y%20%3D%202%3B%0Aconsole.log%28x%20%2B%20y%29%3B%20//%20Suma%20-%3E%207%0Aconsole.log%28x%20-%202%29%3B%20//%20Resta%20-%3E%203%0Aconsole.log%285%20*%20y%29%3B%20//%20Multiplicaci%C3%B3n%20-%3E%2010%0A//console.log%285%20**%202%29%3B%20//%20Potencia%20-%3E%2025%0Aconsole.log%285%20/%202%29%3B%20//%20Divisi%C3%B3n%20-%3E%202.5%0Aconsole.log%285%20%25%202%29%3B%20//%20M%C3%B3dulo%20o%20residuo%20-%3E%201%0Alet%20z%20%3D%200%3B%0Aconsole.log%28%2B%2Bz%29%3B%20//%20Postincremento%20-%3E%201%0A//%20z%20%3D%3D%3D%201%0Aconsole.log%28z%2B%2B%29%3B%20//%20Preincremento%20-%3E%201%0A//%20z%20%3D%3D%3D%202%0Aconsole.log%28z--%29%3B%20//%20Predecremento%20-%3E%202%0A//%20z%20%3D%3D%3D%201%0Aconsole.log%28--z%29%3B%20//%20Postdecremento%20-%3E%200%0A//%20z%20%3D%3D%3D%200&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            target=_blank>Visualiza el código en Python Tutor</a>
+          </p>
+        </div>
+      </section>
+      <section id=codificacion slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Los textos contienen letras, dígitos, signos de puntuación u otros
+            símbolos, a los cuales se les llaman <dfn>caracteres</dfn>.
+          </p>
+          <p>
+            Un <dfn>codigo de caracteres</dfn> asigna un número a cada uno de
+            ellos.
+          </p>
+          <p>
+            Los textos se representan como una secuencia de números de un codigo
+            de caracteres.
+          </p>
+          <table>
+            <caption>
+              Número hexadecimal de algunos caracteres en distintos códigos.
+            </caption>
+            <tr>
+              <th>Caracter</th>
+              <th>UTF-8</th>
+              <th>EBCDIC</th>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td class="num">41</td>
+              <td class="num">C1</td>
+            </tr>
+            <tr>
+              <td>Á</td>
+              <td class="num">C1</td>
+              <td class="num">65</td>
+            </tr>
+            <tr>
+              <td>d</td>
+              <td class="num">64</td>
+              <td class="num">84</td>
+            </tr>
+            <tr>
+              <td>@</td>
+              <td class="num">40</td>
+              <td class="num">7C</td>
+            </tr>
+          </table>
+          <p>
+            Las codificaciones más usadas a nivel internacional son
+            UTF-8, UTF-16 y UTF-32 definidas por
+            <a href="https://unicode.org" target="_blank">Unicode</a>.
+          </p>
+        </div>
+      </section>
+      <section id=String slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Son secuencias de caracteres delimitadas por los siguientes
+            símbolos:
+          </p>
+          <dl>
+            <dt><code class="language-javascript">' '</code></dt>
+            <dd>
+              <p>
+                El delimitador es el símbolo <dfn>apóstrofo</dfn>
+                (<code class="language-javascript">'</code>).
+              </p>
+              <p>
+                En su interior puedes poner cualquier caracter, excepto
+                apóstrofo y salto de línea.
+              </p>
+            </dd>
+            <dt><code class="language-javascript">" "</code></dt>
+            <dd>
+              <p>
+                El delimitador es el símbolo <dfn>comillas</dfn>
+                (<code class="language-javascript">"</code>).
+              </p>
+              <p>
+                En su interior puedes poner cualquier caracter, excepto
+                comillas y salto de línea.
+              </p>
+            </dd>
+            <dt><code class="language-javascript">` `</code></dt>
+            <dd>
+              <p>
+                El delimitador es el símbolo <dfn>acento invertido</dfn>
+                (<code class="language-javascript">`</code>),
+                que se genera con <kbd>Alt Gr+}</kbd> en el teclado
+                latinoamericano.
+              </p>
+              <p>
+                En su interior puedes poner cualquier caracter, excepto acento
+                invertido.
+              </p>
+              <p>Puede incluir saltos de línea.</p>
+              <p>
+                En su interior puedes poner la secuencia
+                <code class="language-javascript">${}</code>,
+                que permite poner en el interior de las llaves una expresión,
+                cuyo resultado sustituye a toda esta secuencia.
+              </p>
+            </dd>
+          </dl>
+          <p>
+            Hay una cadena sin caracteres:
+            <code class="language-javascript">""</code>
+            o
+            <code class="language-javascript">''</code>
+            o
+            <code class="language-javascript">``</code>,
+            conocida como <dfn>cadena vacía</dfn>.
+          </p>
+          <p>
+            La propiedad
+            <code class="language-javascript">length</code>
+            indica cuantos caracteres tiene una cadena.
+          </p>
+          <p>
+            Ejemplo:<br>
+            <code class="language-javascript">"hola".length</code><br>
+            vale 4
+          </p>
+          <p>
+            Internamente usa
+            <a href="https://unicode.org" target="_blank">Unicode</a>.
+          </p>
+          <h3>Ejemplos</h3>
+          <ul>
+            <li><code class="language-javascript">"Hola pp"</code></li>
+            <li><code class="language-javascript">`gg-99`</code></li>
+            <li>
+              <code class="language-javascript">`Este es<br>
+              un ejercicio<br>
+              de ${numl} línea(s).`</code>
+            </li>
+            <li>
+              <code class="language-javascript">'😁¡¡¡¡A sus órdenes jefecita!!!!'</code>
+            </li>
+          </ul>
+          <h3>Secuencias de Escape</h3>
+          <p>
+            Son secuencias que te permiten incluír ciertos caracteres dentro de
+            un texto. Estas son las más usadas:
+          </p>
+          <dl>
+            <dt><code class="language-javascript">\'</code></dt>
+            <dd>Se sustituye por '</dd>
+            <dt><code class="language-javascript">\"</code></dt>
+            <dd>Se sustituye por "</dd>
+            <dt><code class="language-javascript">\\</code></dt>
+            <dd>Se sustituye por \</dd>
+          </dl>
+        </div>
+      </section>
+      <section id=texto slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <table>
+          <tr>
+            <td class=nums data-total="11"></td>
+            <td class=cod><div><div><div><div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ab"</span>&nbsp;+&nbsp;<span style="color: #a31515;">'$&nbsp;h'</span>);&nbsp;<span style="color: #008000;">//&nbsp;Concatenación&nbsp;ab$&nbsp;h</span></div><div><span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">TT</span>&nbsp;=&nbsp;<span style="color: #a31515;">`bb`</span>;</div><div><span style="color: #008000;">/*&nbsp;Concatenación&nbsp;Ejemplo</span></div><div><span style="color: #008000;">de&nbsp;bb*/</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">`Ejemplo</span></div><div><span style="color: #a31515;">de&nbsp;</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">TT</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">`</span>);</div><div><span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">KT</span>&nbsp;=&nbsp;<span style="color: #098658;">8</span>;</div><div><span style="color: #008000;">/*&nbsp;Concatenación&nbsp;88</span></div><div><span style="color: #008000;">de&nbsp;bb&nbsp;yy*/</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">KT</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">8</span></div><div><span style="color: #a31515;">de&nbsp;</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">TT</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">&nbsp;yy`</span>);</div></div></div></div></div></div></td>
+          </tr>
+        </table>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://www.pythontutor.com/javascript.html#code=console.log%28%22ab%22%20%2B%20'%24%20h'%29%3B%20//%20Concatenaci%C3%B3n%20ab%24%20h%0Aconst%20TT%20%3D%20%60bb%60%3B%0A/*%20Concatenaci%C3%B3n%20Ejemplo%0Ade%20bb*/%0Aconsole.log%28%60Ejemplo%0Ade%20%24%7BTT%7D%60%29%3B%0Aconst%20KT%20%3D%208%3B%0A/*%20Concatenaci%C3%B3n%2088%0Ade%20bb%20yy*/%0Aconsole.log%28%60%24%7BKT%7D8%0Ade%20%24%7BTT%7D%20yy%60%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            target=_blank>Visualiza el código en Python Tutor</a>
+          </p>
+        </div>
+      </section>
+      <section id=Boolean slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <h3>Valores</h3>
+          <ul>
+            <li><p><code class="language-javascript">true</code></p></li>
+            <li><p><code class="language-javascript">false</code></p></li>
+            <li>
+              <p>
+                Para los operadores lógicos, los valores
+                <code class="language-javascript">null</code>,
+                <code class="language-javascript">undefined</code>,
+                <code class="language-javascript">0</code>
+                y
+                <code class="language-javascript">""</code>
+                se evalúan a
+                <code class="language-javascript">false</code>,
+                mientras que cualquier otro valor evalúa a
+                <code class="language-javascript">true</code>.
+              </p>
+            </li>
+          </ul>
+          <h3>Operadores Lógicos</h3>
+          <dl>
+            <dt><code class="language-javascript">x && y</code></dt>
+            <dd>
+              <p>Es el operador Y en corto circuito.</p>
+              <p>
+                Si
+                <code class="language-javascript">x</code>
+                se evalúa a
+                <code class="language-javascript">false</code>,
+                el resultado es
+                <code class="language-javascript">x</code>
+                y no se evalúa
+                <code class="language-javascript">y</code>;
+                de lo contrario, el resultado es
+                <code class="language-javascript">y</code>.
+              </p>
+            </dd>
+            <dt><code class="language-javascript">x || y</code></dt>
+            <dd>
+              <p>Es el operador O en corto circuito.</p>
+              <p>
+                Si
+                <code class="language-javascript">x</code>
+                se evalúa a
+                <code class="language-javascript">true</code>,
+                el resultado es
+                <code class="language-javascript">x</code>
+                y no se evalúa
+                <code class="language-javascript">y</code>;
+                de lo contrario, el resultado es
+                <code class="language-javascript">y</code>.
+              </p>
+            </dd>
+            <dt><code class="language-javascript">!x</code></dt>
+            <dd>
+              <p>Es el operador NO.</p>
+              <p>
+                Si
+                <code class="language-javascript">x</code>
+                se evalúa a
+                <code class="language-javascript">true</code>,
+                el resultado es
+                <code class="language-javascript">false</code>;
+                de lo contrario, el resultado es
+                <code class="language-javascript">true</code>.
+              </p>
+            </dd>
+            <dt><code class="language-javascript">x ? y : z</code></dt>
+            <dd>
+              <p>Es el operador ternario.</p>
+              <p>
+                Si
+                <code class="language-javascript">x</code>
+                se evalúa a
+                <code class="language-javascript">true</code>,
+                el resultado es
+                <code class="language-javascript">y</code>;
+                de lo contrario, el resultado es
+                <code class="language-javascript">true</code>.
+              </p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id=logicos slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <table>
+          <tr>
+            <td class=nums data-total="21"></td>
+            <td class=cod><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">false</span>&nbsp;&amp;&amp;&nbsp;<span style="color: rgb(0, 0, 255);">true</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;false</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">false</span>&nbsp;&amp;&amp;&nbsp;<span style="color: rgb(0, 0, 255);">false</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;false</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">true</span>&nbsp;&amp;&amp;&nbsp;<span style="color: rgb(0, 0, 255);">true</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;true</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">true</span>&nbsp;&amp;&amp;&nbsp;<span style="color: rgb(0, 0, 255);">false</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;false</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">true</span>&nbsp;&amp;&amp;&nbsp;<span style="color: rgb(163, 21, 21);">"hola"</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;hola</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(9, 134, 88);">3</span>&nbsp;&amp;&amp;&nbsp;<span style="color: rgb(163, 21, 21);">"hola"</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;hola</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(9, 134, 88);">0</span>&nbsp;&amp;&amp;&nbsp;<span style="color: rgb(163, 21, 21);">"hola"</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;0</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">true</span>&nbsp;||&nbsp;<span style="color: rgb(0, 0, 255);">true</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;true</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">true</span>&nbsp;||&nbsp;<span style="color: rgb(0, 0, 255);">false</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;true</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">false</span>&nbsp;||&nbsp;<span style="color: rgb(0, 0, 255);">true</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;true</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">false</span>&nbsp;||&nbsp;<span style="color: rgb(0, 0, 255);">false</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;false</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(163, 21, 21);">"gg"</span>&nbsp;||&nbsp;<span style="color: rgb(163, 21, 21);">"yy"</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;gg</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(163, 21, 21);">""</span>&nbsp;||&nbsp;<span style="color: rgb(163, 21, 21);">"bb"</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;bb</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(!<span style="color: rgb(0, 0, 255);">true</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;false</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(!<span style="color: rgb(0, 0, 255);">false</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;true</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(!<span style="color: rgb(9, 134, 88);">0</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;true</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(!<span style="color: rgb(163, 21, 21);">"h"</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;false</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">true</span>&nbsp;?&nbsp;<span style="color: rgb(9, 134, 88);">3</span>&nbsp;:&nbsp;<span style="color: rgb(9, 134, 88);">8</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;3</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(0, 0, 255);">false</span>&nbsp;?&nbsp;<span style="color: rgb(9, 134, 88);">3</span>&nbsp;:&nbsp;<span style="color: rgb(9, 134, 88);">8</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;8</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(163, 21, 21);">"h"</span>&nbsp;?&nbsp;<span style="color: rgb(9, 134, 88);">3</span>&nbsp;:&nbsp;<span style="color: rgb(9, 134, 88);">8</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;3</span></div><div><span style="color: rgb(0, 16, 128);">console</span>.<span style="color: rgb(121, 94, 38);">log</span>(<span style="color: rgb(163, 21, 21);">""</span>&nbsp;?&nbsp;<span style="color: rgb(9, 134, 88);">3</span>&nbsp;:&nbsp;<span style="color: rgb(9, 134, 88);">8</span>);&nbsp;<span style="color: rgb(0, 128, 0);">//&nbsp;8</span></div></td>
+          </tr>
+        </table>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://www.pythontutor.com/javascript.html#code=console.log%28false%20%26%26%20true%29%3B%20//%20false%0Aconsole.log%28false%20%26%26%20false%29%3B%20//%20false%0Aconsole.log%28true%20%26%26%20true%29%3B%20//%20true%0Aconsole.log%28true%20%26%26%20false%29%3B%20//%20false%0Aconsole.log%28true%20%26%26%20%22hola%22%29%3B%20//%20hola%0Aconsole.log%283%20%26%26%20%22hola%22%29%3B%20//%20hola%0Aconsole.log%280%20%26%26%20%22hola%22%29%3B%20//%200%0Aconsole.log%28true%20%7C%7C%20true%29%3B%20//%20true%0Aconsole.log%28true%20%7C%7C%20false%29%3B%20//%20true%0Aconsole.log%28false%20%7C%7C%20true%29%3B%20//%20true%0Aconsole.log%28false%20%7C%7C%20false%29%3B%20//%20false%0Aconsole.log%28%22gg%22%20%7C%7C%20%22yy%22%29%3B%20//%20gg%0Aconsole.log%28%22%22%20%7C%7C%20%22bb%22%29%3B%20//%20bb%0Aconsole.log%28!true%29%3B%20//%20false%0Aconsole.log%28!false%29%3B%20//%20true%0Aconsole.log%28!0%29%3B%20//%20true%0Aconsole.log%28!%22h%22%29%3B%20//%20false%0Aconsole.log%28true%20%3F%203%20%3A%208%29%3B%20//%203%0Aconsole.log%28false%20%3F%203%20%3A%208%29%3B%20//%208%0Aconsole.log%28%22h%22%20%3F%203%20%3A%208%29%3B%20//%203%0Aconsole.log%28%22%22%20%3F%203%20%3A%208%29%3B%20//%208&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            target=_blank>Visualiza el código en Python Tutor</a>
+          </p>
+        </div>
+      </section>
+      <section id=Relacionales slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <table>
+          <tr>
+            <td class=nums data-total="38"></td>
+            <td class=cod><div><div><span style="color: #008000;">//&nbsp;Igual&nbsp;que&nbsp;(===)</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"h"</span>&nbsp;===&nbsp;<span style="color: #a31515;">"gh"</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"h"</span>&nbsp;===&nbsp;<span style="color: #a31515;">"h"</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;===&nbsp;<span style="color: #098658;">3</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;===&nbsp;-<span style="color: #098658;">3</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #008000;">//&nbsp;Diferente&nbsp;de&nbsp;(!==)</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"h"</span>&nbsp;!==&nbsp;<span style="color: #a31515;">"gh"</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"h"</span>&nbsp;!==&nbsp;<span style="color: #a31515;">"h"</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;!==&nbsp;<span style="color: #098658;">3</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;!==&nbsp;<span style="color: #098658;">8</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #008000;">//&nbsp;Menor&nbsp;que&nbsp;(&lt;)</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&lt;&nbsp;<span style="color: #a31515;">"aa"</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&lt;&nbsp;<span style="color: #a31515;">"ah"</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&lt;&nbsp;<span style="color: #a31515;">"ai"</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&lt;&nbsp;<span style="color: #098658;">0</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&lt;&nbsp;<span style="color: #098658;">3</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&lt;&nbsp;<span style="color: #098658;">8</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #008000;">//&nbsp;Menor&nbsp;o&nbsp;igual&nbsp;que&nbsp;(&lt;=)</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&lt;=&nbsp;<span style="color: #a31515;">"aa"</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&lt;=&nbsp;<span style="color: #a31515;">"ah"</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&lt;=&nbsp;<span style="color: #a31515;">"ai"</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&lt;=&nbsp;<span style="color: #098658;">0</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&lt;=&nbsp;<span style="color: #098658;">3</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&lt;=&nbsp;<span style="color: #098658;">8</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #008000;">//&nbsp;Mayor&nbsp;que&nbsp;(&gt;)</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&gt;&nbsp;<span style="color: #a31515;">"aa"</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&gt;&nbsp;<span style="color: #a31515;">"ah"</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&gt;&nbsp;<span style="color: #a31515;">"ai"</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&gt;&nbsp;<span style="color: #098658;">0</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&gt;&nbsp;<span style="color: #098658;">3</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&gt;&nbsp;<span style="color: #098658;">8</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #008000;">//&nbsp;Mayor&nbsp;o&nbsp;igual&nbsp;que&nbsp;(&gt;=)</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&gt;=&nbsp;<span style="color: #a31515;">"aa"</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&gt;=&nbsp;<span style="color: #a31515;">"ah"</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #a31515;">"ah"</span>&nbsp;&gt;=&nbsp;<span style="color: #a31515;">"ai"</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&gt;=&nbsp;<span style="color: #098658;">0</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&gt;=&nbsp;<span style="color: #098658;">3</span>);&nbsp;<span style="color: #008000;">//&nbsp;true</span></div><div><span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #098658;">3</span>&nbsp;&gt;&nbsp;<span style="color: #098658;">8</span>);&nbsp;<span style="color: #008000;">//&nbsp;false</span></div></div></td>
+          </tr>
+        </table>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://www.pythontutor.com/javascript.html#code=//%20Igual%20que%20%28%3D%3D%3D%29%0Aconsole.log%28%22h%22%20%3D%3D%3D%20%22gh%22%29%3B%20//%20false%0Aconsole.log%28%22h%22%20%3D%3D%3D%20%22h%22%29%3B%20//%20true%0Aconsole.log%283%20%3D%3D%3D%203%29%3B%20//%20true%0Aconsole.log%283%20%3D%3D%3D%20-3%29%3B%20//%20false%0A//%20Diferente%20de%20%28!%3D%3D%29%0Aconsole.log%28%22h%22%20!%3D%3D%20%22gh%22%29%3B%20//%20true%0Aconsole.log%28%22h%22%20!%3D%3D%20%22h%22%29%3B%20//%20false%0Aconsole.log%283%20!%3D%3D%203%29%3B%20//%20false%0Aconsole.log%283%20!%3D%3D%208%29%3B%20//%20true%0A//%20Menor%20que%20%28%3C%29%0Aconsole.log%28%22ah%22%20%3C%20%22aa%22%29%3B%20//%20false%0Aconsole.log%28%22ah%22%20%3C%20%22ah%22%29%3B%20//%20false%0Aconsole.log%28%22ah%22%20%3C%20%22ai%22%29%3B%20//%20true%0Aconsole.log%283%20%3C%200%29%3B%20//%20false%0Aconsole.log%283%20%3C%203%29%3B%20//%20false%0Aconsole.log%283%20%3C%208%29%3B%20//%20true%0A//%20Menor%20o%20igual%20que%20%28%3C%3D%29%0Aconsole.log%28%22ah%22%20%3C%3D%20%22aa%22%29%3B%20//%20false%0Aconsole.log%28%22ah%22%20%3C%3D%20%22ah%22%29%3B%20//%20true%0Aconsole.log%28%22ah%22%20%3C%3D%20%22ai%22%29%3B%20//%20true%0Aconsole.log%283%20%3C%3D%200%29%3B%20//%20false%0Aconsole.log%283%20%3C%3D%203%29%3B%20//%20true%0Aconsole.log%283%20%3C%3D%208%29%3B%20//%20true%0A//%20Mayor%20que%20%28%3E%29%0Aconsole.log%28%22ah%22%20%3E%20%22aa%22%29%3B%20//%20true%0Aconsole.log%28%22ah%22%20%3E%20%22ah%22%29%3B%20//%20false%0Aconsole.log%28%22ah%22%20%3E%20%22ai%22%29%3B%20//%20false%0Aconsole.log%283%20%3E%200%29%3B%20//%20true%0Aconsole.log%283%20%3E%203%29%3B%20//%20false%0Aconsole.log%283%20%3E%208%29%3B%20//%20false%0A//%20Mayor%20o%20igual%20que%20%28%3E%3D%29%0Aconsole.log%28%22ah%22%20%3E%3D%20%22aa%22%29%3B%20//%20true%0Aconsole.log%28%22ah%22%20%3E%3D%20%22ah%22%29%3B%20//%20true%0Aconsole.log%28%22ah%22%20%3E%3D%20%22ai%22%29%3B%20//%20false%0Aconsole.log%283%20%3E%3D%200%29%3B%20//%20true%0Aconsole.log%283%20%3E%3D%203%29%3B%20//%20true%0Aconsole.log%283%20%3E%208%29%3B%20//%20false&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            target=_blank>Visualiza el código en Python Tutor</a>
+          </p>
+        </div>
+      </section>
+      <section id=Asignacion slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <table>
+          <tr>
+            <td class=nums data-total="13"></td>
+            <td class=cod><div><div><span style="color: #0000ff;">let</span>&nbsp;<span style="color: #001080;">b</span>&nbsp;=&nbsp;<span style="color: #098658;">4</span>;</div><div><span style="color: #0000ff;">let</span>&nbsp;<span style="color: #001080;">c</span>&nbsp;=&nbsp;<span style="color: #a31515;">"pp"</span>;</div><div><span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">d</span>&nbsp;=&nbsp;<span style="color: #098658;">5</span>;</div><div><span style="color: #001080;">c</span>&nbsp;=&nbsp;<span style="color: #a31515;">"h"</span>;&nbsp;<span style="color: #008000;">//&nbsp;c&nbsp;===&nbsp;"h"</span></div><div><span style="color: #001080;">c</span>&nbsp;+=&nbsp;<span style="color: #a31515;">"gg"</span>;&nbsp;<span style="color: #008000;">//&nbsp;c&nbsp;=&nbsp;c&nbsp;+&nbsp;"gg";&nbsp;c&nbsp;===&nbsp;"hgg"</span></div><div><span style="color: #001080;">b</span>&nbsp;=&nbsp;<span style="color: #0070c1;">d</span>;&nbsp;<span style="color: #008000;">//&nbsp;b&nbsp;===&nbsp;5</span></div><div><span style="color: #001080;">b</span>&nbsp;+=&nbsp;<span style="color: #0070c1;">d</span>;&nbsp;<span style="color: #008000;">//&nbsp;b&nbsp;=&nbsp;b&nbsp;+&nbsp;d;&nbsp;b&nbsp;===&nbsp;10</span></div><div><span style="color: #001080;">b</span>&nbsp;+=&nbsp;<span style="color: #098658;">3</span>;&nbsp;<span style="color: #008000;">//&nbsp;b&nbsp;=&nbsp;b&nbsp;+&nbsp;3;&nbsp;b&nbsp;===&nbsp;13</span></div><div><span style="color: #001080;">b</span>&nbsp;-=&nbsp;<span style="color: #098658;">2</span>;&nbsp;<span style="color: #008000;">//&nbsp;b&nbsp;=&nbsp;b&nbsp;-&nbsp;2;&nbsp;b&nbsp;===&nbsp;11</span></div><div><span style="color: #001080;">b</span>&nbsp;*=&nbsp;<span style="color: #098658;">3</span>;&nbsp;<span style="color: #008000;">//&nbsp;b&nbsp;=&nbsp;b&nbsp;*&nbsp;3;&nbsp;b&nbsp;===&nbsp;33</span></div><div><span style="color: #001080;">b</span>&nbsp;/=&nbsp;<span style="color: #098658;">3</span>;&nbsp;<span style="color: #008000;">//&nbsp;b&nbsp;=&nbsp;b&nbsp;/&nbsp;11;&nbsp;b&nbsp;===&nbsp;11</span></div><div><span style="color: #001080;">b</span>&nbsp;%=&nbsp;<span style="color: #098658;">3</span>;&nbsp;<span style="color: #008000;">//&nbsp;b&nbsp;=&nbsp;b&nbsp;/&nbsp;3;&nbsp;b&nbsp;===&nbsp;2</span></div><div><span style="color: #008000;">//b&nbsp;**=&nbsp;3;&nbsp;//&nbsp;b&nbsp;=&nbsp;b&nbsp;**&nbsp;3;&nbsp;b&nbsp;===&nbsp;8</span></div></div></td>
+          </tr>
+        </table>
+        <div class="marco-lectura">
+          <p>Python Tutor no soporta
+            <code class="language-javascript">**=</code>
+            pero los navegadores más usados si.
+          </p>
+          <p>
+            <a href="http://www.pythontutor.com/javascript.html#code=let%20b%20%3D%204%3B%0Alet%20c%20%3D%20%22pp%22%3B%0Aconst%20d%20%3D%205%3B%0Ac%20%3D%20%22h%22%3B%20//%20c%20%3D%3D%3D%20%22h%22%0Ac%20%2B%3D%20%22gg%22%3B%20//%20c%20%3D%20c%20%2B%20%22gg%22%3B%20c%20%3D%3D%3D%20%22hgg%22%0Ab%20%3D%20d%3B%20//%20b%20%3D%3D%3D%205%0Ab%20%2B%3D%20d%3B%20//%20b%20%3D%20b%20%2B%20d%3B%20b%20%3D%3D%3D%2010%0Ab%20%2B%3D%203%3B%20//%20b%20%3D%20b%20%2B%203%3B%20b%20%3D%3D%3D%2013%0Ab%20-%3D%202%3B%20//%20b%20%3D%20b%20-%202%3B%20b%20%3D%3D%3D%2011%0Ab%20*%3D%203%3B%20//%20b%20%3D%20b%20*%203%3B%20b%20%3D%3D%3D%2033%0Ab%20/%3D%203%3B%20//%20b%20%3D%20b%20/%2011%3B%20b%20%3D%3D%3D%2011%0Ab%20%25%3D%203%3B%20//%20b%20%3D%20b%20/%203%3B%20b%20%3D%3D%3D%202%0A//b%20**%3D%203%3B%20//%20b%20%3D%20b%20**%203%3B%20b%20%3D%3D%3D%208&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            target=_blank>Visualiza el código en Python Tutor</a>
+          </p>
+        </div>
+      </section>
+      <section id=Precedencia slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <ol>
+            <li>()</li>
+            <li>. [] f() new</li>
+            <li>++ -- posfijos (al final)</li>
+            <li>! typeof ++ -- prefijos (al inicio)</li>
+            <li>**</li>
+            <li>* / %</li>
+            <li>+ -</li>
+            <li>&lt;&lt; >> >>></li>
+            <li>&lt; &lt;= > >= in instanceof</li>
+            <li>== === != !==</li>
+            <li>&</li>
+            <li>^</li>
+            <li>|</li>
+            <li>&&</li>
+            <li>||</li>
+            <li>?:</li>
+            <li>+= /= -= *= **= %= &lt; &lt;= >>= >>>= &= ^= |=</li>
+            <li>yield</li>
+            <li>,</li>
+          </ol>
+        </div>
+      </section>
+      <section id=Expresiones slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Hay que aprender a estructurar las expresiones matemáticas en el
+            lenguaje de programación.
+          </p>
+          <p>Ejemplos de expresiones aritméticas expresadas en JavaScript:</p>
+          <dl>
+            <dt>
+              <div>
+                  <math>
+                    <mrow>
+                      <mi>x</mi>
+                      <mo>=</mo>
+                      <mfrac>
+                        <mrow>
+                          <mrow>
+                            <mo>-</mo>
+                            <mi>b</mi>
+                          </mrow>
+                          <mo>+</mo>
+                          <msqrt>
+                            <mrow>
+                              <msup>
+                                <mi>b</mi>
+                                <mn>2</mn>
+                              </msup>
+                              <mo>-</mo>
+                              <mrow>
+                                <mn>4</mn>
+                                <mo>&#x2062;</mo>
+                                <mi>a</mi>
+                                <mo>&#x2062;</mo>
+                                <mi>c</mi>
+                              </mrow>
+                            </mrow>
+                          </msqrt>
+                        </mrow>
+                        <mrow>
+                          <mn>2</mn>
+                          <mo>&#x2062;</mo>
+                          <mi>a</mi>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                </math>
+              </div>
+            </dt>
+            <dd>
+              <code class="language-javascript">x = (-b + Math.sqrt(b**2 - 4*a*c)) / (2*a)</code>
+            </dd>
+            <dt>
+              <div>
+                <math>
+                  <mrow>
+                    <mi>y</mi>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mrow>
+                        <msub>
+                          <mi>y</mi>
+                          <mn>2</mn>
+                        </msub>
+                        <mo>-</mo>
+                        <msub>
+                          <mi>y</mi>
+                          <mn>1</mn>
+                        </msub>
+                      </mrow>
+                      <mrow>
+                        <msub>
+                          <mi>x</mi>
+                          <mn>2</mn>
+                        </msub>
+                        <mo>-</mo>
+                        <msub>
+                          <mi>x</mi>
+                          <mn>1</mn>
+                        </msub>
+                      </mrow>
+                    </mfrac>
+                    <mo>&#x2062;</mo>
+                    <mrow>
+                      (
+                      <mn>x</mn>
+                      <mo>-</mo>
+                      <msub>
+                        <mi>x</mi>
+                        <mn>1</mn>
+                      </msub>
+                      )
+                  </mrow>
+                  <mo>+</mo>
+                  <msub>
+                    <mi>y</mi>
+                    <mn>1</mn>
+                  </msub>
+                </math>
+              </div>
+            </dt>
+            <dd>
+              <code class="language-javascript">y = ((y2 - y1) / (x2 - x1)) * (x - x1) + y1</code>
+            </dd>
+          </dl>
+        </div>
+      </section>
+    </mi-presentacion>
+  </body>
+  <script type="module" src="lib/comun.js"></script>
+  <script type="text/JavaScript" src="allBrowserSolution.js"></script>
+</html>

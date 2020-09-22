@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validaciones</title>
+  </head>
+  <body>
+    <h1>Validaciones</h1>
+    <form action=javascript:calculaDivisión();>
+      <p><label>a <input id=inA type=number></label></p>
+      <p><label>b <input id=inB type=number></label></p>
+      <p><button>Dividir</button></p>
+      <p><output id=outSalida></output></p>
+    </form>
+    <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+    <script>
+      function calculaDivisión() {
+        try {
+          const a = inA.valueAsNumber;
+          const b = inB.valueAsNumber;
+          valida(!isNaN(a), "Falta a.");
+          valida(!isNaN(b), "Falta b.");
+          valida(b !== 0, "b no puede ser 0.");
+          const resultado = a / b;
+          outSalida.value = resultado;
+        } catch (e) {
+          console.log(e);
+          outSalida.value = e.message;
+        }
+      }
+      function valida(cond, mensaje) {
+        if (!cond) {
+          throw new Error(mensaje);
+        }
+      }
+    </script>
+  </body>
+</html>

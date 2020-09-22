@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina</title>
+    <style>
+      img {
+        max-height: 40vh;
+      }
+    </style>
+  </head>
+  <body>
+    <form action=javascript:rana();>
+      <h1>Adivina</h1>
+      <p>¿Qúe animal es este?</p>
+      <!--
+      figure
+        Elemento de agrupamiento especial para enmarcar imágenes. -->
+      <figure>
+        <!--
+        img
+          Elemento de fraseo para mostrar imágenes, principalmente de los tipos
+          gif, jpg y png
+        src
+          URL de la imagen.
+        alt
+          Texto alterno que se muestra solo cuando no se pueda cargar la imagen.
+        -->
+        <img src="https://media.giphy.com/media/JKNn9A98JBVlu/giphy.gif"
+          alt="Imagen de un animal">
+      </figure>
+      <p>
+        <button>Una Rana</button>
+        <button formaction="javascript:oso();">Un Oso</button>
+      </p>
+      <p><output id=outResultado></output></p>
+    </form>
+    <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+    <script>
+      function rana() {
+        outResultado.value = "Claro que no es una rana.";
+      }
+      function oso() {
+        outResultado.value = "Claro que si es un oso.";
+      }
+    </script>
+  </body>
+</html>

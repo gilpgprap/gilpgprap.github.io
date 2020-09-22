@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="module" src="cmp/base.js"></script>
+    <script type="module" src="cmp/mi-presentacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/presentacion.css">
+    <script type="module">
+      import { SelDiapositivaBase } from "./lib/SelDiapositivaBase.js";
+      customElements.define("mi-selector", class extends SelDiapositivaBase {
+        /** @override
+         * @returns {string} */
+        get html() {
+          return (/* html */
+            `<select>
+              <option value=intro>Excepciones</option>
+              <option value=throw>throw</option>
+              <option value=try_catch>try-catch</option>
+              <option value=try_finally>try-finally</option>
+              <option value=try_catch_finally>try-catch-finally</option>
+              <option value=anidado>Procesamiento Anidado</option>
+              <option value=validaciones>Validaciones</option>
+            </select>`);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="cortina"></div>
+    <mi-menu></mi-menu>
+    <mi-presentacion class="desplaza">
+      <mi-selector slot=selector></mi-selector>
+      <div id=intro slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h1></h1>
+      </div>
+      <section id=throw slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Cuando una instrucción no puede completarse por algún error, debe
+            abortar usando la instrucción<br>
+            <code class="language-javascript">throw new Error(mensaje);</code>
+          </p>
+          <p>A este proceso se le llama <dfn>Lanzar a excepción.</dfn></p>
+          <figure>
+            <img src="img/throw.svg" alt="Diagrama de throw."
+              style="max-width: 350px;">
+          </figure>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=console.log%28%22En%20este%20ejemplo%22%29%3B%0Aconsole.log%28%22la%20instruci%C3%B3n%22%29%3B%0Athrow%20new%20Error%28%22throw%20aborta%20el%20programa.%22%29%3B%0Aconsole.log%28%22Estas%20l%C3%ADneas%22%29%3B%0Aconsole.log%28%22no%20se%20ejecutan%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            target="_blank">Ejemplo animado de throws</a>
+          </p>
+          <p>
+            Los errores generados por la cláusula
+            <code class="language-javascript">throw</code>
+            pueden procesarse de varias formas que se verán a continuación.
+          </p>
+        </div>
+      </section>
+      <section id=try_catch slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <figure class="columnas2">
+            <img src="img/try-catch.svg" alt="Diagrama de try-catch.">
+            <img src="img/try-error-catch.svg"
+              alt="Diagrama de try-catch con error.">
+          </figure>
+          <p>
+            Para procesar los errores, la instrucción
+            <code class="language-javascript">throw</code>
+            debe ejecutarse dentro de las llaves de
+            <code class="language-javascript">try</code>.
+          </p>
+          <p>
+            Si llega al final de las llaves de
+            <code class="language-javascript">try</code>
+            sin lanzar ninguna excepción, la cláusula
+            <code class="language-javascript">catch</code>
+            y las
+            <i>instrucciones para procesar la excepción</i>
+            no se ejecutan, continuando con las instrucciones que
+            vengan después de la estructura completa
+            <code class="language-javascript">try</code>
+            -
+            <code class="language-javascript">catch</code>.
+          </p>
+          <p>
+            Si se lanza una excepción dentro de las llaves de
+            <code class="language-javascript">try</code>,
+            las restantes instrucciones hasta cerrar llaves no se ejecutan.
+            Se toma la excepción lanzada; a este proceso se le llama
+            <dfn>atrapar la excepción</dfn>. La excepción atrapada se pasa
+            como parámetro a la cláusula
+            <code class="language-javascript">catch</code>
+            el flujo normal se restablece y se ejecutan las
+            <i>instrucciones para procesar la excepción</i>,
+            continuando con las instrucciones que vengan después de la
+            estructura completa
+            <code class="language-javascript">try</code>
+            -
+            <code class="language-javascript">catch</code>.
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=try%20%7B%0A%20%20console.log%28%22Esto%20se%20ejecuta%20sin%20error.%22%29%3B%0A%7D%20catch%20%28e%29%20%7B%0A%20%20console.log%28%22Esta%20parte%20no%20se%20ejecuta.%22%29%3B%0A%7D%0Aconsole.log%28%22Contin%C3%BAa%20el%20flujo%20normal.%22%29%3B%0Atry%20%7B%0A%20%20console.log%28%22Intentamos%20seguir.%22%29%3B%0A%20%20throw%20new%20Error%28%22Fallo,%20fallo.%22%29%3B%0A%20%20console.log%28%22Esta%20parte%20no%20de%20ejecuta%22%29%3B%0A%7D%20catch%20%28e%29%20%7B%0A%20%20console.log%28%22Aqu%C3%AD%20procesamos%20el%20error%3A%22,%20e.message%29%3B%0A%7D%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado de try-catch.</a>
+          </p>
+        </div>
+      </section>
+      <section id=try_finally slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <figure class="columnas2">
+            <img src="img/try-finally.svg" alt="Diagrama de try-finally.">
+            <img src="img/try-error-finally.svg"
+              alt="Diagrama de try-finally con error.">
+          </figure>
+          <p>
+            Las instrucciones que están dentro de
+            <code class="language-javascript">finally</code>
+            siempre se ejecutan.
+          </p>
+          <p>
+            Si llega al final de las llaves de
+            <code class="language-javascript">try</code>
+            sin lanzar ninguna excepción, las
+            <i>instrucciones que siempre se ejecutan</i>
+            de la cláusula
+            <code class="language-javascript">finally</code>
+            se ejecutan, continuando con las instrucciones que
+            vengan después de la estructura completa
+            <code class="language-javascript">try</code>
+            -
+            <code class="language-javascript">finally</code>.
+          </p>
+          <p>
+            Si se lanza una excepción dentro de las llaves de
+            <code class="language-javascript">try</code>,
+            las restantes instrucciones hasta cerrar llaves no se ejecutan.
+            Las
+            <i>instrucciones que siempre se ejecutan</i>
+            de la cláusula
+            <code class="language-javascript">finally</code>
+            se ejecutan y se continúa lanzando la excepción.
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=try%20%7B%0A%20%20console.log%28%22Sin%20error%22%29%3B%0A%7D%20finally%20%7B%0A%20%20console.log%28%22Si%20se%20ejecuta.%22%29%3B%0A%7D%0Aconsole.log%28%22Continuamos%20porque%20no%20hay%20falla.%22%29%3B%0Atry%20%7B%0A%20%20throw%20new%20Error%28%22A%20volar.%22%29%3B%0A%20%20console.log%28%22Esto%20%20no%20se%20ejecuta.%22%29%3B%0A%7D%20finally%20%7B%0A%20%20console.log%28%22Se%20ejecuta,%20pero%20no%20normaliza%20el%20flujo.%22%29%3B%0A%20%20console.log%28%22Python%20tutor%20no%20ejecuta%20esto%20por%20un%20bug.%22%29%3B%0A%7D%0Aconsole.log%28%22Esta%20instrucci%C3%B3n%20no%20se%20realiza.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado de try-finally.</a>
+          </p>
+        </div>
+      </section>
+      <section id=try_catch_finally slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <figure class="columnas2">
+            <img src="img/try-catch-finally.svg"
+              alt="Diagrama de try-catch-finally.">
+            <img src="img/try-error-catch-finally.svg"
+              alt="Diagrama de try-catch-finally con error.">
+          </figure>
+          <p>
+            Es una combinación de las 2 anteriores. Siempre restablece el
+            fujo normal y siempre se ejecutan las
+            <i>instrucciones que siempre se ejecutan</i>
+            de la cláusula
+            <code class="language-javascript">finally</code>
+
+          </p>
+          <p>
+            Si llega al final de las llaves de
+            <code class="language-javascript">try</code>
+            sin lanzar ninguna excepción, la cláusula
+            <code class="language-javascript">catch</code>
+            y las
+            <i>instrucciones para procesar la excepción</i>
+            no se ejecutan, continuando con las
+            <i>instrucciones que siempre se ejecutan</i>
+            de la cláusula
+            <code class="language-javascript">finally</code>.
+            Finalmente se ejecutan las instrucciones que vengan después de
+            la estructura completa
+            <code class="language-javascript">try</code>
+            -
+            <code class="language-javascript">catch</code>
+            -
+            <code class="language-javascript">finally</code>.
+          </p>
+          <p>
+            Si se lanza una excepción dentro de las llaves de
+            <code class="language-javascript">try</code>,
+            las restantes instrucciones hasta cerrar llaves no se ejecutan.
+            Se atrapa la excepción, se pasa como parámetro a la cláusula
+            <code class="language-javascript">catch</code>
+            y se ejecutan las
+            <i>instrucciones para procesar la excepción</i>.
+            El flujo normal se restablece, continuando con las
+            <i>instrucciones que siempre se ejecutan</i>
+            de la cláusula
+            <code class="language-javascript">finally</code>. Finalmente se
+            ejecutan las instrucciones que vengan después de la estructura
+            completa
+            <code class="language-javascript">try</code>
+            -
+            <code class="language-javascript">catch</code>
+            -
+            <code class="language-javascript">finally</code>.
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=try%20%7B%0A%20%20throw%20new%20Error%28%22Ouch%22%29%3B%0A%7D%20catch%20%28e%29%20%7B%0A%20%20console.log%28%22Restablece%20flujo%20normal.%22,%20e.message%29%3B%0A%7D%20finally%20%7B%0A%20%20console.log%28%22finally%20se%20ejecuta.%22%29%3B%0A%7D%0Aconsole.log%28%22Esta%20instrucci%C3%B3n%20se%20realiza.%22%29%3B%0Atry%20%7B%0A%20%20console.log%28%22Try%20exitoso.%22%29%3B%0A%7D%20catch%20%28e%29%20%7B%0A%20%20console.log%28%22catch%20no%20se%20ejecuta%22%29%3B%0A%7D%20finally%20%7B%0A%20%20console.log%28%22finally%20se%20ejecuta.%22%29%3B%0A%7D%0Aconsole.log%28%22Esta%20instrucci%C3%B3n%20se%20hace%20porque%20no%20hay%20falla.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado de try-catch-finally.</a>
+          </p>
+        </div>
+      </section>
+      <section id=anidado slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=try%20%7B%0A%20%20console.log%28%22Empezamos.%22%29%3B%0A%20%20fallo%28%29%3B%0A%20%20console.log%28%22No%20me%20ignores.%22%29%3B%0A%7D%20catch%20%28e%29%20%7B%0A%20%20console.log%28e.message%29%3B%0A%7D%0Aconsole.log%28%22Terminamos.%22%29%3B%0Afunction%20fallo%28%29%20%7B%0A%20%20console.log%28%22%C2%BFFallaremos%3F%22%29%3B%0A%20%20throw%20new%20Error%28%22Fallamos%22%29%3B%0A%20%20console.log%28%22Tampoco%20me%20ignores.%22%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado de try-anidado.</a>
+          </p>
+        </div>
+      </section>
+      <section id=validaciones slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/14_7_validaciones.html" height="300"></iframe>
+          <p><a href="src/14_7_validaciones.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="39"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Validaciones<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Validaciones<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;form</span>&nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">javascript:calculaDivisión();</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;label&gt;</span>a&nbsp;<span style="color: #800000;">&lt;input</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">inA</span>&nbsp;<span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">number</span><span style="color: #800000;">&gt;&lt;/label&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;label&gt;</span>b&nbsp;<span style="color: #800000;">&lt;input</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">inB</span>&nbsp;<span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">number</span><span style="color: #800000;">&gt;&lt;/label&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;button&gt;</span>Dividir<span style="color: #800000;">&lt;/button&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;output</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outSalida</span><span style="color: #800000;">&gt;&lt;/output&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">calculaDivisión</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">a</span>&nbsp;=&nbsp;<span style="color: #001080;">inA</span>.<span style="color: #001080;">valueAsNumber</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">b</span>&nbsp;=&nbsp;<span style="color: #001080;">inB</span>.<span style="color: #001080;">valueAsNumber</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">valida</span>(!<span style="color: #795e26;">isNaN</span>(<span style="color: #0070c1;">a</span>),&nbsp;<span style="color: #a31515;">"Falta&nbsp;a."</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">valida</span>(!<span style="color: #795e26;">isNaN</span>(<span style="color: #0070c1;">b</span>),&nbsp;<span style="color: #a31515;">"Falta&nbsp;b."</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">valida</span>(<span style="color: #0070c1;">b</span>&nbsp;!==&nbsp;<span style="color: #098658;">0</span>,&nbsp;<span style="color: #a31515;">"b&nbsp;no&nbsp;puede&nbsp;ser&nbsp;0."</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">resultado</span>&nbsp;=&nbsp;<span style="color: #0070c1;">a</span>&nbsp;/&nbsp;<span style="color: #0070c1;">b</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">outSalida</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #0070c1;">resultado</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span style="color: #af00db;">catch</span>&nbsp;(<span style="color: #001080;">e</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #001080;">e</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">outSalida</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #001080;">e</span>.<span style="color: #001080;">message</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">valida</span>(<span style="color: #001080;">cond</span>,&nbsp;<span style="color: #001080;">mensaje</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(!<span style="color: #001080;">cond</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">throw</span>&nbsp;<span style="color: #0000ff;">new</span>&nbsp;<span style="color: #267f99;">Error</span>(<span style="color: #001080;">mensaje</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+    </mi-presentacion>
+  </body>
+  <script type="module" src="lib/comun.js"></script>
+</html>

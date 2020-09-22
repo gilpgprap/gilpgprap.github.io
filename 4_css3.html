@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="module" src="cmp/base.js"></script>
+    <script type="module" src="cmp/mi-presentacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/presentacion.css">
+    <script type="module">
+      import { SelDiapositivaBase } from "./lib/SelDiapositivaBase.js";
+      customElements.define("mi-selector", class extends SelDiapositivaBase {
+        /** @override
+         * @returns {string} */
+        get html() {
+          return (/* html */
+            `<select>
+              <option value=intro>Introducción a CSS3</option>
+              <option value=estructura>Estructura</option>
+              <option value=selectores>Selectores Básicos</option>
+              <option value=colores>Colores</option>
+              <option value=unidades>Unidades</option>
+              <option value=fuentes>Fuentes</option>
+              <option value=ejemplo_fuentes>Ejemplo de Fuentes</option>
+            </select>`);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="cortina"></div>
+    <mi-menu></mi-menu>
+    <mi-presentacion class="desplaza">
+      <mi-selector slot=selector></mi-selector>
+      <div id=intro slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h1></h1>
+        <div class="marco-lectura">
+          <iframe src="src/4_1_css.html" height="200"></iframe>
+          <p><a href="src/4_1_css.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="35"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Ejemplo&nbsp;con&nbsp;CSS3<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">&lt;!--&nbsp;Los&nbsp;estilos&nbsp;se&nbsp;ponen&nbsp;en&nbsp;un&nbsp;elemento&nbsp;"style".--&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/*&nbsp;Este&nbsp;es&nbsp;un&nbsp;comentario&nbsp;de&nbsp;CSS3&nbsp;y&nbsp;puede&nbsp;abarcar&nbsp;varias&nbsp;líneas.&nbsp;*/</span></div><br><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/*&nbsp;Estilo&nbsp;para&nbsp;el&nbsp;elemento&nbsp;body.&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">body</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">background-color</span>:&nbsp;<span style="color: #0451a5;">blue</span>;&nbsp;<span style="color: #008000;">/*&nbsp;El&nbsp;body&nbsp;tiene&nbsp;fondo&nbsp;color&nbsp;azul.&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span style="color: #0451a5;">white</span>;&nbsp;<span style="color: #008000;">/*&nbsp;El&nbsp;body&nbsp;tiene&nbsp;color&nbsp;de&nbsp;letra&nbsp;blanco.&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/*&nbsp;Estilo&nbsp;para&nbsp;elementos&nbsp;"h1".&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span style="color: #795e26;">rgb</span>(<span style="color: #098658;">255</span>,&nbsp;<span style="color: #098658;">0</span>,&nbsp;<span style="color: #098658;">0</span>);&nbsp;<span style="color: #008000;">/*&nbsp;Fuente&nbsp;color&nbsp;rojo.&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">background-color</span>:&nbsp;<span style="color: #0451a5;">#ff000088</span>;&nbsp;<span style="color: #008000;">/*&nbsp;Fondo&nbsp;color&nbsp;rojo&nbsp;transparente.&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/*&nbsp;Estilo&nbsp;para&nbsp;elementos&nbsp;con&nbsp;class="verde".&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">.rosa</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span style="color: #0451a5;">#fdc8d4</span>&nbsp;<span style="color: #008000;">/*&nbsp;Fuente&nbsp;color&nbsp;rosa.&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Título&nbsp;de&nbsp;la&nbsp;Página<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Párrafo&nbsp;1&nbsp;de&nbsp;la&nbsp;página<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p</span>&nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"rosa"</span><span style="color: #800000;">&gt;</span>Párrafo&nbsp;2&nbsp;de&nbsp;la&nbsp;página<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </div>
+      <section id="estructura" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Las hojas de estilo controlan la apariencia de la página HTML.
+            Pueden colocarse dentro del HTML o en un archivo aparte.
+            El elemento
+            <dfn><code class="language-html">style</code></dfn>
+            de HTML, lleva como contenido hojas de estilo para la página.
+          </p>
+          <dl>
+            <dt><dfn>Definición de estilos de CSS3</dfn></dt>
+            <dd>
+              <p>Contiene reglas de estilo mezcladas con comentarios.</p>
+            </dd>
+            <dt><dfn>Comentario de CSS3</dfn></dt>
+            <dd>
+              <p>
+                Empieza con <q>/*</q>, termina con <q>*/</q> y puede ocupar 1 o
+                más renglones. Puede colocarse en cualquier lugar de la
+                definición de estilo de CSS3 y es ignorado por el navegador. Por
+                ejemplo:
+              </p>
+              <p>
+                Ejemplo:<br>
+                <code class="language-css">/* Este es un comentario */</code>
+              </p>
+            </dd>
+            <dt><dfn>Regla de estilo de CSS3</dfn></dt>
+            <dd>
+              <p>
+                Las <dfn>reglas de estilo</dfn> empiezan con un selector,
+                seguido de una serie de parejas del tipo propiedad: valor
+                separadas por <q>;</q> y encerradas <q>{</q> y <q>}</q>.
+              </p>
+              <p>Ejemplos:</p>
+              <ul>
+                <li>
+                  <code class="language-css">selector {propiedad1: valor1; propiedad2: valor2}</code>
+                </li>
+                <li>
+                  <code class="language-css">body {background-color: blue; color: white}</code>
+                </li>
+                <li><code class="language-css">.rosa {color: #fdc8d4}</code></li>
+              </ul>
+            </dd>
+            <dt><dfn>Selector de estilo de CSS3</dfn></dt>
+            <dd>
+              <p>
+                Indica a que elementos del HTML se aplican las propiedades de la
+                regla.
+              </p>
+              <p>Ejemplos:</p>
+              <ul>
+                <li><code class="language-css">selector</code></li>
+                <li><code class="language-css">body</code></li>
+                <li><code class="language-css">.rosa</code></li>
+              </ul>
+            </dd>
+            <dt><dfn>Propiedades</dfn></dt>
+            <dd>
+              <p>
+                Son características predefinidas en el navegador que permiten
+                configurar distintas características visuales de un elemento;
+                para ello se les asignan valores.
+              </p>
+              <p>
+                Por ejemplo, para definir que el color del texto de un elemento
+                sea azul, se usa:<br>
+                <code class="language-css">color: blue</code>
+              </p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id="selectores" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Indican a que elementos del archivo se aplican las propiedades de
+            una regla de estilo de CSS3.
+          </p>
+          <dl>
+            <dt><dfn>Selector de tipo de elemento</dfn></dt>
+            <dd>
+              <p>
+                Se usa el tipo de un elemento de HTML. La regla se aplica a
+                todos los elementos de ese tipo que se encuentren en el archivo.
+              </p>
+              <p>
+                Ejemplo: el selector<br>
+                <code class="language-css">h1</code><br>
+                se aplica a todos los elementos dentro del archivo, que sean del
+                tipo h1.
+              </p>
+            </dd>
+            <dt><dfn>Clase</dfn></dt>
+            <dd>
+              <p>
+                Los elementos de HTML pueden llevar un atributo llamado
+                <code class="language-html">class</code>,
+                cuyo valor son nombres separados por espacios. A cada uno de
+                esos nombres se les llama <dfn>clase</dfn> y pueden usarse en
+                varios elementos dentro del atributo
+                <code class="language-html">class</code>.
+              </p>
+              <p>
+                Las clases indican que el elemento tiene una característica
+                especial, la cual se define por medio de hojas de estilos o de
+                JavaScript.
+              </p>
+            </dd>
+            <dt><dfn>Selector de clase</dfn></dt>
+            <dd>
+              <p>
+                Es de la forma<br>
+                <code class="language-css">.clase</code><br>
+                donde <code class="language-css">clase</code> es el nombre de
+                una clase. La regla se aplica a todos los elementos del archivo
+                que en su atributo <code class="language-html">class</code>
+                incluyan el nombre de la clase.
+              </p>
+              <p>
+                Ejemplo: el selector<br>
+                <code class="language-css">.rosa</code><br>
+                se aplica a todos los elementos dentro del archivo, que incluyan
+                rosa en el valor de su atributo class.
+              </p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id="colores" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Se usan principalmente las siguientes propiedades:
+          </p>
+          <dl>
+            <dt><dfn><code class="language-css">color</code></dfn></dt>
+            <dd>
+              <p>Propiedad que define el color del texto del elemento.</p>
+            </dd>
+            <dt><dfn><code class="language-css">background-color</code></dfn></dt>
+            <dd>
+              <p>Propiedad que define el color del fondo del elemento.</p>
+            </dd>
+          </dl>
+          <p>
+            Los valores para colores se pueden expresar de alguna de las
+            siguientes formas:
+          </p>
+          <dl>
+            <dt><dfn><code class="language-html">transparent</code></dfn></dt>
+            <dd>
+              <p>Color transparente.</p>
+            </dd>
+            <dt><dfn>Nombre del color</dfn></dt>
+            <dd>
+              <p>
+                Los nombres de colores que se pueden usar están definidos en
+                <a href="https://www.w3.org/TR/css-color-3/#html4"
+                  target="_blank">https://www.w3.org/TR/css-color-3/#html4</a>.
+                y en
+                <a href="https://www.w3.org/TR/css-color-3/#svg-color"
+                  target="_blank">https://www.w3.org/TR/css-color-3/#svg-color</a>.
+              </p>
+              <p>
+                Ejemplo:<br>
+                <code class="language-css">blue</code>
+              </p>
+            </dd>
+            <dt><dfn><code class="language-css">rgb(num_rojo, num_verde, num_azul)</code></dfn></dt>
+            <dd>
+              <p>
+                Los valores num_rojo, num_verde y num_azul se explican más
+                adelante, pero representan la mezcla de colores rojo, verde y
+                azul en notación decimal.
+              </p>
+              <p>
+                Ejemplo:<br>
+                <code class="language-css">rgb(155, 255, 43)</code>
+              </p>
+            </dd>
+            <dt>
+              <dfn><code class="language-css">rgba(num_rojo, num_verde, num_azul, num_transp)</code></dfn>
+            </dt>
+            <dd>
+              <p>
+                Los valores num_rojo, num_verde, num_azul y num_transp se
+                explican más adelante, pero representan la mezcla de colores
+                rojo, verde y azul en notación decimal, pero aplicándoles un
+                valor para controlar que tan transparente es el color.
+              </p>
+              <p>
+                Ejemplo:<br>
+                <code class="language-css">rgba(155,255,43,0.7)</code>
+              </p>
+            </dd>
+            <dt><dfn>#rrggbb</dfn></dt>
+            <dd>
+              <p>
+                Los rr, gg y bb se explican más adelante, pero representan la
+                mezcla de colores rojo, verde y azul en notación hexadecimal.
+              </p>
+              <p>
+                Ejemplo:<br>
+                <code class="language-css">#a2fe09</code>
+              </p>
+            </dd>
+            <dt>
+              <dfn>#rrggbbaa</dfn>
+            </dt>
+            <dd>
+              <p>
+                Los valores rr, gg, bb y aa se explican más adelante, pero
+                representan la mezcla de colores rojo, verde y azul en notación
+                hexadecimal, pero aplicándoles un valor para controlar que tan
+                transparente es el color.
+              </p>
+              <p>
+                Ejemplo:<br>
+                <code class="language-css">#0b467380</code>
+              </p>
+            </dd>
+            <dt>
+              <dfn>num_rojo</dfn>
+            </dt>
+            <dd>
+              <p>
+                Valor decimal entre 0 y 255. Indica la cantidad de rojo que
+                lleva un color.
+              </p>
+            </dd>
+            <dt>
+              <dfn>num_verde</dfn>
+            </dt>
+            <dd>
+              <p>
+                Valor decimal entre 0 y 255. Indica indica la cantidad de verde
+                que lleva un color.
+              </p>
+            </dd>
+            <dt>
+              <dfn>num_azul</dfn>
+            </dt>
+            <dd>
+              <p>
+                Valor decimal entre 0 y 255. Indica la cantidad de azul que
+                lleva un color.
+              </p>
+            </dd>
+            <dt>
+              <dfn>num_transp</dfn>
+            </dt>
+            <dd>
+              <p>
+                Valor decimal fraccionario entre 0 y 1. Indica lo transparente
+                que es un color: 0 - totalmente transparente,
+                1 - totalmente opaco.
+              </p>
+            </dd>
+            <dt>
+              <dfn>rr</dfn>
+            </dt>
+            <dd>
+              <p>
+                Valor de 2 cifras hexadecimales entre 00 y ff. Indica la
+                cantidad de rojo que lleva un color.
+              </p>
+            </dd>
+            <dt>
+              <dfn>gg</dfn>
+            </dt>
+            <dd>
+              <p>
+                Valor de 2 cifras hexadecimales entre 00 y ff. Indica la
+                cantidad de verde que lleva un color.
+              </p>
+            </dd>
+            <dt>
+              <dfn>bb</dfn>
+            </dt>
+            <dd>
+              <p>
+                Valor de 2 cifras hexadecimales entre 00 y ff. Indica la
+                cantidad de azul que lleva un color.
+              </p>
+            </dd>
+            <dt>
+              <dfn>aa</dfn>
+            </dt>
+            <dd>
+              <p>
+                Valor de 2 cifras hexadecimales entre 00 y ff. Indica lo
+                transparente  que es un color. 00 - totalmente transparente,
+                ff - totalmente opaco.
+              </p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id="unidades" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Hay algunas propiedades que expresan tamaños o distancias.
+            Por ejemplo:
+          </p>
+          <dl>
+            <dt><dfn><code class="language-css">font-size</code></dfn></dt>
+            <dd>
+              <p>Indica el tamaño de letra.</p>
+            </dd>
+          <p>
+            Los valores son números decimales, que opcionalmente son
+            fraccionales y son seguidos sin espacio por las unidades de
+            medición. Ejemplos: 3em, 2.4rem.
+          </p>
+          <p>El cero se puede expresar sin unidades; por ejemplo: 0.</p>
+          <p>Algunas unidades de medición son:</p>
+          <dl>
+            <dt><dfn><code class="language-css">em</code></dfn></dt>
+            <dd>
+              <p>
+                La altura de un renglón de texto, usando el tamaño de letra del
+                elemento.
+              </p>
+            </dd>
+            <dt><dfn><code class="language-css">rem</code></dfn></dt>
+            <dd>
+              <p>
+                La altura de un renglón de texto, usando el tamaño de letra del
+                elemento raíz (que en HTML, es el elemento html).
+              </p>
+            </dd>
+            <dt><dfn><code class="language-css">vh</code></dfn></dt>
+            <dd><p>1% de la altura del puerto de visión (la ventana).</p></dd>
+            <dt><dfn><code class="language-css">vw</code></dfn></dt>
+            <dd><p>1% del ancho del puerto de visión (la ventana).</p></dd>
+            <dt><dfn><code class="language-css">%</code></dfn></dt>
+            <dd>
+              <p>
+                Porcentaje del espacio que el elemento padre permite que sus
+                hijos ocupen.
+              </p>
+            </dd>
+            <dt><dfn><code class="language-css">px</code></dfn></dt>
+            <dd><p>Pixeles.</p></dd>
+          </dl>
+        </div>
+      </section>
+      <section id="fuentes" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <h3>Letra Negrita</h3>
+          <p>
+            Para poner letra en negrita usa la propiedad<br>
+            <code class="language-css">font-weight: bold</code>
+          </p>
+          <h3>Tipos de Letra</h3>
+          <p>Usa la propiedad <dfn><code class="language-css">font-family</code></dfn></p>
+          <p>
+            Cada símbolo que se puede representar en una familia de fuentes
+            se conoce como <dfn>glifo</dfn> o <dfn>pictograma</dfn>.
+          </p>
+          <h4>Familias Básicas</h4>
+          <dl>
+            <dt><dfn><code class="language-css">serif</code></dfn></dt>
+            <dd>
+              <p>Es el tipo de letra que lleva adornos.</p>
+              <p>
+                Cada glifo puede tener un ancho diferente al de los otros de la
+                misma familia.
+              </p>
+              <p>Permite leer cómodamente textos largos.</p>
+              <p>
+                Viene predefinida, pero la familia exacta depende de cada
+                navegador web.
+              </p>
+            </dd>
+            <dt><dfn><code class="language-css">sans-serif</code></dfn></dt>
+            <dd>
+              <p>Es el tipo de letra que no lleva adornos.</p>
+              <p>Luce más en títulos, textos cortos e interfaces de usuario.</p>
+              <p>
+                Cada glifo puede tener un ancho diferente al de los otros de la
+                misma familia.
+              </p>
+              <p>
+                Viene predefinida, pero la familia exacta depende de cada
+                navegador web.
+              </p>
+            </dd>
+            <dt><dfn><code class="language-css">cursive</code></dfn></dt>
+            <dd>
+              <p>Se parece a la letra hecha a mano.</p>
+              <p>
+                Cada glifo puede tener un ancho diferente al de los otros de la
+                misma familia.
+              </p>
+              <p>
+                Viene predefinida, pero la familia exacta depende de cada
+                navegador web.
+              </p>
+            </dd>
+            <dt><dfn><code class="language-css">fantasy</code></dfn></dt>
+            <dd>
+              <p>Letra decorativa.</p>
+              <p>
+                Cada glifo puede tener un ancho diferente al de los otros de la
+                misma familia.
+              </p>
+              <p>
+                Viene predefinida, pero cambia mucho de un navegador a otro.
+              </p>
+            </dd>
+            <dt><dfn><code class="language-css">monospace</code></dfn></dt>
+            <dd>
+              <p>
+                Cada glifo tiene el mismo ancho que los otros de la misma
+                familia.
+              </p>
+              <p>
+                Viene predefinida, pero la familia exacta depende de cada
+                navegador web.
+              </p>
+            </dd>
+          </dl>
+          <h4>Otras Familias</h4>
+          <p>
+            Cada navegador tiene sus propias familias de fuentes, que pueden ser
+            diferentes a las de otros navegadores.
+          </p>
+          <p>
+            Cuando el nombre una familia lleva espacios, se debe poner entre
+            apóstrofos ('), o entre comillas (").
+          </p>
+          <p>
+            Como no sabemos específicamente en cual navegador se abrirá la
+            página, si deseamos usar fuentes que no sean los básicos, hay que
+            poner una lista de familias de un estilo similar, separadas con
+            <code class="language-css">,</code>
+            y que termine en un font básico de un estilo similar.
+          </p>
+          <p>
+            Cuando el navegador web ejecuta el código, trata de cargar la
+            primera familia de la lista; si no la tiene, se pasa a la siguiente,
+            y así sucesivamente hasta que puede cargar alguna.
+          </p>
+          <p>
+            Ejemplo:<br>
+            <code class="language-css">"Courier New", Courier, monospace</code>
+          </p>
+          <h4>Descerga Fuentes</h4>
+          <p>
+            Puedes descargar fuentes de algún sitio como
+            <a href="https://fonts.google.com/">Google Fonts</a>.
+            El mismo sitio proporciona instrucciones para obtener una URL que
+            puedes colocar en tu código para que el navegador web descargue la
+            familia que deseas.
+          </p>
+          <p>
+            Hay otros sitios como
+            <a href="https://google-webfonts-helper.herokuapp.com/fonts">google-webfonts-helper</a>
+            que te permite descargar los fuentes para hospedarlos en tu servidor
+            web y que se descarguen junto con tu página. Tienes que crear
+            también un archivo de CSS3 que cargue el font y que debes incluir
+            desde tu archivo HTML. Una vez más, el sitio te ayuda para realizar
+            estas labores.
+          </p>
+          <p>
+            Con el fuente descargado puedes incluir el nombre de tu familia en
+            el listado de la propiedad
+            <code class="language-css">font-family</code>.
+          </p>
+        </div>
+      </section>
+      <section id=ejemplo_fuentes slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/4_2_fuentes.html" height="300"></iframe>
+          <p><a href="src/4_2_fuentes.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="50"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Fuentes<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;link</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Indie+Flower&amp;display=swap"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"stylesheet"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">font-family</span>:&nbsp;<span style="color: #0451a5;">sans-serif</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">font-size</span>:&nbsp;<span style="color: #098658;">10vh</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">font-family</span>:&nbsp;Cambria,&nbsp;Cochin,&nbsp;<span style="color: #0451a5;">Georgia</span>,&nbsp;<span style="color: #0451a5;">Times</span>,&nbsp;<span style="color: #a31515;">'Times&nbsp;New&nbsp;Roman'</span>,&nbsp;<span style="color: #0451a5;">serif</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">.bold</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">font-weight</span>:&nbsp;<span style="color: #0451a5;">bold</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">.monospace</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">font-family</span>:&nbsp;<span style="color: #a31515;">"Courier&nbsp;New"</span>,&nbsp;<span style="color: #0451a5;">Courier</span>,&nbsp;<span style="color: #0451a5;">monospace</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">.cursive</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">font-family</span>:&nbsp;<span style="color: #0451a5;">cursive</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">.fantasy</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">font-family</span>:&nbsp;<span style="color: #0451a5;">fantasy</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">.descargado</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">font-family</span>:&nbsp;<span style="color: #a31515;">'Indie&nbsp;Flower'</span>,&nbsp;<span style="color: #0451a5;">cursive</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Fuentes<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;span</span>&nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">bold</span><span style="color: #800000;">&gt;</span>Párrafo<span style="color: #800000;">&lt;/span&gt;</span>&nbsp;con&nbsp;Serif.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p</span>&nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"monospace"</span><span style="color: #800000;">&gt;</span>Párrafo&nbsp;con&nbsp;monospace.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p</span>&nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"cursive"</span><span style="color: #800000;">&gt;</span>Párrafo&nbsp;con&nbsp;cursive.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p</span>&nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"fantasy"</span><span style="color: #800000;">&gt;</span>Párrafo&nbsp;con&nbsp;fantasy.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p</span>&nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"descargado"</span><span style="color: #800000;">&gt;</span>Párrafo&nbsp;con&nbsp;fuente&nbsp;descargado.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+    </mi-presentacion>
+  </body>
+  <script type="module" src="lib/comun.js"></script>
+</html>

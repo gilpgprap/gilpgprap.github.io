@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="module" src="cmp/base.js"></script>
+    <script type="module" src="cmp/mi-presentacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/presentacion.css">
+    <script type="module">
+      import { SelDiapositivaBase } from "./lib/SelDiapositivaBase.js";
+      customElements.define("mi-selector", class extends SelDiapositivaBase {
+        /** @override
+         * @returns {string} */
+        get html() {
+          return (/* html */
+            `<select>
+              <option value=intro>Funciones</option>
+              <option value=basico>Ejemplo Básico</option>
+              <option value=uso>Uso de las Funciones</option>
+              <option value=funfun>Funciones que Invocan Funciones</option>
+              <option value=parametros>Parámetros</option>
+              <option value=expresiones>Expresiones en Parámetros</option>
+              <option value=regreso>Regreso de Valores</option>
+              <option value=flecha>Funciones Flecha</option>
+              <option value=recursividad>Recursividad</option>
+              <option value=animacion>Animación con Funciones</option>
+            </select>`);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="cortina"></div>
+    <mi-menu></mi-menu>
+    <mi-presentacion class="desplaza">
+      <mi-selector slot=selector></mi-selector>
+      <div id=intro slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h1></h1>
+      </div>
+      <section id=basico slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=console.log%28%22Hola.%22%29%3B%0Arie%28%29%3B%0Aconsole.log%28%22Adios.%22%29%3B%0Afunction%20rie%28%29%20%7B%0A%20%20console.log%28%22gg.%22%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado.</a>
+          </p>
+        </div>
+      </section>
+      <section id=uso slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=function%20f1%28%29%7B%0A%20%20console.log%28%22Hola%22%29%3B%0A%7D%0Af1%28%29%3B%0Aconsole.log%28%22gg%22%29%3B%0Af1%28%29%3B%0Af1%28%29%3B%0Afunction%20fn%28%29%20%7B%0A%20%20console.log%28%22adios%22%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado.</a>
+          </p>
+        </div>
+      </section>
+      <section id=funfun slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=function%20c1%28%29%20%7B%0A%20%20console.log%28%22c1-1%22%29%3B%0A%20%20c2%28%29%3B%0A%20%20console.log%28%22c1-2%22%29%3B%0A%7D%0Afunction%20c2%28%29%20%7B%0A%20%20console.log%28%22c2%22%29%3B%0A%7D%0Aconsole.log%28%22main-1%22%29%3B%0Ac2%28%29%3B%0Aconsole.log%28%22main-2%22%29%3B%0Ac1%28%29%3B%0Aconsole.log%28%22main-3%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado.</a>
+          </p>
+        </div>
+      </section>
+      <section id=parametros slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=console.log%28%22m1%22%29%3B%0Afn%283,%20-2%29%3B%0Afunction%20fn%28a,%20b%29%20%7B%0A%20%20console.log%28a%20%2B%20b%29%3B%0A%7D%0Aconsole.log%28%223%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado.</a>
+          </p>
+        </div>
+      </section>
+      <section id=expresiones slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=function%20fn%28a,%20b,%20c%29%20%7B%0A%20%20console.log%28a%20%2B%20b%20*%20c%29%3B%0A%7D%0Aconst%20a%20%3D%203%3B%0Afn%283%20-%208,%20a,%20a%20*%202%29%3B%0Aconsole.log%28%22ggg%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado.</a>
+          </p>
+        </div>
+      </section>
+      <section id=regreso slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20x%20%3D%20fna%288,%205%29%3B%0Aconsole.log%28fna%284,%201%29%29%3B%0Aconsole.log%28x%29%3B%0Afunction%20fna%28t,%20bc%29%20%7B%0A%20%20console.log%28t%20%2B%20bc%20*%202%29%3B%0A%20%20return%201%20%2B%20t%20*%208%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado.</a>
+          </p>
+        </div>
+      </section>
+      <section id=flecha slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=const%20fx%20%3D%20%28%29%20%3D%3E%20console.log%28%22hola%22%29%3B%0Aconst%20fy%20%3D%20%28f%29%20%3D%3E%20console.log%28f%29%3B%0Aconst%20fz%20%3D%20%28a,b%29%20%3D%3E%20%7B%0A%20%20console.log%28a%20%2B%20b%29%3B%0A%20%20return%20a%20*%20b%3B%0A%7D%3B%0Aconst%20fw%20%3D%20g%20%3D%3E%20g%20%2B%201%3B%0Afx%28%29%3B%0Aconsole.log%28fz%284,%20-15%29%29%3B%0Afy%28%22mx%22%29%3B%0Aconsole.log%28fw%283%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado.</a>
+          </p>
+        </div>
+      </section>
+      <section id=recursividad slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=function%20fns%28a,%20b%29%20%7B%0A%20%20if%20%28a%20%3C%3D%200%29%20%7B%0A%20%20%20%20return%20b%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20const%20ant%20%3D%20fns%28a%20-%201,%20b%29%3B%0A%20%20%20%20return%20ant%20%2B%201%3B%0A%20%20%7D%0A%7D%0Aconsole.log%28fns%282,%203%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo animado.</a>
+          </p>
+        </div>
+      </section>
+      <section id=animacion slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/12_9_animacion.html"></iframe>
+          <p><a href="src/12_9_animacion.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="32"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Muévete<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">.figura</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">position</span>:&nbsp;<span style="color: #0451a5;">fixed</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">font-size</span>:&nbsp;<span style="color: #098658;">30px</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Muévete<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;div</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"figura1"</span>&nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"figura"</span><span style="color: #800000;">&gt;</span><span style="color: #0000ff;">&amp;#x1f98b;</span><span style="color: #800000;">&lt;/div&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//&nbsp;Declara&nbsp;la&nbsp;variable&nbsp;"r"&nbsp;que&nbsp;es&nbsp;visible&nbsp;en&nbsp;la&nbsp;función&nbsp;"graf".</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">let</span>&nbsp;<span style="color: #001080;">r</span>&nbsp;=&nbsp;<span style="color: #098658;">0</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//&nbsp;invoca&nbsp;a&nbsp;la&nbsp;función&nbsp;graf&nbsp;cada&nbsp;120&nbsp;milisegundos.</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">setInterval</span>(<span style="color: #795e26;">graf</span>,&nbsp;<span style="color: #098658;">120</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">graf</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">x</span>&nbsp;=&nbsp;<span style="color: #098658;">20</span>&nbsp;*&nbsp;<span style="color: #267f99;">Math</span>.<span style="color: #795e26;">sin</span>(<span style="color: #001080;">r</span>)&nbsp;+&nbsp;<span style="color: #098658;">40</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">y</span>&nbsp;=&nbsp;<span style="color: #098658;">30</span>&nbsp;*&nbsp;<span style="color: #267f99;">Math</span>.<span style="color: #795e26;">cos</span>(<span style="color: #001080;">r</span>)&nbsp;+&nbsp;<span style="color: #098658;">60</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">figura1</span>.<span style="color: #001080;">style</span>.<span style="color: #001080;">left</span>&nbsp;=&nbsp;<span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">x</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">figura1</span>.<span style="color: #001080;">style</span>.<span style="color: #001080;">bottom</span>&nbsp;=&nbsp;<span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">y</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">r</span>&nbsp;+=&nbsp;<span style="color: #098658;">0.3</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+    </mi-presentacion>
+  </body>
+  <script type="module" src="lib/comun.js"></script>
+</html>

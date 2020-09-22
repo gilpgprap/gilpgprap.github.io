@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adivina mi Número (De 1 a 5)</title>
+  </head>
+  <body>
+    <div class="cuerpo">
+      <h1>Adivina mi Número (De 1 a 5)</h1>
+      <form action="javascript:procesa();">
+        <p>
+          <label>
+            Tu Número
+            <input id="inpNúmero" type="number" min="1" max="5" required>
+          </label>
+        </p>
+        <p><button>Procesa</button></p>
+        <p><output id=outMensaje></output></p>
+      </form>
+      <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+      <script>
+        function procesa() {
+          const MIN = 1;
+          const MAX = 5;
+          const miNúmero = MIN + Math.floor(Math.random() * (MAX - MIN + 1))
+          const número = inpNúmero.valueAsNumber;
+          let mensaje = "";
+          if (número === miNúmero) {
+            mensaje += "Adivinaste. "
+          }
+          outMensaje.value = `${mensaje}Mi número es ${miNúmero}.`;
+        }
+      </script>
+    </div>
+  </body>
+</html>

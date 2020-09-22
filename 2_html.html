@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="module" src="cmp/base.js"></script>
+    <script type="module" src="cmp/mi-presentacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/presentacion.css">
+    <script type="module">
+      import { SelDiapositivaBase } from "./lib/SelDiapositivaBase.js";
+      customElements.define("mi-selector", class extends SelDiapositivaBase {
+        /** @override
+         * @returns {string} */
+        get html() {
+          return (/* html */
+            `<select>
+              <option value=intro>Introducción a HTML5</option>
+              <option value=marcas>Marcas de Texto</option>
+              <option value=lenguaje>Lenguaje de Marcado</option>
+              <option value=etiquetas>Etiquetas Predefinidas</option>
+              <option value=elementos>Elementos de HTML</option>
+              <option value=contenido>Contenido HTML</option>
+              <option value=estructura>Estructura</option>
+              <option value=fraseo>Contenido de Fraseo</option>
+              <option value=p>El Elemento p</option>
+              <option value=cierran_p>Elementos que Cierran p</option>
+              <option value=ejemplo_p>Ejemplo de p</option>
+              <option value=titulos>Títulos</option>
+              <option value=ejemplo_titulos>Ejemplo de Títulos</option>
+              <option value=a>Elemento a</option>
+              <option value=footer>Elemento footer</option>
+              <option value=ejemplo_footer>Ejemplo de footer</option>
+            </select>`);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="cortina"></div>
+    <mi-menu></mi-menu>
+    <mi-presentacion class="desplaza">
+      <mi-selector slot=selector></mi-selector>
+      <div id=intro slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h1></h1>
+        <div class="marco-lectura">
+          <iframe src="src/2_1_html.html"></iframe>
+          <p><a href="src/2_1_html.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="13"></td>
+            <td class=cod><div><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #008000;">&lt;!--&nbsp;Ese&nbsp;es&nbsp;un&nbsp;comentario.&nbsp;El&nbsp;navegador&nbsp;lo&nbsp;ignora.&nbsp;--&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Primer&nbsp;Ejemplo<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Primer&nbsp;Ejemplo<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Hola&nbsp;Mundo<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></div></td>
+          </tr>
+        </table>
+      </div>
+      <section id="marcas" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Cuando el negocio de impresiones no usaba computadoras, se hacían
+            anotaciones que indicaban la forma de imprimir cada parte del texto.
+          </p>
+          <figure>
+            <img src="img/marcas.svg" alt="Ejemplo de texto con marcas.">
+          </figure>
+        </div>
+      </section>
+      <section id="lenguaje" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Hoy en día, las indicaciones de impresión se mezclan con el
+            texto y reciben el nombre de <dfn>marcas</dfn> o
+            <dfn>etiquetas</dfn>, de las cuales hay varios tipos:
+          </p>
+          <dl>
+            <dt><dfn>Etiquetas iniciales</dfn></dt>
+            <dd>
+              <p>
+                Marcan el inicio de una anotación. Son de la forma<br>
+                <code class="language-html">&lt;marca atributo1="valor1" atributo2="valor2"&gt;</code><br>
+                donde
+                <dfn><code class="language-html">atributo1</code></dfn>
+                y
+                <dfn><code class="language-html">atributo2</code></dfn>
+                son los nombres de las características de la marca, por ejemplo
+                altura o margen, mientras que
+                <dfn><code class="language-html">valor1</code></dfn>
+                y
+                <dfn><code class="language-html">valor2</code></dfn>
+                son los valores de que tienen los atributos, por ejemplo
+                <q>20 puntos</q> o <q>1 línea arriba y abajo</q>.
+              </p>
+              <p>
+                Algunos atributos son boolean y solo se pone el nombre, sin
+                indicar valor, para representar true; por el contraio, si no
+                se ponen en la etiqueta inicial, valen false. Como ejemplo
+                están los atributos readonly o hidden.
+              </p>
+              <p>
+                Ejemplo:<br>
+                <code class="language-html">&lt;input type="text" value="Hola" readonly&gt;</code>
+              </p>
+            </dd>
+            <dt><dfn>Etiquetas de cierre</dfn></dt>
+            <dd>
+              <p>
+                Marcan el final de una anotación. Son de la forma<br>
+                <code class="language-html">&lt;/marca&gt;</code>
+              </p>
+            </dd>
+            <dt><dfn>Comentarios</dfn></dt>
+            <dd>
+              <p>
+                Inician con
+                <code class="language-html">&lt;--</code>,
+                terminan con
+                <code class="language-html">--&gt;</code>,
+                pueden abarcar uno o más renglones y son ignorados por los
+                navegadores web.
+              </p>
+              <p>
+                Ayudan a entender como funciona el código. Una limitación
+                es que no pueden contener la secuencia
+                <code class="language-html">--</code>.
+              </p>
+              <p>
+                Ejemplo:<br>
+                <code class="language-html">&lt;-- Este es un comentario. --&gt;</code>
+              </p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id="etiquetas" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            En HTML hay etiquetas predefinidas para diferentes partes de un
+            texto, con instrucciones de impresión también predefinidas. Por
+            ejemplo,
+            <code class="language-html">h1</code>
+            para encabezados y
+            <code class="language-html">p</code>
+            para párrafos.
+          </p>
+          <p>El ejemplo con las instrucciones de marcado, quedaría así:</p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="2"></td>
+            <td class=cod><div><div><div><div><span style="color: #800000;">&lt;h1&gt;</span>Primer&nbsp;Ejemplo<span style="color: #800000;">&lt;/h1&gt;</span></div><div><span style="color: #800000;">&lt;p&gt;</span>Hola&nbsp;Mundo<span style="color: #800000;">&lt;/p&gt;</span></div></div></div></div></td>
+          </tr>
+        </table>
+        <div class="marco-lectura">
+          <p>
+            Ya tenemos el concepto de marca, pero falta explicar de forma más
+            precisa el contenido de un archivo HTML.
+          </p>
+          <p>
+            El código HTML requiere usar etiquetas adicionales para indicar
+            las características de un documento.
+          </p>
+        </div>
+      </section>
+      <section id="elementos" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Las marcas de los archivos HTML se utilizan para representar
+            objetos llamados <dfn>elementos</dfn>.
+          </p>
+          <p>Cada elemento tiene la siguiente estructura interna:</p>
+          <dl>
+            <dt><dfn>Tipo de Elemento</dfn></dt>
+            <dd>
+              <p>
+                Indica el tipo de información que representa el objeto. Por
+                ejemplo, p representa un párrafo o h1 representa un encabezado
+                de primer nivel.
+              </p>
+            </dd>
+            <dt><dfn>Atributo</dfn></dt>
+            <dd>
+              <p>
+                Características a las cuales se puede asignar un valor.
+                Por ejemplo:
+              </p>
+              <ul>
+                <li><code class="language-html">maxsize="10"</code></li>
+                <li><code class="language-html">id="texto1"</code></li>
+                <li><code class="language-html">height="150"</code></li>
+              </ul>
+              <p>
+                Sirven para configurar la forma en que se muestra un elemento.
+                Son opcionales y no hay límite para la cantidad de atributos
+                que puede contener un elemento.
+              </p>
+            </dd>
+            <dt><dfn>Identificador</dfn></dt>
+            <dd>
+              <p>
+                Es un atributo opcional llamado
+                <dfn><code class="language-html">id</code></dfn>.
+                Todos los elementos pueden tener este atributo, pero para cada
+                elemento debe tener un valor diferente; no se vale que se
+                repita.
+              </p>
+              <p>
+                Es el nombre que distingue a un elemento de todos los otros
+                elementos del archivo.
+              </p>
+            </dd>
+            <dt>Contenido</dt>
+            <dd>
+              <p>
+                Es lo que va en el interior del elemento y puede ser.
+              </p>
+              <ul>
+                <li>Texto que forma parte del elemento.</li>
+                <li>Comentarios.</li>
+                <li>Más elementos que complementan al elemento.</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id="contenido" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>El contenido HTML consta de las siguientes partes:</p>
+          <dl>
+            <dt>Comentarios</dt>
+            <dd>
+              <p>
+                Inician con <code class="language-html">&lt;--</code>,
+                terminan con <code class="language-html">--&gt;</code>,
+                pueden abarcar uno o más renglones y son ignorados por los
+                navegadores web.
+              </p>
+              <p>
+                Ayudan a entender como funciona el código. Una limitación
+                es que no pueden contener la secuencia
+                <code class="language-html">--</code>.
+              </p>
+              <p>
+                Ejemplo:<br>
+                <code class="language-html">&lt;-- Este es un comentario. --&gt;</code>
+              </p>
+            </dd>
+            </dd>
+            <dt><dfn>Elementos con Contenido</dfn></dt>
+            <dd>
+              <p>Llevan:</p>
+              <ul>
+                <li>Una etiqueta inicial</li>
+                <li>Contenido</li>
+                <li>Una etiqueta de cierre</li>
+              </ul>
+              <p>
+                Tienen una estructura como la siguiente:<br>
+                <code class="language-html">&lt;tipo_de_elemento atributo1="valor1" atributo2="valor2" atributo_booleano1 atributo_booleano2><br>
+                  &nbsp;&nbsp;Contenido HTML<br>
+                  &lt;/tipo_de_elemento>
+                </code>
+              </p>
+            </dd>
+            <dt><dfn>Elementos sin Contenido</dfn></dt>
+            <dd>
+              <p>
+                Solo usan una etiqueta inicial y tienen una estructura como la
+                siguiente:<br>
+                <code class="language-html">&lt;tipo_de_elemento atributo1="valor1" atributo2="valor2" atributo_booleano1 atributo_booleano2></code>
+              </p>
+            </dd>
+            <dt><dfn>Texto</dfn></dt>
+            <dd>El texto que forma parte del elemento.</dd>
+          </dl>
+        </div>
+      </section>
+      <section id="estructura" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Un archivo de HTML5 debe tener al menos la siguiente estructura:
+          </p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="11"></td>
+            <td class=cod><div><div><div><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Título<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">&lt;!--&nbsp;Aquí&nbsp;va&nbsp;el&nbsp;contenido&nbsp;que&nbsp;muestra&nbsp;el&nbsp;navegador&nbsp;web.&nbsp;--&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></div></div></div></td>
+          </tr>
+        </table>
+        <div class="marco-lectura">
+          <dl>
+            <dt><code class="language-html"><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></code></dt>
+            <dd>
+              <p>
+                Se conoce como DOCTYPE e indica al navegador la estructura y
+                comportamiento que deben tener las etiquetas.
+              </p>
+              <p>El valor mostrado es obligatorio para HTML5 o posterior.</p>
+            </dd>
+            <dt><code class="language-html"><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></code></dt>
+            <dd>
+              <p>
+                El elemento
+                <code class="language-html">html</code>
+                es el elemento principal del
+                archivo. Solo puede se puede tener una de estas etiquetas en
+                un archivo.
+              </p>
+              <p>
+                También hay que indicar el código de idioma en el atributo
+                <code class="language-html">lang</code>, que en este caso corresponde al español.
+              </p>
+            </dd>
+            <dt><code class="language-html"><span style="color: #800000;">&lt;head&gt;</span></code></dt>
+            <dd>
+              <p>
+                Es el primer elemento dentro de
+                <code class="language-html">html</code>
+                y contiene información para procesar el archivo.
+              </p>
+            </dd>
+            <dt><code class="language-html"><span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></code></dt>
+            <dd>
+              <dl>
+                <dt><dfn><code class="language-html">meta</code></dfn></dt>
+                <dd>
+                  <p>Indica metadatos, o sea información sobre el archivo.</p>
+                </dd>
+                <dt><code class="language-html"><span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span></code></dt>
+                <dd>
+                  <p>
+                    Indica que el archivo codifica los caracteres del archivo
+                    usando el estandar
+                    <a href="https://unicode.org" target="_blank">Unicode</a>,
+                    que sirve para casi todos los idiomas del mundo.
+                  </p>
+                  <p>
+                    El lenguaje JavaScript usa por defecto Unicode, por lo que
+                    no poner esta etiqueta, podría ocasionar problemas con los
+                    elementos script de la página.
+                  </p>
+                  <p>
+                    Si no se pone esta etiqueta, se usa el estandar ISO-8859-1,
+                    que sirve solo para los paises de Europa Occidental y
+                    América.
+                  </p>
+                </dd>
+              </dl>
+            </dd>
+            <dt><code class="language-html"><span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></code></dt>
+            <dd>
+              <dl>
+                <dt><code class="language-html">meta</code></dt>
+                <dd>
+                  <p>Indica metadatos, o sea información sobre el archivo.</p>
+                </dd>
+                <dt><code class="language-html"><span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></code></dt>
+                <dd>
+                  <p>
+                    Indica la definición del metadato
+                    <dfn><code class="language-html">viewport</code></dfn>,
+                    que indica como manejar la pantalla en navegadores de
+                    dispositivos móviles.
+                  </p>
+                </dd>
+                <dt><code class="language-html"><span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span></code></dt>
+                <dd>
+                  <p>
+                    Es el valor asociado con el metadato
+                    <dfn><code class="language-html">viewport</code></dfn>,
+                    que consta de varios atributos.
+                  </p>
+                </dd>
+                <dt><code class="language-html"><span style="color: #0000ff;">width=device-width</span></code></dt>
+                <dd>
+                  <p>
+                    El ancho de la página será el ancho del dispositivo, lo que
+                    permite mostrar las letras del tamaño normal para el móvil.
+                  </p>
+                </dd>
+                <dt><code class="language-html"><span style="color: #0000ff;">initial-scale=1.0</span></code></dt>
+                <dd>
+                  <p>
+                    Inicialmente, la página se muestra sin modificar el tamaño
+                    natural de la página. Es decir que ni se amplifica ni se
+                    reduce el contenido.
+                  </p>
+                </dd>
+              </dl>
+              <p>
+                Si no se pone esta etiqueta y la página se muestra en un
+                navegador móvil, se desplegará con letras reducidas en tamaño.
+              </p>
+            </dd>
+            <dt><code class="language-html"><span style="color: #800000;">&lt;title&gt;</span>Título<span style="color: #800000;">&lt;/title&gt;</span></code></dt>
+            <dd>
+              <p>
+                El contenido del elemento
+                <code class="language-html">title</code>
+                se muestra en las pestañas o en las barras de título de las
+                ventanas que muestran la página.
+              </p>
+            </dd>
+            <dt><code class="language-html"><span style="color: #800000;">&lt;body&gt;</span></code></dt>
+            <dd>
+              <p>
+                El contenido del elemento
+                <code class="language-html">body</code>
+                es el que se muestra en el navegador web.
+              </p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id="fraseo" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Representa el texto de un documento y los elementos que lo modifican.
+          </p>
+          <p>No implica ninguna jerarquía ni estructura.</p>
+          <p>
+            Se puede colocar dentro de otros elementos que si implican
+            estructura; por ejemplo, párrafos, títulos, tablas, etcétera.
+          </p>
+          <h3>Elementos que Son Contenido de Fraseo</h3>
+          <ul class="columnas">
+            <li><code class="language-html">a</code></li>
+            <li><code class="language-html">abbr</code></li>
+            <li>
+              <code class="language-html">area</code>
+              (si es descendiente de map)
+            </li>
+            <li><code class="language-html">audio</code></li>
+            <li><code class="language-html">b</code></li>
+            <li><code class="language-html">bdi</code></li>
+            <li><code class="language-html">bdo</code></li>
+            <li><code class="language-html">br</code></li>
+            <li><code class="language-html">button</code></li>
+            <li><code class="language-html">canvas</code></li>
+            <li><code class="language-html">cite</code></li>
+            <li><code class="language-html">code</code></li>
+            <li><code class="language-html">data</code></li>
+            <li><code class="language-html">datalist</code></li>
+            <li><code class="language-html">del</code></li>
+            <li><code class="language-html">dfn</code></li>
+            <li><code class="language-html">em</code></li>
+            <li><code class="language-html">embed</code></li>
+            <li><code class="language-html">i</code></li>
+            <li><code class="language-html">iframe</code></li>
+            <li><code class="language-html">img</code></li>
+            <li><code class="language-html">input</code></li>
+            <li><code class="language-html">ins</code></li>
+            <li><code class="language-html">kbd</code></li>
+            <li><code class="language-html">label</code></li>
+            <li>
+              <code class="language-html">link</code>
+              (si se permite dentro de body)
+            </li>
+            <li><code class="language-html">map</code></li>
+            <li><code class="language-html">mark</code></li>
+            <li><code class="language-html">math</code> de MathML</li>
+            <li>
+              <code class="language-html">meta</code>
+              (si el atributo itemprop está presente)
+            </li>
+            <li><code class="language-html">meter</code></li>
+            <li><code class="language-html">noscript</code></li>
+            <li><code class="language-html">object</code></li>
+            <li><code class="language-html">output</code></li>
+            <li><code class="language-html">picture</code></li>
+            <li><code class="language-html">progress</code></li>
+            <li><code class="language-html">q</code></li>
+            <li><code class="language-html">ruby</code></li>
+            <li><code class="language-html">s</code></li>
+            <li><code class="language-html">samp</code></li>
+            <li><code class="language-html">script</code></li>
+            <li><code class="language-html">select</code></li>
+            <li><code class="language-html">slot</code></li>
+            <li><code class="language-html">small</code></li>
+            <li><code class="language-html">span</code></li>
+            <li><code class="language-html">strong</code></li>
+            <li><code class="language-html">sub</code></li>
+            <li><code class="language-html">sup</code></li>
+            <li><code class="language-html">svg</code> de SVG</li>
+            <li><code class="language-html">template</code></li>
+            <li><code class="language-html">textarea</code></li>
+            <li><code class="language-html">time</code></li>
+            <li><code class="language-html">u</code></li>
+            <li><code class="language-html">var</code></li>
+            <li><code class="language-html">video</code></li>
+            <li><code class="language-html">wbr</code></li>
+            <li>Elementos personalizados autónomos (web components)</li>
+            <li>texto</li>
+          </ul>
+        </div>
+      </section>
+      <section id="p" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>Representan los párrafos de un documento.</p>
+          <p>
+            Por defecto se muestran separados 1 renglón del contenido
+            previo y otro del contenido que le sigue.
+          </p>
+          <p>Solo puede llevar contenido de fraseo en su interior.</p>
+          <p>
+            Si encuentra en su interior un elemento no permitido,
+            automáticamente termina el párrafo y el elemento prohibido queda
+            fuera del párrafo.
+          </p>
+        </div>
+      </section>
+      <section id="cierran_p" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <ul class="columnas">
+            <li><code class="language-html">address</code></li>
+            <li><code class="language-html">article</code></li>
+            <li><code class="language-html">aside</code></li>
+            <li><code class="language-html">blockquote</code></li>
+            <li><code class="language-html">details</code></li>
+            <li><code class="language-html">div</code></li>
+            <li><code class="language-html">dl</code></li>
+            <li><code class="language-html">fieldset</code></li>
+            <li><code class="language-html">figcaption</code></li>
+            <li><code class="language-html">figure</code></li>
+            <li><code class="language-html">footer</code></li>
+            <li><code class="language-html">form</code></li>
+            <li><code class="language-html">h1</code></li>
+            <li><code class="language-html">h2</code></li>
+            <li><code class="language-html">h3</code></li>
+            <li><code class="language-html">h4</code></li>
+            <li><code class="language-html">h5</code></li>
+            <li><code class="language-html">h6</code></li>
+            <li><code class="language-html">header</code></li>
+            <li><code class="language-html">hgroup</code></li>
+            <li><code class="language-html">hr</code></li>
+            <li><code class="language-html">main</code></li>
+            <li><code class="language-html">menu</code></li>
+            <li><code class="language-html">nav</code></li>
+            <li><code class="language-html">ol</code></li>
+            <li><code class="language-html">p</code></li>
+            <li><code class="language-html">pre</code></li>
+            <li><code class="language-html">section</code></li>
+            <li><code class="language-html">table</code></li>
+            <li><code class="language-html">ul</code></li>
+          </ul>
+          <p>
+            El elemento p también cierra si no hay más contenido en el elemento
+            padre, el cual no es:
+            <ul>
+              <li><code class="language-html">a</code></li>
+              <li><code class="language-html">audio</code></li>
+              <li><code class="language-html">del</code></li>
+              <li><code class="language-html">ins</code></li>
+              <li><code class="language-html">map</code></li>
+              <li><code class="language-html">noscript</code></li>
+              <li><code class="language-html">video</code></li>
+              <li>elemento personalizado autónomo</li>
+            </ul>
+          </p>
+        </div>
+      </section>
+      <section id="ejemplo_p" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/2_4_parrafos.html"></iframe>
+          <p><a href="src/2_4_parrafos.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="13"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Párrafos<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Párrafos<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Hola.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo&nbsp;de&nbsp;párrafos.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+      <section id="titulos" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <hgroup>
+          <h2></h2>
+          <h3>Los elementos h1, h2, h3, h4, h5 y h6</h3>
+        </hgroup>
+        <div class="marco-lectura">
+          <p>Representan títulos de secciones.</p>
+          <p>Su contenido de fraseo.</p>
+          <p>
+            Los elementos tienen una categoría en base a su número, donde
+            h1 es la categoría más alta y h6 es la más baja.
+          </p>
+          <p>
+            Títulos de una misma categoría o mayor definen nuevas
+            secciones.
+          </p>
+          <p>
+            Títulos de una categoría más baja definen subsecciones que son
+            parte de la anterior.
+          </p>
+          <p>
+            Se recomienda que haya un solo h1 en una página y sea el
+            título del documento. Las secciones se pueden marcar con h2 o
+            inferior.
+          </p>
+        </div>
+      </section>
+      <section id="ejemplo_titulos" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/2_5_titulos.html" height="350"></iframe>
+          <p><a href="src/2_5_titulos.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="17"></td>
+            <td class=cod><div><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Latinoamérica<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Latinoamérica<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Acerca&nbsp;de&nbsp;varios&nbsp;paises.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>México<span style="color: #800000;">&lt;/h2&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>El&nbsp;país&nbsp;más&nbsp;al&nbsp;norte&nbsp;de&nbsp;Latinoamérica.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Tiene&nbsp;una&nbsp;gran&nbsp;diversidad&nbsp;climática.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Brasil<span style="color: #800000;">&lt;/h2&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Contiene&nbsp;la&nbsp;selva&nbsp;amazónica;&nbsp;uno&nbsp;de&nbsp;los&nbsp;pulmones&nbsp;del&nbsp;mundo.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></div></td>
+          </tr>
+        </table>
+      </section>
+      <section id="a" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>Es un elemento dde fraseo.</p>
+          <p>Se le conoce como ancla.</p>
+          <p>
+            Cuando un elemento tiene el atributo
+            <code class="language-html">href</code>,
+            representa un hipervínculo. El texto que muestra es su contenido,
+            que debe ser de fraseo.
+          </p>
+          <p>
+            Ejemplo:<br>
+            <code class="language-html">&lt;a href=" https://google.com ">Google&lt;/a></code>
+          </p>
+          <h3>Atributos</h3>
+          <dl>
+            <dt><dfn><code class="language-html">href</code></dfn></dt>
+            <dd>
+              <p>
+                URL válida del recurso que muestra. Puede estar rodeado por
+                espacios.
+              </p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id="footer" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>Representa el pie de la página o de una sección.</p>
+          <p>
+            Típicamente contiene información de quien escribió la página o
+            sección, enlaces a documentos relacionados, copyright y cosas
+            similares.
+          </p>
+          <p>
+            Cuando contiene secciones, representan apéndices, índices, acuerdos
+            de licencia y contenidos similares.
+          </p>
+          <p>Es un elemento que conceptualmente puede llevar anclas.</p>
+        </div>
+      </section>
+      <section id="ejemplo_footer" slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/2_6_footer.html" height="200"></iframe>
+          <p><a href="src/2_6_footer.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="18"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"en"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Footer<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Footer<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Contenido.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;a</span>&nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"https://mx.creativecommons.net/"</span><span style="color: #800000;">&gt;</span>Creative&nbsp;Commons&nbsp;México.<span style="color: #800000;">&lt;/a&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+    </mi-presentacion>
+  </body>
+  <script type="module" src="lib/comun.js"></script>
+</html>

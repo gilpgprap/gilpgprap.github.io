@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cantantes Recomendados por Género Musical</title>
+  </head>
+  <body>
+    <div class="cuerpo">
+      <h1>Cantantes Recomendados por Género Musical</h1>
+      <form action="javascript:procesa();">
+        <p>
+          <label>
+            Género
+            <select id=inGénero required>
+              <option value="">-- Selecciona --</option>
+              <option value="cumbia">Cumbia</option>
+              <option value="reggaeton">Reggaeton</option>
+              <option value="mariachi">Mariachi</option>
+              <option value="tango">Tango</option>
+              <option value="danzón">Danzón</option>
+              <option value="pop">Pop</option>
+              <option value="balada">Balada</option>
+            </select>
+          </label>
+        </p>
+        <p><button id="submit">Procesa</button></p>
+        <p><output id=outMensaje></output></p>
+      </form>
+      <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+      <script>
+        function procesa() {
+          const género = inGénero.value;
+          let cantante = "";
+          switch (género) {
+            case "pop":
+              cantante += "¡Belinda!";
+            case "balada":
+            case "mariachi":
+              cantante += "¡Juan Gabriel!";
+              break;
+            case "cumbia":
+              cantante += "¡Selena!";
+              break;
+            case "reggaeton":
+              cantante += "¡Bad Bunny!";
+              break;
+            default:
+            cantante += "De ese género no conozco.";
+          }
+          outMensaje.value = cantante;
+        }
+      </script>
+    </div>
+  </body>
+</html>

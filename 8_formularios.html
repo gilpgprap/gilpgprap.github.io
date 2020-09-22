@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="module" src="cmp/base.js"></script>
+    <script type="module" src="cmp/mi-presentacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/presentacion.css">
+    <script type="module">
+      import { SelDiapositivaBase } from "./lib/SelDiapositivaBase.js";
+      customElements.define("mi-selector", class extends SelDiapositivaBase {
+        /** @override
+         * @returns {string} */
+        get html() {
+          return (/* html */
+            `<select>
+              <option value=intro>Formularios</option>
+              <option value=analisis>Ejemplo de Análisis</option>
+              <option value=ejemplo>Ejemplo de Formulario</option>
+              <option value=form>Elemento form</option>
+              <option value=atributos>Atributos Comunes</option>
+              <option value=label>Elemento label</option>
+              <option value=button>Elemento button</option>
+              <option value=input>Elemento input</option>
+              <option value=output>Elemento output</option>
+              <option value=dos>Ejemplo de 2 Botones</option>
+              <option value=juego>Juego con Botones</option>
+              <option value=encuesta>Encuesta</option>
+            </select>`);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="cortina"></div>
+    <mi-menu></mi-menu>
+    <mi-presentacion class="desplaza">
+      <mi-selector slot=selector></mi-selector>
+      <div id=intro slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h1></h1>
+      </div>
+      <section id=analisis slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <h3>Problema</h3>
+          <p>Hacer un programa que salude al usuario por su nombre.</p>
+          <h3>Análisis</h3>
+          <p>
+            El saludo se puede calcular a partir su nombre usando la expresión
+            <br>
+            <code class="language-javascript">saludo = `Hola ${nombre}.`</code>
+            <br>
+            El nombre no puede estar en blanco.
+          </p>
+          <h3>Datos a Solicitar</h3>
+          <ul>
+            <li>El nombre del usuario.</li>
+          </ul>
+          <h3>Datos a Mostrar</h3>
+          <ul>
+            <li>El saludo al usuario.</li>
+          </ul>
+          <h3>Escenarios</h3>
+          <dl>
+            <dt>nombre = "Pedro"</dt>
+            <dd>
+              <p>saludo = "Hola Pedro."</p>
+            </dd>
+            <dt>nombre = "Salma"</dt>
+            <dd>
+              <p>saludo = "Hola Salma."</p>
+            </dd>
+          </ul>
+        </div>
+      </section>
+      <section id=ejemplo slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/8_1_formulario.html" height="250"></iframe>
+          <p><a href="src/8_1_formulario.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="41"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Saludo<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">&lt;!--</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;action="javascript:calcula();"</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cuando&nbsp;la&nbsp;forma&nbsp;se&nbsp;active,&nbsp;se&nbsp;ejecuta&nbsp;una&nbsp;parte&nbsp;de&nbsp;la&nbsp;etiqueta&nbsp;&lt;script&gt;</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;que&nbsp;aparece&nbsp;más&nbsp;abajo&nbsp;y&nbsp;se&nbsp;llama&nbsp;"function&nbsp;saluda()".&nbsp;--&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;form</span>&nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">"javascript:saluda();"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Saludo<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">&lt;!--</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id="inNombre"</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identificador&nbsp;del&nbsp;campo&nbsp;de&nbsp;captura.&nbsp;Se&nbsp;puede&nbsp;usar&nbsp;desde&nbsp;el&nbsp;script</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;más&nbsp;abajo.&nbsp;--&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;input</span>&nbsp;<span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">"text"</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"inNombre"</span>&nbsp;<span style="color: #ff0000;">required</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;button&gt;</span>Calcular<span style="color: #800000;">&lt;/button&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;output</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outSaludo</span><span style="color: #800000;">&gt;&lt;/output&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/**&nbsp;Función&nbsp;que&nbsp;realiza&nbsp;el&nbsp;cálculo&nbsp;cuando&nbsp;se&nbsp;activa&nbsp;la&nbsp;forma.&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">saluda</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/*&nbsp;Recupera&nbsp;el&nbsp;texto&nbsp;capturado&nbsp;en&nbsp;"inNombre"&nbsp;y&nbsp;lo&nbsp;asigna&nbsp;a&nbsp;la&nbsp;constante</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;"nombre".&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">nombre</span>&nbsp;=&nbsp;<span style="color: #001080;">inNombre</span>.<span style="color: #001080;">value</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">saludo</span>&nbsp;=&nbsp;<span style="color: #a31515;">`Hola&nbsp;</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">nombre</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">.`</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//&nbsp;Despliega&nbsp;el&nbsp;saludo&nbsp;en&nbsp;el&nbsp;elemento&nbsp;"outSaludo".</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">outSaludo</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #0070c1;">saludo</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+      <section id=form slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>Representa un hiperenlace.</p>
+          <p>
+            El atributo
+            <dfn></dfb><code class="language-html">action</code></dfn>
+            es el enlace a una URL
+            para procesar su contenido. Puede indicar también procesamiento
+            local con el JavaScript de la página.
+          </p>
+          <p>
+            Puede manipularse por medio de una colección de elementos asociados.
+          </p>
+          <p>
+            Algunos de los elementos asociados pueden representar valores
+            editables que se pueden enviar para su procesamiento en un servidor
+            o localmente.
+          </p>
+          <p>
+            El atributo 
+            <dfn><code class="language-html">name</code></dfn>
+            de la forma, representa el nombre único de la forma dentro de la
+            colección de formas dentro de la página.
+          </p>
+          <p>
+            Las formas pueden tener uno o más elementos asociados de tipo
+            <code class="language-html">&lt;button type="submit">&lt;/button></code>.
+          </p>
+          <p>Hay varias maneras de activar la forma:</p>
+          <ul>
+            <li>
+              <p>
+                Haciendo clic en un elemento
+                <code class="language-html">&lt;button type="submit">&lt;/button></code>
+                asociado con la forma.</p>
+            </li>
+            <li>
+              <p>
+                Usando el tabulador hasta llegar a un elemento
+                <code class="language-html">&lt;button type="submit">&lt;/button></code>
+                asociado con la forma y oprimir la tecla ESPACIO.
+              </p>
+            </li>
+            <li>
+              <p>
+                Posicionarse en alguno de los campos de captura y oprimir la
+                tecla ENTER.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id=atributos slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Los siguientes atributos son comunes en los elementos asociados con
+            una forma.
+          </p>
+          <dl>
+            <dt><dfn><code class="language-html">name</code></dfn></dt>
+            <dd>
+              <p>
+                Nombre único del elemento (y sus valores asociados) dentro de la
+                forma.
+              </p>    
+            </dd>
+            <dt><dfn><code class="language-html">disabled</code></dfn></dt>
+            <dd>
+              <p>
+                Atributo booleano. Cuando está presente indica que el elemento
+                está deshabilitado y no responde a la interacción del usuario.
+              </p>    
+            </dd>
+            <dt><dfn><code class="language-html">maxlength</code></dfn></dt>
+            <dd>
+              <p>
+                Para
+                <code class="language-html">textarea</code>
+                y controles de texto del elemento
+                <code class="language-html">input</code>.
+              </p>    
+              <p>
+                Es el número máximo de caracteres que el usuario puede
+                introducir.
+              </p>    
+            </dd>
+            <dt><dfn><code class="language-html">minlength</code></dfn></dt>
+            <dd>
+              <p>
+                Para
+                <code class="language-html">textarea</code>
+                y controles de texto del elemento
+                <code class="language-html">input</code>.
+              </p>    
+              <p>
+                Es el número mínimo de caracteres que el usuario puede
+                introducir para que la captura sea válida.
+              </p>    
+            </dd>
+            <dt><dfn><code class="language-html">required</code></dfn></dt>
+            <dd>
+              <p>
+                Atributo booleano. Cuando está presente indica que el valor de
+                captura del elemento no puede estar vacío.
+              </p>    
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id=label slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Representa un rótulo o etiqueta asociado a un control de una forma.
+          </p>
+          <p>El contenido del elemento es el rótulo.</p>
+          <p>
+            Se puede asignar a su atributo
+            <dfn><code class="language-html">for</code></dfn>
+            el identificador del elemento con que se desea asociar la etiqueta.
+          </p>
+          <p>
+            También se puede hacer que el elemento label tenga como hijo al
+            control para que queden asociados.
+          </p>
+        </div>
+      </section>
+      <section id=button slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Representa un botón cuya superficie muestra el contenido del
+            elemento.
+          </p>
+          <p>
+            El atributo
+            <dfn><code class="language-html">type</code></dfn>
+            controla el comportamiento del botón al ser activado. Sus valores
+            posibles son:
+          </p>
+          <dl>
+            <dt><dfn><code class="language-html">submit</code></dfn></dt>
+            <dd>
+              <p>
+                Cuando el botón se activa, el contenido de la forma se envía.
+              </p>    
+              <p>Es el valor por omisión.</p>    
+            </dd>
+            <dt><dfn><code class="language-html">reset</code></dfn></dt>
+            <dd>
+              <p>
+                Cuando el botón se activa, el contenido de la forma regresa a su
+                estado inicial.
+              </p>    
+            </dd>
+            <dt><dfn><code class="language-html">reset</code></dfn></dt>
+            <dd>
+              <p>
+                Cuando el botón se activa, no tiene un comportamiento definido,
+                el cual se puede configurar por medio de un script.
+              </p>    
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id=input slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            Puede desplegar una gran cantidad de controles según el valor
+            <dfn><code class="language-html">type</code></dfn>.
+          </p>
+          <p>Los campos con formato se validan antes de realizar submit.</p>
+          <p>
+            Los valores más usados para
+            <dfn><code class="language-html">type</code></dfn>
+            son:
+          </p>
+          <dl>
+            <dt><code class="language-html">hidden</code></dt>
+            <dd>
+              <p>
+                Campo invisible cuyo no puede se examinado o manipulado por el
+                usuario.
+              </p>
+            </dd>
+            <dt><code class="language-html">text</code></dt>
+            <dd><p>Manipula texto plano.</p></dd>
+            <dt><code class="language-html">search</code></dt>
+            <dd>
+              <p>
+                Usa texto para búsquedas. Se despliega con la apariencia
+                preferida por la plataforma donde se ejecuta.
+              </p>
+            </dd>
+            <dt><code class="language-html">tel</code></dt>
+            <dd><p>Texto que representa un número telefónico válido.</p></dd>
+            <dt><code class="language-html">url</code></dt>
+            <dd><p>Texto que representa una URL válida.</p></dd>
+            <dt><code class="language-html">email</code></dt>
+            <dd><p>Texto que representa un email válido.</p></dd>
+            <dt><code class="language-html">password</code></dt>
+            <dd>
+              <p>
+                Texto que representa una contraseña y por lo mismo no se
+                 muestra.
+              </p>
+            </dd>
+            <dt><code class="language-html">number</code></dt>
+            <dd><p>Maneja números.</p></dd>
+            <dt><code class="language-html">range</code></dt>
+            <dd><p>Maneja un rango de números.</p></dd>
+          </dl>
+          <h3>Otros Atributos</h3>
+          <dl>
+            <dt><code class="language-html">pattern</code></dt>
+            <dd>
+              <p>Para los tipos que manejan texto.</p>
+              <p>
+                Expresión regular para validar el contenido. Abarca desde el
+                inicio hasta el final del texto.
+              </p>
+            </dd>
+            <dt><code class="language-html">min</code></dt>
+            <dd>
+              <p>Para controles numéricos y de fecha.</p>
+              <p>Valor mínimo que se puede capturar.</p>
+            </dd>
+            <dt><code class="language-html">max</code></dt>
+            <dd>
+              <p>Para controles numéricos y de fecha.</p>
+              <p>Valor máximo que se puede capturar.</p>
+            </dd>
+            <dt><code class="language-html">step</code></dt>
+            <dd>
+              <p>Para controles numéricos y de fecha.</p>
+              <p>
+                Granularidad o separación entre los valores que se pueden
+                capturar. Por ejemplo, step=0.1 indica que los valores pueden
+                ser 0, 0.1, 0.2, 0.3, etcétera. Aplica también para fechas.
+              </p>
+              <p>El valor por omisión para controles numéricos es 1.</p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+      <section id=output slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>Muestra el resultado de un cálculo.</p>
+        </div>
+      </section>
+      <section id=dos slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/8_2_2botones.html" height="300"></iframe>
+          <p><a href="src/8_2_2botones.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="47"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Formulario&nbsp;con&nbsp;2&nbsp;botones<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;form</span>&nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">javascript:calculaSuma();</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Formulario&nbsp;con&nbsp;2&nbsp;botones<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;input</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">inA</span>&nbsp;<span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">number</span>&nbsp;<span style="color: #ff0000;">required</span>&nbsp;<span style="color: #ff0000;">min</span>=<span style="color: #0000ff;">"0.1"</span>&nbsp;<span style="color: #ff0000;">max</span>=<span style="color: #0000ff;">"100"</span>&nbsp;<span style="color: #ff0000;">step</span>=<span style="color: #0000ff;">"0.1"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;input</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">inB</span>&nbsp;<span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">number</span>&nbsp;<span style="color: #ff0000;">required</span>&nbsp;<span style="color: #ff0000;">min</span>=<span style="color: #0000ff;">"0.1"</span>&nbsp;<span style="color: #ff0000;">max</span>=<span style="color: #0000ff;">"100"</span>&nbsp;<span style="color: #ff0000;">step</span>=<span style="color: #0000ff;">"0.1"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span>Sumar<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;button</span>&nbsp;<span style="color: #ff0000;">formaction</span>=<span style="color: #0000ff;">"javascript:calculaResta();"</span><span style="color: #800000;">&gt;</span>Restar<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;output</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outResultado</span><span style="color: #800000;">&gt;&lt;/output&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">calculaSuma</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">/*&nbsp;Recupera&nbsp;el&nbsp;número&nbsp;capturado&nbsp;en&nbsp;"inBase"&nbsp;y&nbsp;lo&nbsp;asigna&nbsp;a&nbsp;la</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;constante&nbsp;"base".&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">a</span>&nbsp;=&nbsp;<span style="color: #001080;">inA</span>.<span style="color: #001080;">valueAsNumber</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">b</span>&nbsp;=&nbsp;<span style="color: #001080;">inB</span>.<span style="color: #001080;">valueAsNumber</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">suma</span>&nbsp;=&nbsp;<span style="color: #0070c1;">a</span>&nbsp;+&nbsp;<span style="color: #0070c1;">b</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">outResultado</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #a31515;">`La&nbsp;suma&nbsp;es:&nbsp;</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">suma</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">.`</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">calculaResta</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">a</span>&nbsp;=&nbsp;<span style="color: #001080;">inA</span>.<span style="color: #001080;">valueAsNumber</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">b</span>&nbsp;=&nbsp;<span style="color: #001080;">inB</span>.<span style="color: #001080;">valueAsNumber</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">resta</span>&nbsp;=&nbsp;<span style="color: #0070c1;">a</span>&nbsp;-&nbsp;<span style="color: #0070c1;">b</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">outResultado</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #a31515;">`La&nbsp;resta&nbsp;es:&nbsp;</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">resta</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">.`</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+      <section id=juego slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/8_3_juego_botones.html" height="430"></iframe>
+          <p><a href="src/8_3_juego_botones.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="49"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Adivina<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">img</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">max-height</span>:&nbsp;<span style="color: #098658;">40vh</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;form</span>&nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">javascript:rana();</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Adivina<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>¿Qúe&nbsp;animal&nbsp;es&nbsp;este?<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">&lt;!--</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;figure</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elemento&nbsp;de&nbsp;agrupamiento&nbsp;especial&nbsp;para&nbsp;enmarcar&nbsp;imágenes.&nbsp;--&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;figure&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">&lt;!--</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;img</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elemento&nbsp;de&nbsp;fraseo&nbsp;para&nbsp;mostrar&nbsp;imágenes,&nbsp;principalmente&nbsp;de&nbsp;los&nbsp;tipos</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gif,&nbsp;jpg&nbsp;y&nbsp;png</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URL&nbsp;de&nbsp;la&nbsp;imagen.</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alt</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Texto&nbsp;alterno&nbsp;que&nbsp;se&nbsp;muestra&nbsp;solo&nbsp;cuando&nbsp;no&nbsp;se&nbsp;pueda&nbsp;cargar&nbsp;la&nbsp;imagen.</span></div><div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;img</span>&nbsp;<span style="color: #ff0000;">src</span>=<span style="color: #0000ff;">"https://media.giphy.com/media/JKNn9A98JBVlu/giphy.gif"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">alt</span>=<span style="color: #0000ff;">"Imagen&nbsp;de&nbsp;un&nbsp;animal"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/figure&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span>Una&nbsp;Rana<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;button</span>&nbsp;<span style="color: #ff0000;">formaction</span>=<span style="color: #0000ff;">"javascript:oso();"</span><span style="color: #800000;">&gt;</span>Un&nbsp;Oso<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;output</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outResultado</span><span style="color: #800000;">&gt;&lt;/output&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">rana</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">outResultado</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #a31515;">"Claro&nbsp;que&nbsp;no&nbsp;es&nbsp;una&nbsp;rana."</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">oso</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">outResultado</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #a31515;">"Claro&nbsp;que&nbsp;si&nbsp;es&nbsp;un&nbsp;oso."</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+      <section id=encuesta slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/8_4_encuesta.html" height="650"></iframe>
+          <p><a href="src/8_4_encuesta.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="54"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>¿Cuál&nbsp;te&nbsp;gusta&nbsp;más?<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">span</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">display</span>:&nbsp;<span style="color: #0451a5;">inline-block</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">vertical-align</span>:&nbsp;<span style="color: #0451a5;">top</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">img</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">width</span>:&nbsp;<span style="color: #098658;">40vw</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;form</span>&nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">javascript:gatito();</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>¿Cuál&nbsp;te&nbsp;gusta&nbsp;más?<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;span&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;output</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outGatito</span><span style="color: #800000;">&gt;</span>0<span style="color: #800000;">&lt;/output&gt;</span>&nbsp;votos.</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span>Vota<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;br&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;img</span>&nbsp;<span style="color: #ff0000;">src</span>=<span style="color: #0000ff;">"https://media.giphy.com/media/uWYjSbkIE2XIMIc7gh/giphy.gif"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">alt</span>=<span style="color: #0000ff;">"Gatito"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;span&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;output</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outPerrito</span><span style="color: #800000;">&gt;</span>0<span style="color: #800000;">&lt;/output&gt;</span>&nbsp;votos.</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;button</span>&nbsp;<span style="color: #ff0000;">formaction</span>=<span style="color: #0000ff;">"javascript:perrito();"</span><span style="color: #800000;">&gt;</span>Vota<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;br&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;img</span>&nbsp;<span style="color: #ff0000;">src</span>=<span style="color: #0000ff;">"https://media.giphy.com/media/rXzOY4RpSA0Ug/giphy.gif"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">alt</span>=<span style="color: #0000ff;">"Perrito"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">let</span>&nbsp;<span style="color: #001080;">votosParaGatito</span>&nbsp;=&nbsp;<span style="color: #098658;">0</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">let</span>&nbsp;<span style="color: #001080;">votosParaPerrito</span>&nbsp;=&nbsp;<span style="color: #098658;">0</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">gatito</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">votosParaGatito</span>++;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">outGatito</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #001080;">votosParaGatito</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">perrito</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">votosParaPerrito</span>++;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">outPerrito</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #001080;">votosParaPerrito</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+    </mi-presentacion>
+  </body>
+  <script type="module" src="lib/comun.js"></script>
+</html>

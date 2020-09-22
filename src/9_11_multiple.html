@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cantantes Recomendados por Género Musical</title>
+    <style>
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cuerpo">
+      <h1>Cantantes Recomendados por Género Musical</h1>
+      <form action="javascript:procesa();">
+        <p>
+          <label>
+            Género
+            <select id=inGénero required>
+              <option value="">-- Selecciona --</option>
+              <option value="cumbia">Cumbia</option>
+              <option value="reggaeton">Reggaeton</option>
+              <option value="mariachi">Mariachi</option>
+            </select>
+          </label>
+        </p>
+        <p><button id="submit">Procesa</button></p>
+        <p><output id=outCantante></output></p>
+        <figure><img id=imgCantante></figure>
+      </form>
+      <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+      <script>
+        function procesa() {
+          const género = inGénero.value;
+          let cantante = "";
+          if (género === "cumbia") {
+            cantante = "Selena";
+            imgCantante.src =
+              "https://media.giphy.com/media/sbzP1vQOaE49y/giphy.gif";
+          } else if (género === "reggaeton") {
+            cantante = "Bad Bunny";
+            imgCantante.src =
+              "https://media.giphy.com/media/kfcsiSjQUyMvEZ1khq/giphy.gif";
+          } else if (género === "mariachi") {
+            cantante = "Juan Gabriel";
+            imgCantante.src =
+              "https://media.giphy.com/media/3o6ZsYyNQumUyS9t72/giphy.gif";
+          }
+          outCantante.value = cantante;
+        }
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento Absolute</title>
+    <style>
+      header {
+        position: absolute;
+        bottom: 0;
+        height: 6rem;
+        left: 2rem;
+        right: 2rem;
+        background-color: yellow;
+      }
+
+      h1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .rel {
+        position: relative
+      }
+
+      .abs {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Posicionamiento Absolute</h1>
+    </header>
+    <p class="rel">Párrafo.
+      <span class="abs">Mov</span>
+    </p>
+    <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+  </body>
+</html>

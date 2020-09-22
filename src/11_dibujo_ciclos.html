@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea</title>
+  </head>
+  <body>
+    <footer><p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p></footer>
+    <script>
+      for (let x = 0; x < 200; x += 20) {
+        let y = 0.45 * x + 30;
+        document.body.innerHTML += /* html */
+          `<div style="position: absolute; bottom: ${y}px; left: ${x}px;">
+            &#x1f495;
+          </div>`;
+      }
+    </script>
+  </body>
+</html>

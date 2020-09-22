@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="module" src="cmp/base.js"></script>
+    <script type="module" src="cmp/mi-presentacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/presentacion.css">
+    <script type="module">
+      import { SelDiapositivaBase } from "./lib/SelDiapositivaBase.js";
+      customElements.define("mi-selector", class extends SelDiapositivaBase {
+        /** @override
+         * @returns {string} */
+        get html() {
+          return (/* html */
+            `<select>
+              <option value=intro>Ciclos</option>
+              <option value=while>while</option>
+              <option value=for>for</option>
+              <option value=do_while>do-while</option>
+              <option value=ejemplo>Ejemplo con Ciclos</option>
+            </select>`);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="cortina"></div>
+    <mi-menu></mi-menu>
+    <mi-presentacion class="desplaza">
+      <mi-selector slot=selector></mi-selector>
+      <div id=intro slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h1></h1>
+      </div>
+      <section id=while slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <figure>
+            <img src="img/while.svg" alt="if" style="max-width: 350px;">
+          </figure>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=let%20i%20%3D%201%3B%0Awhile%20%28i%20%3C%3D%203%29%20%7B%0A%20%20console.log%28i%29%3B%0A%20%20i%2B%2B%3B%0A%7D%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo de while ascendente.</a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=let%20i%20%3D%208%3B%0Awhile%20%28i%20%3E%208%29%20%7B%0A%20%20i--%3B%0A%20%20console.log%28i%29%3B%0A%7D%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo de while que no se ejecuta.</a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=let%20a%20%3D%202%3B%0Awhile%20%28a%20%3E%200%29%20%7B%0A%20%20console.log%28a%29%3B%0A%20%20a--%3B%0A%20%20console.log%28a%29%3B%0A%7D%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo de while descendente.</a>
+          </p>
+        </div>
+      </section>
+      <section id=for slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <figure>
+            <img src="img/for.svg" alt="if" style="max-width: 450px;">
+          </figure>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=console.log%28%22Hola.%22%29%3B%0Afor%20%28var%20i%20%3D%201,%20j%20%3D%203%3B%0A%20%20i%20%3C%3D%203%3B%0A%20%20i%2B%2B%29%20%7B%0A%20%20console.log%28i%20%2B%20j%29%3B%0A%7D%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo de for ascendente.</a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=for%20%28let%20i%20%3D%208%3B%20i%20%3E%208%3B%20i--%29%20%7B%0A%20%20console.log%28i%20%2B%20j%29%3B%0A%7D%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo de for que no se ejecuta.</a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=for%20%28var%20a%20%3D%202%3B%20a%20%3E%200%3B%20a--%29%20%7B%0A%20%20console.log%28a%29%3B%0A%7D%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo de for descendente.</a>
+          </p>
+        </div>
+      </section>
+      <section id=do_while slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <figure>
+            <img src="img/do-while.svg" alt="if" style="max-width: 350px;">
+            <p>
+              <a href="http://pythontutor.com/javascript.html#code=let%20i%20%3D%201%3B%0Ado%20%7B%0A%20%20console.log%28i%29%3B%0A%20%20i%2B%2B%3B%0A%7D%20while%20%28i%20%3C%3D%203%29%3B%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+                target="_blank">Ejemplo de do-while ascendente.</a>
+            </p>
+            <p>
+              <a href="http://pythontutor.com/javascript.html#code=let%20i%20%3D%208%3B%0Ado%20%7B%0A%20%20console.log%28i%29%3B%0A%20%20i--%3B%0A%7D%20while%20%28i%20%3E%208%29%3B%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+                target="_blank">Ejemplo de do-while que no se puede anular.</a>
+            </p>
+            <p>
+              <a href="http://pythontutor.com/javascript.html#code=let%20i%20%3D%202%3B%0Ado%20%7B%0A%20%20console.log%28i%29%3B%0A%20%20i--%3B%0A%7D%20while%20%28i%20%3E%200%29%3B%0Aconsole.log%28%22Adios.%22%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+                target="_blank">Ejemplo de do-while descendente.</a>
+            </p>
+          </div>
+            </figure>
+        </div>
+      </section>
+      <section id=ejemplo slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <iframe src="src/11_dibujo_ciclos.html"></iframe>
+          <p><a href="src/11_dibujo_ciclos.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+        </div>
+        <table>
+          <tr>
+            <td class=nums data-total="20"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"utf-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Línea<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;&lt;p&gt;</span>Copyright&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;2020&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.<span style="color: #800000;">&lt;/p&gt;&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">for</span>&nbsp;(<span style="color: #0000ff;">let</span>&nbsp;<span style="color: #001080;">x</span>&nbsp;=&nbsp;<span style="color: #098658;">0</span>;&nbsp;<span style="color: #001080;">x</span>&nbsp;&lt;&nbsp;<span style="color: #098658;">200</span>;&nbsp;<span style="color: #001080;">x</span>&nbsp;+=&nbsp;<span style="color: #098658;">20</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">let</span>&nbsp;<span style="color: #001080;">y</span>&nbsp;=&nbsp;<span style="color: #098658;">0.45</span>&nbsp;*&nbsp;<span style="color: #001080;">x</span>&nbsp;+&nbsp;<span style="color: #098658;">30</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">document</span>.<span style="color: #001080;">body</span>.<span style="color: #001080;">innerHTML</span>&nbsp;+=&nbsp;<span style="color: #008000;">/*&nbsp;html&nbsp;*/</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<span style="color: #800000;">&lt;div</span>&nbsp;<span style="color: #ff0000;">style</span>=<span style="color: #0000ff;">"</span><span style="color: #0000ff;">position:&nbsp;absolute;&nbsp;bottom:&nbsp;${</span><span style="color: #001080;">y</span><span style="color: #0000ff;">}px;&nbsp;left:&nbsp;${</span><span style="color: #001080;">x</span><span style="color: #0000ff;">}px;</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">&amp;#x1f495;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/div&gt;</span>`;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+          </tr>
+        </table>
+      </section>
+    </mi-presentacion>
+  </body>
+  <script type="module" src="lib/comun.js"></script>
+</html>
