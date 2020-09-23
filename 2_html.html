@@ -48,6 +48,10 @@
         <div class="marco-lectura">
           <iframe src="src/2_1_html.html"></iframe>
           <p><a href="src/2_1_html.html" target="_blank">Ábrelo en otra pestaña.</a></p>
+          <p>
+            <a href="https://html.spec.whatwg.org/multipage/"
+              target="_blank">El estándar de HTML5.</a>
+          </p>
         </div>
         <table>
           <tr>
@@ -83,15 +87,15 @@
           <dl>
             <dt><dfn>Etiquetas iniciales</dfn></dt>
             <dd>
+              <p>Marcan el inicio de una anotación. Son de la forma</p>
+              <p style="text-align: start;"><code class="language-html">&lt;marca atributo1="valor1" atributo2="valor2"&gt;</code></p>
               <p>
-                Marcan el inicio de una anotación. Son de la forma<br>
-                <code class="language-html">&lt;marca atributo1="valor1" atributo2="valor2"&gt;</code><br>
                 donde
                 <dfn><code class="language-html">atributo1</code></dfn>
                 y
                 <dfn><code class="language-html">atributo2</code></dfn>
-                son los nombres de las características de la marca, por ejemplo
-                altura o margen, mientras que
+                son los nombres de las características de la etiqueta; por
+                ejemplo altura o margen, mientras que
                 <dfn><code class="language-html">valor1</code></dfn>
                 y
                 <dfn><code class="language-html">valor2</code></dfn>
@@ -99,28 +103,28 @@
                 <q>20 puntos</q> o <q>1 línea arriba y abajo</q>.
               </p>
               <p>
-                Algunos atributos son boolean y solo se pone el nombre, sin
-                indicar valor, para representar true; por el contraio, si no
-                se ponen en la etiqueta inicial, valen false. Como ejemplo
-                están los atributos readonly o hidden.
+                Algunos atributos son <em>boolean</em> y solo se pone su nombre,
+                sin indicar el valor, para representar
+                <code class="language-javascript">true</code>;
+                por el contrario, si no se ponen en la etiqueta inicial, valen
+                <code class="language-javascript">false</code>.
+                Como ejemplo están los atributos
+                <code class="language-html">readonly</code> o
+                <code class="language-html">hidden</code>.
               </p>
-              <p>
-                Ejemplo:<br>
-                <code class="language-html">&lt;input type="text" value="Hola" readonly&gt;</code>
-              </p>
+              <p>Ejemplo:<p>
+              <p style="text-align: start;"><code class="language-html">&lt;input type="text" value="Hola" readonly&gt;</code></p>
             </dd>
             <dt><dfn>Etiquetas de cierre</dfn></dt>
             <dd>
-              <p>
-                Marcan el final de una anotación. Son de la forma<br>
-                <code class="language-html">&lt;/marca&gt;</code>
-              </p>
+              <p>Marcan el final de una anotación. Son de la forma</p>
+              <p style="text-align: start;"><code class="language-html">&lt;/marca&gt;</code></p>
             </dd>
             <dt><dfn>Comentarios</dfn></dt>
             <dd>
               <p>
                 Inician con
-                <code class="language-html">&lt;--</code>,
+                <code class="language-html">&lt;!--</code>,
                 terminan con
                 <code class="language-html">--&gt;</code>,
                 pueden abarcar uno o más renglones y son ignorados por los
@@ -131,10 +135,8 @@
                 es que no pueden contener la secuencia
                 <code class="language-html">--</code>.
               </p>
-              <p>
-                Ejemplo:<br>
-                <code class="language-html">&lt;-- Este es un comentario. --&gt;</code>
-              </p>
+              <p>Ejemplo:</p>
+              <p><code class="language-html">&lt;!-- Este es un comentario. --&gt;</code></p>
             </dd>
           </dl>
         </div>
@@ -224,9 +226,7 @@
             </dd>
             <dt>Contenido</dt>
             <dd>
-              <p>
-                Es lo que va en el interior del elemento y puede ser.
-              </p>
+              <p>Es lo que va en el interior del elemento y puede llevar:</p>
               <ul>
                 <li>Texto que forma parte del elemento.</li>
                 <li>Comentarios.</li>
@@ -246,8 +246,10 @@
             <dt>Comentarios</dt>
             <dd>
               <p>
-                Inician con <code class="language-html">&lt;--</code>,
-                terminan con <code class="language-html">--&gt;</code>,
+                Inician con
+                <code class="language-html">&lt;!--</code>,
+                terminan con
+                <code class="language-html">--&gt;</code>,
                 pueden abarcar uno o más renglones y son ignorados por los
                 navegadores web.
               </p>
@@ -256,11 +258,8 @@
                 es que no pueden contener la secuencia
                 <code class="language-html">--</code>.
               </p>
-              <p>
-                Ejemplo:<br>
-                <code class="language-html">&lt;-- Este es un comentario. --&gt;</code>
-              </p>
-            </dd>
+              <p>Ejemplo:</p>
+              <p><code class="language-html">&lt;!-- Este es un comentario. --&gt;</code></p>
             </dd>
             <dt><dfn>Elementos con Contenido</dfn></dt>
             <dd>
@@ -270,8 +269,8 @@
                 <li>Contenido</li>
                 <li>Una etiqueta de cierre</li>
               </ul>
-              <p>
-                Tienen una estructura como la siguiente:<br>
+              <p>Tienen una estructura como la siguiente:</p>
+              <p style="text-align: start;">
                 <code class="language-html">&lt;tipo_de_elemento atributo1="valor1" atributo2="valor2" atributo_booleano1 atributo_booleano2><br>
                   &nbsp;&nbsp;Contenido HTML<br>
                   &lt;/tipo_de_elemento>
@@ -282,7 +281,9 @@
             <dd>
               <p>
                 Solo usan una etiqueta inicial y tienen una estructura como la
-                siguiente:<br>
+                siguiente:
+              </p>
+              <p style="text-align: start;">
                 <code class="language-html">&lt;tipo_de_elemento atributo1="valor1" atributo2="valor2" atributo_booleano1 atributo_booleano2></code>
               </p>
             </dd>
@@ -651,7 +652,7 @@
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
-          <p>Es un elemento dde fraseo.</p>
+          <p>Es un elemento de fraseo.</p>
           <p>Se le conoce como ancla.</p>
           <p>
             Cuando un elemento tiene el atributo
@@ -659,8 +660,8 @@
             representa un hipervínculo. El texto que muestra es su contenido,
             que debe ser de fraseo.
           </p>
+          <p>Ejemplo:</p>
           <p>
-            Ejemplo:<br>
             <code class="language-html">&lt;a href=" https://google.com ">Google&lt;/a></code>
           </p>
           <h3>Atributos</h3>
