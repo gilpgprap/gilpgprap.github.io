@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo</title>
+    <link href="css/estilos.css" rel="stylesheet">
+    <script src="cmp/mi-footer.js"></script>
+  </head>
+  <body>
+    <form action="javascript:saluda();">
+      <h1>Saludo</h1>
+      <p>
+        <label>
+          Nombre
+          <input type="text" id="inNombre" required>
+        </label>
+      </p>
+      <p><button>Calcular</button></p>
+      <p><output id=outSaludo></output></p>
+    </form>
+    <footer>
+      <p>
+        <mi-footer></mi-footer>
+      </p>
+    </footer>
+    <script src="js/ctrlSaludo.js"></script>
+  </body>
+</html>
