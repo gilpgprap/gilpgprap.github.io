@@ -215,6 +215,10 @@ img {
   max-width: 100%;
 }
 
+img.dc {
+  width: 100%;
+}
+
 .columnas {
   columns: 4 180px;
   column-gap: 1rem;

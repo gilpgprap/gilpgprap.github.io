@@ -3,7 +3,7 @@ customElements.define("mi-nav", class extends HTMLElement {
     this.innerHTML = /* html */
       `<h2>Contenido</h2>
       <ul>
-        <li><a href="index.html">Sitio Web</a></li>
+        <li><a href="index.html">Inicio</a></li>
         <li><a href="0_sw.html">Software a Instalar</a></li>
         <li><a href="2_html.html">Introducción a HTML5</a></li>
         <li><a href="4_css3.html">Introducción a CSS3</a></li>
@@ -18,6 +18,7 @@ customElements.define("mi-nav", class extends HTMLElement {
         <li><a href="13_objetos.html">Objetos</a></li>
         <li><a href="14_excepciones.html">Excepciones</a></li>
         <li><a href="15_sitio.html">Sitio Web</a></li>
+        <li><a href="17_asociaciones.html">Asociaciones</a></li>
       </ul>`;
   }
 });
