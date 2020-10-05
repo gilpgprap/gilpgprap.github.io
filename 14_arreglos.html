@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="module" src="cmp/base.js"></script>
+    <script type="module" src="cmp/mi-presentacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/presentacion.css">
+    <script type="module">
+      import { SelDiapositivaBase } from "./lib/SelDiapositivaBase.js";
+      customElements.define("mi-selector", class extends SelDiapositivaBase {
+        /** @override
+         * @returns {string} */
+        get html() {
+          return (/* html */
+            `<select>
+              <option value=intro>Arreglos</option>
+              <option value=arreglos>Arreglos</option>
+              <option value=arrobjs>Arreglos de Objetos</option>
+              <option value=map>map</option>
+              <option value=filter>filter</option>
+              <option value=join>join</option>
+              <option value=reduce>reduce</option>
+              <option value=sort>sort</option>
+              <option value=Encadenamiento>Encadenamiento</option>
+              <option value=Set>Set</option>
+            </select>`);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="cortina"></div>
+    <mi-menu></mi-menu>
+    <mi-presentacion class="desplaza">
+      <mi-selector slot=selector></mi-selector>
+      <div id=intro slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h1></h1>
+      </div>
+      <section id=arreglos slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <figure>
+            <img src="img/arreglos.svg" alt="Imagina un arreglo">
+          </figure>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=const%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Aconsole.log%28arr1%29%3B%0Aconsole.log%28arr1.length%29%3B%0Afor%20%28var%20i%20%3D%200,%0A%20%20%20%20len%20%3D%20arr1.length%3B%0A%20%20%20%20i%20%3C%20len%3B%0A%20%20%20%20i%2B%2B%29%20%7B%0A%20%20const%20str%20%3D%20arr1%5Bi%5D%3B%0A%20%20console.log%28str%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Programa animado de arreglos con contadores.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=const%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Afor%20%28var%20str%20of%20arr1%29%20%7B%0A%20%20console.log%28str%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Programa animado de arreglos con for-of.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=const%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Aarr1.forEach%28str%20%3D%3E%20console.log%28str%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Programa animado de arreglos con forEach.
+            </a>
+          </p>
+        </div>
+      </section>
+      <section id=arrobjs slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <figure>
+            <img src="img/arrobjs.svg" alt="Imagina un arreglo de objetos">
+          </figure>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=class%20Clao%20%7B%0A%20%20constructor%28a%29%20%7B%0A%20%20%20%20this.a%20%3D%20a%3B%0A%20%20%7D%0A%7D%0Aconst%20arro1%20%3D%20%5Bnew%20Clao%28-3%29,%20new%20Clao%284%29,%20new%20Clao%288%29%5D%3B%0Aconsole.log%28arro1%29%3B%0Afor%20%28var%20ob%20of%20arro1%29%20%7B%0A%20%20console.log%28ob.a%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Programa animado de arreglos de instancias.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=const%20arro2%20%3D%20%5B%7B%20a%3A%20-3%20%7D,%20%7B%20a%3A%204%20%7D,%20%7B%20a%3A%208%20%7D%5D%3B%0Aconsole.log%28arro2%29%3B%0Afor%20%28var%20ob%20of%20arro2%29%20%7B%0A%20%20console.log%28ob.a%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Programa animado de arreglos de literales de objetos.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=const%20arro3%20%3D%20%5B%7B%20a%3A%20-3%20%7D,%20%7B%20a%3A%204%20%7D,%20%7B%20a%3A%208%20%7D%5D%3B%0Aarro3.forEach%28n%20%3D%3E%20console.log%28n.a%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Programa animado de arreglos de literales de objetos y foreach.
+            </a>
+          </p>
+        </div>
+      </section>
+      <section id=map slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20mapi1%20%3D%20%5B7,%202,%209%5D%3B%0Avar%20mapi2%20%3D%20%5B%5D%3B%0Afor%20%28var%20x%20of%20mapi1%29%20%7B%0A%20%20mapi2.push%28x%20*%202%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Map de datos usando for.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20map1%20%3D%20%5B7,%202,%209%5D%3B%0Avar%20map2%20%3D%20map1.map%28x%20%3D%3E%20x%20*%202%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Map de datos.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20mapi3%20%3D%20%5B%7B%20p%3A%207%20%7D,%20%7B%20p%3A%202%20%7D,%20%7B%20p%3A%209%20%7D%5D%3B%0Avar%20mapi4%20%3D%20%5B%5D%3B%0Afor%20%28var%20x%20of%20mapi3%29%20%7B%0A%20%20mapi4.push%28%7B%20n%3A%20x.p%20*%202%20%7D%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Map de objetos usando for.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20map3%20%3D%20%5B%7B%20p%3A%207%20%7D,%20%7B%20p%3A%202%20%7D,%20%7B%20p%3A%209%20%7D%5D%3B%0Avar%20map4%20%3D%20map3.map%28x%20%3D%3E%20%28%7B%20n%3A%20x.p%20*%202%20%7D%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Map de objetos.
+            </a>
+          </p>
+        </div>
+      </section>
+      <section id=filter slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20filf1%20%3D%20%5B7,%202,%204,%209%5D%3B%0Avar%20filf2%20%3D%20%5B%5D%3B%0Afor%20%28var%20x%20of%20filf1%29%20%7B%0A%20%20if%20%28x%20%25%202%20%3D%3D%3D%200%29%20%7B%0A%20%20%20%20filf2.push%28x%29%3B%0A%20%20%7D%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Filter de datos usando for.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20fil1%20%3D%20%5B7,%202,%204,%209%5D%3B%0Avar%20fil2%20%3D%20fil1.filter%28x%20%3D%3E%20x%20%25%202%20%3D%3D%3D%200%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Filter de datos.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20filf3%20%3D%20%5B%7B%20p%3A%207%20%7D,%20%7B%20p%3A%202%20%7D,%20%7B%20p%3A%204%20%7D,%20%7B%20p%3A%209%20%7D%5D%3B%0Avar%20filf4%20%3D%20%5B%5D%3B%0Afor%20%28var%20y%20of%20filf3%29%20%7B%0A%20%20if%20%28y.p%20%25%202%20%3D%3D%3D%200%29%20%7B%0A%20%20%20%20filf4.push%28y%29%3B%0A%20%20%7D%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Filter de objetos usando for.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20fil3%20%3D%20%5B%7B%20p%3A%207%20%7D,%20%7B%20p%3A%202%20%7D,%20%7B%20p%3A%204%20%7D,%20%7B%20p%3A%209%20%7D%5D%3B%0Avar%20fil4%20%3D%20fil3.filter%28x%20%3D%3E%20x.p%20%25%202%20%3D%3D%3D%200%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Filter de objetos.
+            </a>
+          </p>
+        </div>
+      </section>
+      <section id=join slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=const%20txt%20%3D%20%5B%22hola%22,%20%22estoy%22,%20%22muy%22,%20%22contento%22%5D.join%28%22--%22%29%3B%0Aconsole.log%28txt%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Programa animado de join de arreglos.
+            </a>
+          </p>
+        </div>
+      </section>
+      <section id=reduce slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20reducef%20%3D%20%5B7,%202,%204,%209%5D%3B%0Avar%20total%20%3D%200%3B%0Afor%20%28var%20x%20of%20reducef%29%20%7B%0A%20%20total%20%2B%3D%20x%3B%0A%7D%0Aconsole.log%28total%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Reduce usando for.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20reduce%20%3D%20%5B7,%202,%204,%209%5D%3B%0Avar%20total%20%3D%20reduce.reduce%28%28tot,%20num,%20i,%20arr%29%20%3D%3E%20tot%20%2B%20num,%200%29%3B%0Aconsole.log%28total%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Reduce.
+            </a>
+          </p>
+        </div>
+      </section>
+      <section id=sort slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=console.log%28%5B%22hola%22,%20%22estoy%22,%20%22muy%22,%20%22contento%22%5D.sort%28%29%29%3B%0Avar%20juguetes%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Aconsole.log%28juguetes.sort%28%28j1,j2%29%20%3D%3E%20j1.precioMX%20-%20j2.precioMX%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Programa animado de sort de arreglos.
+            </a>
+          </p>
+        </div>
+      </section>
+      <section id=Encadenamiento slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20juguetesf%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Avar%20total%20%3D%200%3B%0Afor%20%28var%20juguete%20of%20juguetesf%29%20%7B%0A%20%20if%20%28juguete.tipo%20%3D%3D%3D%20%22femenino%22%29%20%7B%0A%20%20%20%20total%20%2B%3D%200.16%20*%20juguete.precioMX%3B%0A%20%20%7D%0A%7D%0Aconsole.log%28total.toFixed%282%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Múltiples operaciones en un ciclo.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20juguetesf%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Avar%20femeninos%20%3D%20%5B%5D%3B%0Afor%20%28var%20juguete%20of%20juguetesf%29%20%7B%0A%20%20if%20%28juguete.tipo%20%3D%3D%3D%20%22femenino%22%29%20%7B%0A%20%20%20%20femeninos.push%28juguete%29%3B%0A%20%20%7D%0A%7D%0Avar%20impuestos%20%3D%20%5B%5D%3B%0Afor%20%28var%20juguete%20of%20femeninos%29%20%7B%0A%20%20impuestos.push%280.16%20*%20juguete.precioMX%29%3B%0A%7D%0Avar%20total%20%3D%200%3B%0Afor%20%28var%20impuesto%20of%20impuestos%29%20%7B%0A%20%20total%20%2B%3D%20impuesto%3B%0A%7D%0Aconsole.log%28total.toFixed%282%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Con for por etapas.
+            </a>
+          </p>
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20juguetes%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Avar%20total%20%3D%20juguetes%0A%20%20.filter%28juguete%20%3D%3E%20juguete.tipo%20%3D%3D%3D%20%22femenino%22%29%0A%20%20.map%28juguete%20%3D%3E%200.16%20*%20juguete.precioMX%29%0A%20%20.reduce%28%28tot,%20impuesto%29%20%3D%3E%20tot%20%2B%20impuesto,%200%29%3B%0Aconsole.log%28total.toFixed%282%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">
+              Encadenamiento.
+            </a>
+          </p>
+        </div>
+      </section>
+      <section id=Set slot=diapositiva>
+        <div class="cortina"></div>
+        <header></header>
+        <h2></h2>
+        <div class="marco-lectura">
+          <p>
+            <a href="http://pythontutor.com/javascript.html#code=var%20juguetes%20%3D%20new%20Set%28%5B%22carro%22,%20%22mu%C3%B1eca%22,%20%20%22unicornio%22,%20%22heroe%22%5D%29%3B%0Aconsole.log%28juguetes.has%28%22mu%C3%B1eca%22%29%29%3B%0Aconsole.log%28juguetes.has%28%22peluche%22%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+              target="_blank">Ejemplo con Set.</a>
+          </p>
+        </div>
+      </section>
+    </mi-presentacion>
+  </body>
+  <script type="module" src="lib/comun.js"></script>
+</html>

@@ -18,8 +18,6 @@
             `<select>
               <option value=intro>Asociaciones</option>
               <option value=uno>Asociaciones a Uno</option>
-              <option value=arreglos>Arreglos</option>
-              <option value=arrobjs>Arreglos de Objetos</option>
               <option value=muchos>Asociaciones a Muchos</option>
               <option value=uno_a_uno>Asociaciones Uno a Uno</option>
               <option value=uno_a_muchos>Asociaciones Uno a Muchos</option>
@@ -61,62 +59,6 @@
             <a href="http://pythontutor.com/javascript.html#code=class%20Beb%C3%A9%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%7D%0A%7D%0Aclass%20Sonaja%20%7B%0A%20%20constructor%28modelo%29%20%7B%0A%20%20%20%20this.modelo%20%3D%20modelo%3B%0A%20%20%20%20this.due%C3%B1o%20%3D%20null%3B%0A%20%20%7D%20%20%0A%7D%0Aconst%20telSonajita1%20%3D%20new%20Sonaja%28%22sonajita1%22%29%3B%0Alet%20telQk%20%3D%20new%20Beb%C3%A9%28%22qk%22%29%3B%0AtelSonajita1.due%C3%B1o%20%3D%20telQk%3B%0AtelQk%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
               target="_blank">
               Programa animado de asociaciones a uno.
-            </a>
-          </p>
-        </div>
-      </section>
-      <section id=arreglos slot=diapositiva>
-        <div class="cortina"></div>
-        <header></header>
-        <h2></h2>
-        <div class="marco-lectura">
-          <figure>
-            <img src="img/arreglos.svg" alt="Imagina un arreglo">
-          </figure>
-          <p>
-            <a href="http://pythontutor.com/javascript.html#code=const%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Aconsole.log%28arr1%29%3B%0Aconsole.log%28arr1.length%29%3B%0Afor%20%28var%20i%20%3D%200,%0A%20%20%20%20len%20%3D%20arr1.length%3B%0A%20%20%20%20i%20%3C%20len%3B%0A%20%20%20%20i%2B%2B%29%20%7B%0A%20%20const%20str%20%3D%20arr1%5Bi%5D%3B%0A%20%20console.log%28str%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
-              target="_blank">
-              Programa animado de arreglos con contadores.
-            </a>
-          </p>
-          <p>
-            <a href="http://pythontutor.com/javascript.html#code=const%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Afor%20%28var%20str%20of%20arr1%29%20%7B%0A%20%20console.log%28str%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
-              target="_blank">
-              Programa animado de arreglos con for-of.
-            </a>
-          </p>
-          <p>
-            <a href="http://pythontutor.com/javascript.html#code=const%20arr1%20%3D%20%5B%22mx%22,%20%22my%22,%20%22mu%22%5D%3B%0Aarr1.forEach%28str%20%3D%3E%20console.log%28str%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
-              target="_blank">
-              Programa animado de arreglos con forEach.
-            </a>
-          </p>
-        </div>
-      </section>
-      <section id=arrobjs slot=diapositiva>
-        <div class="cortina"></div>
-        <header></header>
-        <h2></h2>
-        <div class="marco-lectura">
-          <figure>
-            <img src="img/arrobjs.svg" alt="Imagina un arreglo de objetos">
-          </figure>
-          <p>
-            <a href="http://pythontutor.com/javascript.html#code=class%20Clao%20%7B%0A%20%20constructor%28a%29%20%7B%0A%20%20%20%20this.a%20%3D%20a%3B%0A%20%20%7D%0A%7D%0Aconst%20arro1%20%3D%20%5Bnew%20Clao%28-3%29,%20new%20Clao%284%29,%20new%20Clao%288%29%5D%3B%0Aconsole.log%28arro1%29%3B%0Afor%20%28var%20ob%20of%20arro1%29%20%7B%0A%20%20console.log%28ob.a%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
-              target="_blank">
-              Programa animado de arreglos de instancias.
-            </a>
-          </p>
-          <p>
-            <a href="http://pythontutor.com/javascript.html#code=const%20arro2%20%3D%20%5B%7B%20a%3A%20-3%20%7D,%20%7B%20a%3A%204%20%7D,%20%7B%20a%3A%208%20%7D%5D%3B%0Aconsole.log%28arro2%29%3B%0Afor%20%28var%20ob%20of%20arro2%29%20%7B%0A%20%20console.log%28ob.a%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
-              target="_blank">
-              Programa animado de arreglos de literales de objetos.
-            </a>
-          </p>
-          <p>
-            <a href="http://pythontutor.com/javascript.html#code=const%20arro3%20%3D%20%5B%7B%20a%3A%20-3%20%7D,%20%7B%20a%3A%204%20%7D,%20%7B%20a%3A%208%20%7D%5D%3B%0Aarro3.forEach%28n%20%3D%3E%20console.log%28n.a%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
-              target="_blank">
-              Programa animado de arreglos de literales de objetos y foreach.
             </a>
           </p>
         </div>

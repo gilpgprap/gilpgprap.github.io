@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creando Promesas</title>
+  </head>
+  <body>
+    <h1>Creando Promesas</h1>
+    <p><button onclick="ejecuta();">Ejecuta</button></p>
+    <script>
+      async function ejecuta() {
+        try {
+          const r1 = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve("Hola");
+            }, 5000);
+          });
+          alert(`Éxito1 ${r1}`);
+        } catch (error) {
+          alert(`Falló1 ${error.message}`);
+        }
+        try {
+          const r2 = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+              reject(new Error("ouch"));
+            }, 5000);
+          });
+          alert(`Éxito2 ${r2}`);
+        } catch (error) {
+          alert(`Falló2 ${error.message}`);
+        }
+      }
+    </script>
+  </body>
+</html>
