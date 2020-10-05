@@ -168,6 +168,17 @@ table.cebra tr:nth-child(even) {
   background-color: lavender;
 }
 
+table.borde,
+table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+}
+
+table.borde th,
+table.borde td {
+  padding: 0.4rem;
+}
+
 .num {
   text-align: right;
 }

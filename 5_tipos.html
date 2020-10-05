@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/presentacion.css">
 
-    <script src="fonts/fmathFormulaFonts.js"></script>
+    <!-- <script src="fonts/fmathFormulaFonts.js"></script>
 		<script src="fmathFormulaC.js"></script>
 		<script src="menu/basicContext.min.js"></script>
-		<script src="menu/basicModal.min.js"></script>
+		<script src="menu/basicModal.min.js"></script> -->
 
 		<link rel="stylesheet" href="menu/default.min.css">
 		<link rel="stylesheet" href="menu/basicContext.min.css">
 		<link rel="stylesheet" href="menu/basicModal.min.css">
 
-		<link rel="stylesheet" href="allBrowserSolution.css">
+		<!-- <link rel="stylesheet" href="allBrowserSolution.css"> -->
     <script type="module">
       import { SelDiapositivaBase } from "./lib/SelDiapositivaBase.js";
       customElements.define("mi-selector", class extends SelDiapositivaBase {
@@ -654,7 +654,7 @@
             pero los navegadores más usados si.
           </p>
           <p>
-            <a href="http://www.pythontutor.com/javascript.html#code=let%20b%20%3D%204%3B%0Alet%20c%20%3D%20%22pp%22%3B%0Aconst%20d%20%3D%205%3B%0Ac%20%3D%20%22h%22%3B%20//%20c%20%3D%3D%3D%20%22h%22%0Ac%20%2B%3D%20%22gg%22%3B%20//%20c%20%3D%20c%20%2B%20%22gg%22%3B%20c%20%3D%3D%3D%20%22hgg%22%0Ab%20%3D%20d%3B%20//%20b%20%3D%3D%3D%205%0Ab%20%2B%3D%20d%3B%20//%20b%20%3D%20b%20%2B%20d%3B%20b%20%3D%3D%3D%2010%0Ab%20%2B%3D%203%3B%20//%20b%20%3D%20b%20%2B%203%3B%20b%20%3D%3D%3D%2013%0Ab%20-%3D%202%3B%20//%20b%20%3D%20b%20-%202%3B%20b%20%3D%3D%3D%2011%0Ab%20*%3D%203%3B%20//%20b%20%3D%20b%20*%203%3B%20b%20%3D%3D%3D%2033%0Ab%20/%3D%203%3B%20//%20b%20%3D%20b%20/%2011%3B%20b%20%3D%3D%3D%2011%0Ab%20%25%3D%203%3B%20//%20b%20%3D%20b%20/%203%3B%20b%20%3D%3D%3D%202%0A//b%20**%3D%203%3B%20//%20b%20%3D%20b%20**%203%3B%20b%20%3D%3D%3D%208&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            <a href="http://www.pythontutor.com/javascript.html#code=let%20b%20%3D%204%3B%0Alet%20c%20%3D%20%22pp%22%3B%0Aconst%20d%20%3D%205%3B%0Ac%20%3D%20%22h%22%3B%20//%20c%20%3D%3D%3D%20%22h%22%0Ac%20%2B%3D%20%22gg%22%3B%20//%20c%20%3D%20c%20%2B%20%22gg%22%3B%20c%20%3D%3D%3D%20%22hgg%22%0Ab%20%3D%20d%3B%20//%20b%20%3D%3D%3D%205%0Ab%20%2B%3D%20d%3B%20//%20b%20%3D%20b%20%2B%20d%3B%20b%20%3D%3D%3D%2010%0Ab%20%2B%3D%203%3B%20//%20b%20%3D%20b%20%2B%203%3B%20b%20%3D%3D%3D%2013%0Ab%20-%3D%202%3B%20//%20b%20%3D%20b%20-%202%3B%20b%20%3D%3D%3D%2011%0Ab%20*%3D%203%3B%20//%20b%20%3D%20b%20*%203%3B%20b%20%3D%3D%3D%2033%0Ab%20/%3D%203%3B%20//%20b%20%3D%20b%20/%203%3B%20b%20%3D%3D%3D%2011%0Ab%20%25%3D%203%3B%20//%20b%20%3D%20b%20/%203%3B%20b%20%3D%3D%3D%202%0A//b%20**%3D%203%3B%20//%20b%20%3D%20b%20**%203%3B%20b%20%3D%3D%3D%208&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
             target=_blank>Visualiza el código en Python Tutor</a>
           </p>
         </div>
@@ -664,261 +664,331 @@
         <header></header>
         <h2></h2>
         <div class="marco-lectura">
-          <table>
+          <table class="borde">
             <tr>
-              <th>Precedencia</th>
-              <th>Tipo de operador</th>
+              <th>Orden</th>
+              <th>Descripción</th>
               <th>Asociatividad</th>
               <th>Operador</th>
+              <th>ejempo</th>
             </tr>
             <tr>
-              <td>0</td>
+              <td>1</td>
               <td>agrupamiento</td>
               <td>n/a</td>
-              <td><code class="language-javascript">(</code>…<code class="language-javascript">)</code></td>
+              <td><code class="language-javascript"><strong>(</strong>…<strong>)</strong></code></td>
+              <td><code class="language-javascript"><strong>(</strong>2 + 3<strong>)</strong></code></td>
             </tr>
             <tr>
-              <td rowspan="3">1</td>
+              <td rowspan="4">2</td>
               <td rowspan="2">miembro</td>
               <td rowspan="2">izquierda a derecha</td>
-              <td>…<code class="language-javascript">.<var>…</var></code></td>
+              <td><code class="language-javascript">…<strong>.</strong>…</code></td>
+              <td><code class="language-javascript">a<strong>.</strong>b</code></td>
             </tr>
             <tr>
-              <td>…<code class="language-javascript">[<var>…</var>]</code></td>
+              <td><code class="language-javascript">…<strong>[</strong>…<strong>]</strong></code></td>
+              <td><code class="language-javascript">a<strong>[</strong>0<strong>]</strong></code></td>
             </tr>
             <tr>
               <td>new</td>
               <td>n/a</td>
-              <td><code class="language-javascript">new</code> … <code class="language-javascript">(<var>…</var>)</code></td>
+              <td><code class="language-javascript"><strong>new</strong> …<strong>(</strong>…<strong>)</strong></code></td>
+              <td><code class="language-javascript"><strong>new</strong> Clase<strong>(</strong>0<strong>)</strong></code></td>
             </tr>
             <tr>
-              <td rowspan="2">2</td>
               <td>invocación a función</td>
               <td>izquierda a derecha</td>
-              <td>…<code class="language-javascript">(<var>…</var>)</code></td>
-            </tr>
-            <tr>
-              <td>new</td>
-              <td>derecha a izquierda</td>
-              <td><code class="language-javascript">new</code> …</td>
+              <td><code class="language-javascript">…<strong>(</strong>…<strong>)</strong></code></td>
+              <td><code class="language-javascript">fn<strong>(</strong>x<strong>)</strong></code></td>
             </tr>
             <tr>
               <td rowspan="2">3</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Arithmetic_Operators" title="JavaScript/Reference/Operators/Arithmetic_Operators">increment</a></td>
+              <td>incremento sufijo</td>
               <td>n/a</td>
-              <td>…<code class="language-javascript">++</code></td>
+              <td><code class="language-javascript">…<strong>++</strong></code></td>
+              <td><code class="language-javascript">a<strong>++</strong></code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Arithmetic_Operators" title="JavaScript/Reference/Operators/Arithmetic_Operators">decrement</a></td>
+              <td>decremento sufijo</td>
               <td>n/a</td>
-              <td>…<code class="language-javascript">--</code></td>
+              <td><code class="language-javascript">…<strong>--</strong></code></td>
+              <td><code class="language-javascript">a<strong>--</strong></code></td>
             </tr>
             <tr>
-              <td rowspan="7">4</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Logical_Operators" title="JavaScript/Reference/Operators/Logical_Operators">logical-not</a></td>
+              <td rowspan="9">4</td>
+              <td>incremento prefijo</td>
+              <td>n/a</td>
+              <td><code class="language-javascript"><strong>++</strong>…</code></td>
+              <td><code class="language-javascript"><strong>++</strong>a</code></td>
+            </tr>
+            <tr>
+              <td>decremento prefijo</td>
+              <td>n/a</td>
+              <td><code class="language-javascript"><strong>--</strong>…</code></td>
+              <td><code class="language-javascript"><strong>--</strong>a</code></td>
+            </tr>
+            <tr>
+              <td>not lógico</td>
               <td>derecha a izquierda</td>
-              <td><code class="language-javascript">!</code>…</td>
+              <td><code class="language-javascript"><strong>!</strong>…</code></td>
+              <td><code class="language-javascript"><strong>!</strong>a</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Bitwise_Operators" title="JavaScript/Reference/Operators/Bitwise_Operators">bitwise not</a></td>
+              <td>not a nivel de bits</td>
               <td>derecha a izquierda</td>
-              <td><code class="language-javascript">~</code>…</td>
+              <td><code class="language-javascript"><strong>~</strong>…</code></td>
+              <td><code class="language-javascript"><strong>~</strong>a</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Arithmetic_Operators" title="JavaScript/Reference/Operators/Arithmetic_Operators">unary +</a></td>
+              <td>+ unario</a></td>
               <td>derecha a izquierda</td>
-              <td><code class="language-javascript">+</code>…</td>
+              <td><code class="language-javascript"><strong>+</strong>…</code></td>
+              <td><code class="language-javascript"><strong>+</strong>a</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Arithmetic_Operators" title="JavaScript/Reference/Operators/Arithmetic_Operators">unary negation</a></td>
+              <td>negación unaria</a></td>
               <td>derecha a izquierda</td>
-              <td><code class="language-javascript">-</code>…</td>
+              <td><code class="language-javascript"><strong>-</strong>…</code></td>
+              <td><code class="language-javascript"><strong>-</strong>a</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Special/typeof" title="JavaScript/Reference/Operators/Special_Operators/typeof_Operator">typeof</a></td>
+              <td>typeof</td>
               <td>derecha a izquierda</td>
-              <td><code class="language-javascript">typeof</code> …</td>
+              <td><code class="language-javascript"><strong>typeof</strong> …</code></td>
+              <td><code class="language-javascript"><strong>typeof</strong> a</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Special/void" title="JavaScript/Reference/Operators/Special_Operators/void_Operator">void</a></td>
+              <td>void</a></td>
               <td>derecha a izquierda</td>
-              <td><code class="language-javascript">void</code> …</td>
+              <td><code class="language-javascript"><strong>void</strong> …</code></td>
+              <td><code class="language-javascript"><strong>void</strong> a</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Special/delete" title="JavaScript/Reference/Operators/Special_Operators/delete_Operator">delete</a></td>
+              <td>delete</td>
               <td>derecha a izquierda</td>
-              <td><code class="language-javascript">delete</code> …</td>
+              <td><code class="language-javascript"><strong>delete</strong> …</code></td>
+              <td><code class="language-javascript"><strong>delete</strong> a.nombre</code></td>
             </tr>
             <tr>
-              <td rowspan="3">5</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Arithmetic_Operators" title="JavaScript/Reference/Operators/Arithmetic_Operators">multiplication</a></td>
+              <td>5</td>
+              <td>exponenciación</td>
+              <td>n/a</td>
+              <td><code class="language-javascript">… <strong>**</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>**</strong> b</code></td>
+            </tr>
+            <tr>
+              <td rowspan="3">6</td>
+              <td>multiplicación</a></td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">*</code></td>
+              <td><code class="language-javascript">… <strong>*</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>*</strong> b</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Arithmetic_Operators" title="JavaScript/Reference/Operators/Arithmetic_Operators">division</a></td>
+              <td>división</a></td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">/</code></td>
+              <td><code class="language-javascript">… <strong>/</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>/</strong> b</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Arithmetic_Operators" title="JavaScript/Reference/Operators/Arithmetic_Operators">modulus</a></td>
+              <td>resituo</a></td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">%</code></td>
+              <td><code class="language-javascript">… <strong>%</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>%</strong> b</code></td>
             </tr>
             <tr>
-              <td rowspan="2">6</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Arithmetic_Operators" title="JavaScript/Reference/Operators/Arithmetic_Operators">addition</a></td>
+              <td rowspan="2">7</td>
+              <td>suma</a></td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">+</code></td>
+              <td><code class="language-javascript">… <strong>+</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>+</strong> b</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Arithmetic_Operators" title="JavaScript/Reference/Operators/Arithmetic_Operators">subtraction</a></td>
+              <td>resta</a></td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">-</code></td>
+              <td><code class="language-javascript">… <strong>-</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>-</strong> b</code></td>
             </tr>
             <tr>
-              <td rowspan="3">7</td>
-              <td rowspan="3"><a href="/en-US/docs/JavaScript/Reference/Operators/Bitwise_Operators" title="JavaScript/Reference/Operators/Bitwise_Operators">bitwise shift</a></td>
+              <td rowspan="3">8</td>
+              <td rowspan="3">corrimiento de bits</a></td>
               <td rowspan="3">izquierda a derecha</td>
-              <td><code class="language-javascript">&lt;&lt;</code></td>
+              <td><code class="language-javascript">… <strong>&lt;&lt;</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>&lt;&lt;</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">&gt;&gt;</code></td>
+              <td><code class="language-javascript">… <strong>>></strong> …</code></td>
+              <td><code class="language-javascript">a <strong>>></strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">&gt;&gt;&gt;</code></td>
+              <td><code class="language-javascript">… <strong>>>></strong> …</code></td>
+              <td><code class="language-javascript">a <strong>>>></strong> b</code></td>
             </tr>
             <tr>
-              <td rowspan="6">8</td>
-              <td rowspan="4"><a href="/en-US/docs/JavaScript/Reference/Operators/Comparison_Operators" title="JavaScript/Reference/Operators/Comparison_Operators">relational</a></td>
+              <td rowspan="6">9</td>
+              <td rowspan="4">relacional</td>
               <td rowspan="4">izquierda a derecha</td>
-              <td><code class="language-javascript">&lt;</code></td>
+              <td><code class="language-javascript">… <strong>&lt;</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>&lt;</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">&lt;=</code></td>
+              <td><code class="language-javascript">… <strong>&lt;=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>&lt;=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">&gt;</code></td>
+              <td><code class="language-javascript">… <strong>></strong> …</code></td>
+              <td><code class="language-javascript">a <strong>></strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">&gt;=</code></td>
+              <td><code class="language-javascript">… <strong>>=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>>=</strong> b</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Special/in" title="JavaScript/Reference/Operators/Special_Operators/in_Operator">in</a></td>
+              <td>in</td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">in</code></td>
+              <td><code class="language-javascript">… <strong>in</strong> …</code></td>
+              <td><code class="language-javascript">"nombre" <strong>in</strong> a</code></td>
             </tr>
             <tr>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Special/instanceof" title="JavaScript/Reference/Operators/Special_Operators/instanceof_Operator">instanceof</a></td>
+              <td>instanceof</td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">instanceof</code></td>
+              <td><code class="language-javascript">… <strong>instanceof</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>instanceof</strong> Array</code></td>
             </tr>
             <tr>
-              <td rowspan="4">9</td>
-              <td rowspan="4"><a href="/en-US/docs/JavaScript/Reference/Operators/Comparison_Operators" title="JavaScript/Reference/Operators/Comparison_Operators">equality</a></td>
+              <td rowspan="4">10</td>
+              <td rowspan="4">igualdad</td>
               <td rowspan="4">izquierda a derecha</td>
-              <td><code class="language-javascript">==</code></td>
+              <td><code class="language-javascript">… <strong>==</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>==</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">!=</code></td>
+              <td><code class="language-javascript">… <strong>!=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>!=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">===</code></td>
+              <td><code class="language-javascript">… <strong>===</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>===</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">!==</code></td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Bitwise_Operators" title="JavaScript/Reference/Operators/Bitwise_Operators">bitwise-and</a></td>
-              <td>izquierda a derecha</td>
-              <td><code class="language-javascript">&amp;</code></td>
+              <td><code class="language-javascript">… <strong>!==</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>!==</strong> b</code></td>
             </tr>
             <tr>
               <td>11</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Bitwise_Operators" title="JavaScript/Reference/Operators/Bitwise_Operators">bitwise-xor</a></td>
+              <td>and de bits</td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">^</code></td>
+              <td><code class="language-javascript">… <strong>&amp;</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>&amp;</strong> b</code></td>
             </tr>
             <tr>
               <td>12</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Bitwise_Operators" title="JavaScript/Reference/Operators/Bitwise_Operators">bitwise-or</a></td>
+              <td>xor de bits</td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">|</code></td>
+              <td><code class="language-javascript">… <strong>^</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>^</strong> b</code></td>
             </tr>
             <tr>
               <td>13</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Logical_Operators" title="JavaScript/Reference/Operators/Logical_Operators">logical-and</a></td>
+              <td>or de bits</td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">&amp;&amp;</code></td>
+              <td><code class="language-javascript">… <strong>|</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>|</strong> b</code></td>
             </tr>
             <tr>
               <td>14</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Logical_Operators" title="JavaScript/Reference/Operators/Logical_Operators">logical-or</a></td>
+              <td>and lógico</td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">||</code></td>
+              <td><code class="language-javascript">… <strong>&amp;&amp;</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>&amp;&amp;</strong> b</code></td>
             </tr>
             <tr>
               <td>15</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Special/Conditional_Operator" title="JavaScript/Reference/Operators/Special_Operators/Conditional_Operator">conditional</a></td>
-              <td>derecha a izquierda</td>
-              <td>… <code class="language-javascript">?</code> … <code class="language-javascript">:</code> …</td>
+              <td>or lógico</td>
+              <td>izquierda a derecha</td>
+              <td><code class="language-javascript">… <strong>||</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>||</strong> b</code></td>
             </tr>
             <tr>
-              <td rowspan="12">16</td>
-              <td rowspan="12"><a href="/en-US/docs/JavaScript/Reference/Operators/Assignment_Operators" title="JavaScript/Reference/Operators/Assignment_Operators">assignment</a></td>
+              <td>16</td>
+              <td>condicional</td>
+              <td>derecha a izquierda</td>
+              <td><code class="language-javascript">… <strong>?</strong> … <strong>:</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>?</strong> b <strong>:</strong> c</code></td>
+            </tr>
+            <tr>
+              <td rowspan="12">17</td>
+              <td rowspan="12">asignación</td>
               <td rowspan="12">derecha a izquierda</td>
-              <td><code class="language-javascript">=</code></td>
+              <td><code class="language-javascript">… <strong>=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">+=</code></td>
+              <td><code class="language-javascript">… <strong>+=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>+=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">-=</code></td>
+              <td><code class="language-javascript">… <strong>-=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>-=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">*=</code></td>
+              <td><code class="language-javascript">… <strong>*=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>*=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">/=</code></td>
+              <td><code class="language-javascript">… <strong>/=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>/=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">%=</code></td>
+              <td><code class="language-javascript">… <strong>%=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>%=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">&lt;&lt;=</code></td>
+              <td><code class="language-javascript">… <strong>&lt;&lt;=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>&lt;&lt;=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">&gt;&gt;=</code></td>
+              <td><code class="language-javascript">… <strong>>>=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>>>=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">&gt;&gt;&gt;=</code></td>
+              <td><code class="language-javascript">… <strong>>>>=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>>>>=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">&amp;=</code></td>
+              <td><code class="language-javascript">… <strong>&amp;=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>&amp;=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">^=</code></td>
+              <td><code class="language-javascript">… <strong>^=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>^=</strong> b</code></td>
             </tr>
             <tr>
-              <td><code class="language-javascript">|=</code></td>
-            </tr>
-            <tr>
-              <td>17</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/yield" title="JavaScript/Reference/Operators/yield">yield</a></td>
-              <td>derecha a izquierda</td>
-              <td><code class="language-javascript">yield</code>…</td>
+              <td><code class="language-javascript">… <strong>|=</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>|=</strong> b</code></td>
             </tr>
             <tr>
               <td>18</td>
-              <td><a href="/en-US/docs/JavaScript/Reference/Operators/Special/Comma_Operator" title="JavaScript/Reference/Operators/Special_Operators/Comma_Operator">comma</a></td>
+              <td>yield</td>
+              <td>derecha a izquierda</td>
+              <td><code class="language-javascript"><strong>yield</strong> …</code></td>
+              <td><code class="language-javascript"><strong>yield</strong> a</code></td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>coma</td>
               <td>izquierda a derecha</td>
-              <td><code class="language-javascript">,</code></td>
+              <td><code class="language-javascript">… <strong>,</strong> …</code></td>
+              <td><code class="language-javascript">a <strong>,</strong> b</code></td>
             </tr>
           </table>
           <p>
-            Fuente:
-            <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Operator_Precedence">https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Operator_Precedence</a>
+            Fuentes:<br>
+            <small>
+              <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Operator_Precedence">https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Operator_Precedence</a>
+              y
+              <a href="https://www.w3schools.com/js/js_arithmetic.asp">https://www.w3schools.com/js/js_arithmetic.asp</a>
+            </small>
           </p>
         </div>
       </section>
@@ -934,96 +1004,19 @@
           <p>Ejemplos de expresiones aritméticas expresadas en JavaScript:</p>
           <dl>
             <dt>
-              <div>
-                  <math>
-                    <mrow>
-                      <mi>x</mi>
-                      <mo>=</mo>
-                      <mfrac>
-                        <mrow>
-                          <mrow>
-                            <mo>-</mo>
-                            <mi>b</mi>
-                          </mrow>
-                          <mo>+</mo>
-                          <msqrt>
-                            <mrow>
-                              <msup>
-                                <mi>b</mi>
-                                <mn>2</mn>
-                              </msup>
-                              <mo>-</mo>
-                              <mrow>
-                                <mn>4</mn>
-                                <mo>&#x2062;</mo>
-                                <mi>a</mi>
-                                <mo>&#x2062;</mo>
-                                <mi>c</mi>
-                              </mrow>
-                            </mrow>
-                          </msqrt>
-                        </mrow>
-                        <mrow>
-                          <mn>2</mn>
-                          <mo>&#x2062;</mo>
-                          <mi>a</mi>
-                        </mrow>
-                      </mfrac>
-                    </mrow>
-                </math>
-              </div>
+              <figure>
+                <img src="img/cuadratica.png"
+                  alt="x = (-b + Math.sqrt(b**2 - 4*a*c)) / (2*a)">
+              </figure>
             </dt>
             <dd>
               <code class="language-javascript">x = (-b + Math.sqrt(b**2 - 4*a*c)) / (2*a)</code>
             </dd>
             <dt>
-              <div>
-                <math>
-                  <mrow>
-                    <mi>y</mi>
-                    <mo>=</mo>
-                    <mfrac>
-                      <mrow>
-                        <msub>
-                          <mi>y</mi>
-                          <mn>2</mn>
-                        </msub>
-                        <mo>-</mo>
-                        <msub>
-                          <mi>y</mi>
-                          <mn>1</mn>
-                        </msub>
-                      </mrow>
-                      <mrow>
-                        <msub>
-                          <mi>x</mi>
-                          <mn>2</mn>
-                        </msub>
-                        <mo>-</mo>
-                        <msub>
-                          <mi>x</mi>
-                          <mn>1</mn>
-                        </msub>
-                      </mrow>
-                    </mfrac>
-                    <mo>&#x2062;</mo>
-                    <mrow>
-                      (
-                      <mn>x</mn>
-                      <mo>-</mo>
-                      <msub>
-                        <mi>x</mi>
-                        <mn>1</mn>
-                      </msub>
-                      )
-                  </mrow>
-                  <mo>+</mo>
-                  <msub>
-                    <mi>y</mi>
-                    <mn>1</mn>
-                  </msub>
-                </math>
-              </div>
+              <figure>
+                <img src="img/recta.png"
+                  alt="y = ((y2 - y1) / (x2 - x1)) * (x - x1) + y1">
+              </figure>
             </dt>
             <dd>
               <code class="language-javascript">y = ((y2 - y1) / (x2 - x1)) * (x - x1) + y1</code>
