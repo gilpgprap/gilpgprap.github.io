@@ -35,4 +35,4 @@ console.log("ah" >= "ah"); // true
 console.log("ah" >= "ai"); // false
 console.log(3 >= 0); // true
 console.log(3 >= 3); // true
-console.log(3 > 8); // false
+console.log(3 >= 8); // false
