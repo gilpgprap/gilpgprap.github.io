@@ -17,7 +17,7 @@ customElements.define("mi-nav", class extends HTMLElement {
         <li><a href="10_funciones.html">Funciones</a></li>
         <li><a href="11_objetos.html">Objetos</a></li>
         <li><a href="12_excepciones.html">Excepciones</a></li>
-        <li><a href="13_sitio.html">Sitio Web</a></li>
+        <li><a href="13_sitio.html">Sitio Web con Servicios</a></li>
         <li><a href="14_arreglos.html">Arreglos</a></li>
         <li><a href="15_promesas.html">Promesas</a></li>
         <li><a href="16_asociaciones.html">Asociaciones</a></li>

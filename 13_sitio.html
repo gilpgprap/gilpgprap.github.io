@@ -21,7 +21,7 @@
               <option value=carpetas>Carpetas</option>
               <option value=mifooter>cmp/mi-footer.js</option>
               <option value=estilos>css/estilos.css</option>
-              <option value=ctrlSaludo>js/ctrlSaludo.js</option>
+              <option value=CtrlSaludo>js/CtrlSaludo.js</option>
               <option value=favicon>favicon.ico</option>
               <option value=index>index.html</option>
               <option value=readme>README.md</option>
@@ -52,16 +52,16 @@
           </p>
           <p>Esta presentación contiene las siguientes diapositivas:</p>
           <ol>
-            <li><a href=#intro>Introducción</a></li>
-            <li><a href=#instrucciones>Instrucciones</a></li>
-            <li><a href=#carpetas>Carpetas</a></li>
-            <li><a href=#mifooter>cmp/mi-footer.js</a></li>
-            <li><a href=#estilos>css/estilos.css</a></li>
-            <li><a href=#ctrlSaludo>js/ctrlSaludo.js</a></li>
-            <li><a href=#favicon>favicon.ico</a></li>
-            <li><a href=#index>index.html</a></li>
-            <li><a href=#readme>README.md</a></li>
-            <li><a href=#license>LICENSE</a></li>
+            <li><p><a href=#intro>Introducción</a></p></li>
+            <li><p><a href=#instrucciones>Instrucciones</a></p></li>
+            <li><p><a href=#carpetas>Carpetas</a></p></li>
+            <li><p><a href=#mifooter>cmp/mi-footer.js</a></p></li>
+            <li><p><a href=#estilos>css/estilos.css</a></p></li>
+            <li><p><a href=#CtrlSaludo>js/CtrlSaludo.js</a></p></li>
+            <li><p><a href=#favicon>favicon.ico</a></p></li>
+            <li><p><a href=#index>index.html</a></p></li>
+            <li><p><a href=#readme>README.md</a></p></li>
+            <li><p><a href=#license>LICENSE</a></p></li>
           </ol>
         </div>
       </div>
@@ -110,27 +110,27 @@
         <div class="marco-lectura">
           <ul>
             <li>
-              cmp
+              <p>cmp</p>
               <ul>
-                <li><a href=#mifooter>mi-footer.js</a></li>
+                <li><p><a href=#mifooter>mi-footer.js</a></p></li>
               </ul>
             </li>
             <li>
-              css
+              <p>css</p>
               <ul>
-                <li><a href=#estilos>estilos.css</a></li>
+                <li><p><a href=#estilos>estilos.css</a></p></li>
               </ul>
             </li>
             <li>
-              js
+              <p>js</p>
               <ul>
-                <li><a href=#ctrlSaludo>ctrlSaludo.js</a></li>
+                <li><p><a href=#CtrlSaludo>CtrlSaludo.js</a></p></li>
               </ul>
             </li>
-            <li><a href=#favicon>favicon.ico</a></li>
-            <li><a href=#index>index.html</a></li>
-            <li><a href=#readme>README.md</a></li>
-            <li><a href=#license>LICENSE</a></li>
+            <li><p><a href=#favicon>favicon.ico</a></p></li>
+            <li><p><a href=#index>index.html</a></p></li>
+            <li><p><a href=#readme>README.md</a></p></li>
+            <li><p><a href=#license>LICENSE</a></p></li>
           </ul>
         </div>
       </section>
@@ -154,13 +154,13 @@
           </tr>
         </table>
       </section>
-      <section id=ctrlSaludo slot=diapositiva>
+      <section id=CtrlSaludo slot=diapositiva>
         <header></header>
         <h2></h2>
         <table>
           <tr>
-            <td class=nums data-total="5"></td>
-            <td class=cod><div><div><span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">saluda</span>()&nbsp;{</div><div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">nombre</span>&nbsp;=&nbsp;<span style="color: #001080;">inNombre</span>.<span style="color: #001080;">value</span>;</div><div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">saludo</span>&nbsp;=&nbsp;<span style="color: #a31515;">`Hola&nbsp;</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">nombre</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">.`</span>;</div><div>&nbsp;&nbsp;<span style="color: #001080;">outSaludo</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #0070c1;">saludo</span>;</div><div>}</div></div></td>
+            <td class=nums data-total="10"></td>
+            <td class=cod><div><div><span style="color: #af00db;">export</span>&nbsp;<span style="color: #0000ff;">class</span>&nbsp;<span style="color: #267f99;">CtrlSaludo</span>&nbsp;{</div><div>&nbsp;&nbsp;<span style="color: #008000;">/**&nbsp;</span><span style="color: #0000ff;">@param</span><span style="color: #008000;">&nbsp;</span><span style="color: #267f99;">{string}</span><span style="color: #008000;">&nbsp;</span><span style="color: #001080;">nombre</span><span style="color: #008000;">&nbsp;*/</span></div><div>&nbsp;&nbsp;<span style="color: #795e26;">calculaSaludo</span>(<span style="color: #001080;">nombre</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">nombreSinEspacios</span>&nbsp;=&nbsp;<span style="color: #001080;">nombre</span>&nbsp;?&nbsp;<span style="color: #001080;">nombre</span>.<span style="color: #795e26;">trim</span>()&nbsp;:&nbsp;<span style="color: #a31515;">""</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(!<span style="color: #0070c1;">nombreSinEspacios</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">throw</span>&nbsp;<span style="color: #0000ff;">new</span>&nbsp;<span style="color: #267f99;">Error</span>(<span style="color: #a31515;">"Falta&nbsp;proporcionar&nbsp;el&nbsp;nombre."</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">return</span>&nbsp;<span style="color: #a31515;">`Hola&nbsp;</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">nombreSinEspacios</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">.`</span>;</div><div>&nbsp;&nbsp;}</div><div>}</div></div></td>
           </tr>
         </table>
       </section>
@@ -176,8 +176,8 @@
         <h2></h2>
         <table>
           <tr>
-            <td class=nums data-total="29"></td>
-            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Saludo<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;link</span>&nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"css/estilos.css"</span>&nbsp;<span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"stylesheet"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script</span>&nbsp;<span style="color: #ff0000;">src</span>=<span style="color: #0000ff;">"cmp/mi-footer.js"</span><span style="color: #800000;">&gt;&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;form</span>&nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">"javascript:saluda();"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Saludo<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;input</span>&nbsp;<span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">"text"</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"inNombre"</span>&nbsp;<span style="color: #ff0000;">required</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;button&gt;</span>Calcular<span style="color: #800000;">&lt;/button&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;output</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outSaludo</span><span style="color: #800000;">&gt;&lt;/output&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;mi-footer&gt;&lt;/mi-footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script</span>&nbsp;<span style="color: #ff0000;">src</span>=<span style="color: #0000ff;">"js/ctrlSaludo.js"</span><span style="color: #800000;">&gt;&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
+            <td class=nums data-total="40"></td>
+            <td class=cod><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span>&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Saludo<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;link</span>&nbsp;<span style="color: #ff0000;">href</span>=<span style="color: #0000ff;">"css/estilos.css"</span>&nbsp;<span style="color: #ff0000;">rel</span>=<span style="color: #0000ff;">"stylesheet"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script</span>&nbsp;<span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">"module"</span>&nbsp;<span style="color: #ff0000;">src</span>=<span style="color: #0000ff;">"cmp/mi-footer.js"</span><span style="color: #800000;">&gt;&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;form</span>&nbsp;<span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"formSaludo"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Saludo<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;input</span>&nbsp;<span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">"text"</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"nombre"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;button&gt;</span>Calcular<span style="color: #800000;">&lt;/button&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;&lt;output</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"salida"</span><span style="color: #800000;">&gt;&lt;/output&gt;&lt;/p&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;mi-footer&gt;&lt;/mi-footer&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script</span>&nbsp;<span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">"module"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">import</span>&nbsp;{&nbsp;<span style="color: #001080;">CtrlSaludo</span>&nbsp;}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span style="color: #a31515;">"/js/CtrlSaludo.js"</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">ctrlSaludo</span>&nbsp;=&nbsp;<span style="color: #0000ff;">new</span>&nbsp;<span style="color: #267f99;">CtrlSaludo</span>();</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">formSaludo</span>.<span style="color: #795e26;">addEventListener</span>(<span style="color: #a31515;">"submit"</span>,&nbsp;<span style="color: #001080;">evt</span>&nbsp;<span style="color: #0000ff;">=&gt;</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">evt</span>.<span style="color: #795e26;">preventDefault</span>();</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">datos</span>&nbsp;=&nbsp;<span style="color: #0000ff;">new</span>&nbsp;<span style="color: #267f99;">FormData</span>(<span style="color: #001080;">formSaludo</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">nombre</span>&nbsp;=&nbsp;<span style="color: #0070c1;">datos</span>.<span style="color: #795e26;">get</span>(<span style="color: #a31515;">"nombre"</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">saludo</span>&nbsp;=&nbsp;<span style="color: #0070c1;">ctrlSaludo</span>.<span style="color: #795e26;">calculaSaludo</span>(<span style="color: #0070c1;">nombre</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">formSaludo</span>.<span style="color: #001080;">salida</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #0070c1;">saludo</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span style="color: #af00db;">catch</span>&nbsp;(<span style="color: #001080;">error</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">console</span>.<span style="color: #795e26;">log</span>(<span style="color: #001080;">error</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">formSaludo</span>.<span style="color: #001080;">salida</span>.<span style="color: #001080;">value</span>&nbsp;=&nbsp;<span style="color: #001080;">error</span>.<span style="color: #001080;">message</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></td>
           </tr>
         </table>
       </section>
