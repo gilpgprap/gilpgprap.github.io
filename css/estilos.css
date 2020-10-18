@@ -179,6 +179,21 @@ table.borde td {
   padding: 0.4rem;
 }
 
+table.borde,
+table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+}
+
+table.borde th,
+table.borde td {
+  padding: 0.4rem;
+}
+
+table.documento {
+  margin: 0;
+}
+
 .num {
   text-align: right;
 }
@@ -211,6 +226,11 @@ code.language-css {
 
 code.language-javascript {
   color: blue;
+  font-size: 1.3em;
+}
+
+code.language-cpp {
+  color: rgb(6, 77, 33);
   font-size: 1.3em;
 }
 
