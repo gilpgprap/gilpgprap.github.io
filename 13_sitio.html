@@ -20,10 +20,11 @@
               <option value=instrucciones>Instrucciones</option>
               <option value=carpetas>Carpetas</option>
               <option value=mifooter>cmp/mi-footer.js</option>
-              <option value=estilos>css/estilos.css</option>
+              <option value=util>lib/util.js</option>
               <option value=CtrlSaludo>js/CtrlSaludo.js</option>
               <option value=favicon>favicon.ico</option>
               <option value=index>index.html</option>
+              <option value=estilos>css/estilos.css</option>
               <option value=readme>README.md</option>
               <option value=license>LICENSE</option>
             </select>`);
@@ -57,6 +58,7 @@
             <li><p><a href=#carpetas>Carpetas</a></p></li>
             <li><p><a href=#mifooter>cmp/mi-footer.js</a></p></li>
             <li><p><a href=#estilos>css/estilos.css</a></p></li>
+            <li><p><a href=#util>js/util.js</a></p></li>
             <li><p><a href=#CtrlSaludo>js/CtrlSaludo.js</a></p></li>
             <li><p><a href=#favicon>favicon.ico</a></p></li>
             <li><p><a href=#index>index.html</a></p></li>
@@ -132,6 +134,12 @@
               </ul>
             </li>
             <li>
+              <p>lib</p>
+              <ul>
+                <li><p><a href=#util>util.js</a></p></li>
+              </ul>
+            </li>
+            <li>
               <p>js</p>
               <ul>
                 <li><p><a href=#CtrlSaludo>CtrlSaludo.js</a></p></li>
@@ -164,13 +172,23 @@
           </tr>
         </table>
       </section>
+      <section id=util slot=diapositiva>
+        <header></header>
+        <h2></h2>
+        <table>
+          <tr>
+            <td class=nums data-total="9"></td>
+            <td class=cod><div><div><span style="color: #008000;">/**&nbsp;Si&nbsp;una&nbsp;condición&nbsp;no&nbsp;se&nbsp;cumple,&nbsp;lanza&nbsp;un&nbsp;Error&nbsp;con&nbsp;el&nbsp;mensaje&nbsp;indicado.</span></div><div><span style="color: #008000;">&nbsp;*&nbsp;</span><span style="color: #0000ff;">@param</span><span style="color: #008000;">&nbsp;</span><span style="color: #267f99;">{any}</span><span style="color: #008000;">&nbsp;</span><span style="color: #001080;">condición</span><span style="color: #008000;">&nbsp;Condición&nbsp;que&nbsp;debe&nbsp;cumplirse.</span></div><div><span style="color: #008000;">&nbsp;*&nbsp;</span><span style="color: #0000ff;">@param</span><span style="color: #008000;">&nbsp;</span><span style="color: #267f99;">{string}</span><span style="color: #008000;">&nbsp;</span><span style="color: #001080;">mensaje</span><span style="color: #008000;">&nbsp;Mensaje&nbsp;que&nbsp;se&nbsp;lanza&nbsp;el&nbsp;Error.</span></div><div><span style="color: #008000;">&nbsp;*&nbsp;</span><span style="color: #0000ff;">@throws</span><span style="color: #008000;">&nbsp;</span><span style="color: #267f99;">{Error}</span><span style="color: #008000;">&nbsp;si&nbsp;la&nbsp;condición&nbsp;no&nbsp;se&nbsp;cumple.&nbsp;*/</span></div><div><span style="color: #af00db;">export</span>&nbsp;<span style="color: #0000ff;">function</span>&nbsp;<span style="color: #795e26;">valida</span>(<span style="color: #001080;">condición</span>,&nbsp;<span style="color: #001080;">mensaje</span>)&nbsp;{</div><div>&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(!<span style="color: #001080;">condición</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">throw</span>&nbsp;<span style="color: #0000ff;">new</span>&nbsp;<span style="color: #267f99;">Error</span>(<span style="color: #001080;">mensaje</span>);</div><div>&nbsp;&nbsp;}</div><div>}</div></div></td>
+          </tr>
+        </table>
+      </section>
       <section id=CtrlSaludo slot=diapositiva>
         <header></header>
         <h2></h2>
         <table>
           <tr>
-            <td class=nums data-total="10"></td>
-            <td class=cod><div><div><span style="color: #af00db;">export</span>&nbsp;<span style="color: #0000ff;">class</span>&nbsp;<span style="color: #267f99;">CtrlSaludo</span>&nbsp;{</div><div>&nbsp;&nbsp;<span style="color: #008000;">/**&nbsp;</span><span style="color: #0000ff;">@param</span><span style="color: #008000;">&nbsp;</span><span style="color: #267f99;">{string}</span><span style="color: #008000;">&nbsp;</span><span style="color: #001080;">nombre</span><span style="color: #008000;">&nbsp;*/</span></div><div>&nbsp;&nbsp;<span style="color: #795e26;">calculaSaludo</span>(<span style="color: #001080;">nombre</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">nombreSinEspacios</span>&nbsp;=&nbsp;<span style="color: #001080;">nombre</span>&nbsp;?&nbsp;<span style="color: #001080;">nombre</span>.<span style="color: #795e26;">trim</span>()&nbsp;:&nbsp;<span style="color: #a31515;">""</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">if</span>&nbsp;(!<span style="color: #0070c1;">nombreSinEspacios</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">throw</span>&nbsp;<span style="color: #0000ff;">new</span>&nbsp;<span style="color: #267f99;">Error</span>(<span style="color: #a31515;">"Falta&nbsp;proporcionar&nbsp;el&nbsp;nombre."</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">return</span>&nbsp;<span style="color: #a31515;">`Hola&nbsp;</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">nombreSinEspacios</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">.`</span>;</div><div>&nbsp;&nbsp;}</div><div>}</div></div></td>
+            <td class=nums data-total="9"></td>
+            <td class=cod><div><div><span style="color: #af00db;">import</span>&nbsp;{&nbsp;<span style="color: #001080;">valida</span>&nbsp;}&nbsp;<span style="color: #af00db;">from</span>&nbsp;<span style="color: #a31515;">"../lib/util.js"</span>;</div><div><span style="color: #af00db;">export</span>&nbsp;<span style="color: #0000ff;">class</span>&nbsp;<span style="color: #267f99;">CtrlSaludo</span>&nbsp;{</div><div>&nbsp;&nbsp;<span style="color: #008000;">/**&nbsp;</span><span style="color: #0000ff;">@param</span><span style="color: #008000;">&nbsp;</span><span style="color: #267f99;">{string}</span><span style="color: #008000;">&nbsp;</span><span style="color: #001080;">nombre</span><span style="color: #008000;">&nbsp;*/</span></div><div>&nbsp;&nbsp;<span style="color: #795e26;">calculaSaludo</span>(<span style="color: #001080;">nombre</span>)&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">nombreSinEspacios</span>&nbsp;=&nbsp;<span style="color: #001080;">nombre</span>&nbsp;?&nbsp;<span style="color: #001080;">nombre</span>.<span style="color: #795e26;">trim</span>()&nbsp;:&nbsp;<span style="color: #a31515;">""</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">valida</span>(<span style="color: #0070c1;">nombreSinEspacios</span>,&nbsp;<span style="color: #a31515;">"Falta&nbsp;proporcionar&nbsp;el&nbsp;nombre."</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #af00db;">return</span>&nbsp;<span style="color: #a31515;">`Hola&nbsp;</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">nombreSinEspacios</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">.`</span>;</div><div>&nbsp;&nbsp;}</div><div>}</div></div></td>
           </tr>
         </table>
       </section>
