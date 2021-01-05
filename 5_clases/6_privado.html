@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>Acceso Privado</h1>
+      <h2>Ejemplo para Navegador que Usa Correctamente el Acceso Privado</h2>
+      <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Miembros&nbsp;Privados&nbsp;OK<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Miembros&nbsp;Privados&nbsp;OK<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">class</span>&nbsp;<span style="color: #267f99;">Cl1</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">#x</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">saluda</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #001080;">#x</span>&nbsp;=&nbsp;<span style="color: #098658;">0</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">alert</span>(<span style="color: #0000ff;">this</span>.<span style="color: #001080;">#x</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">a</span>&nbsp;=&nbsp;<span style="color: #0000ff;">new</span>&nbsp;<span style="color: #267f99;">Cl1</span>();</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0070c1;">a</span>.<span style="color: #795e26;">saluda</span>();</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+      <div class="marco-lectura">
+        <p>
+          <a href="src/1_privado_bien.html"
+          target="_blank">Ejecuta en otra pestaña.</a>
+        </p>
+      </div>
+      <h2>Ejemplo para Navegador que Usa Incorrectamente el Acceso Privado</h2>
+      <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span>&nbsp;<span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width,&nbsp;initial-scale=1.0"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Miembros&nbsp;Privados&nbsp;Mal<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Miembros&nbsp;Privados&nbsp;Mal<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">class</span>&nbsp;<span style="color: #267f99;">Cl1</span>&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">#x</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">saluda</span>()&nbsp;{</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #001080;">#x</span>&nbsp;=&nbsp;<span style="color: #098658;">0</span>;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">alert</span>(<span style="color: #0000ff;">this</span>.<span style="color: #001080;">#x</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span style="color: #0070c1;">a</span>&nbsp;=&nbsp;<span style="color: #0000ff;">new</span>&nbsp;<span style="color: #267f99;">Cl1</span>();</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0070c1;">a</span>.<span style="color: #795e26;">saluda</span>();</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">alert</span>(<span style="color: #0070c1;">a</span>.<span style="color: #001080;">#x</span>);</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+      <div class="marco-lectura">
+        <p>
+          <a href="src/2_privado_mal.html"
+            target="_blank">Ejecuta en otra pestaña e inspecciona mostrando la
+            consola.</a>
+        </p>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>

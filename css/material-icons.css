@@ -1,0 +1,33 @@
+/* This work by Gilberto Pacheco Gallegos is licensed under the Creative Commons
+ * Atribución 4.0 Internacional License. To view a copy of this license, visit
+ * http://creativecommons.org/licenses/by/4.0/. */
+
+ .material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Soporte para todos los navegadores WebKit. */
+  -webkit-font-smoothing: antialiased;
+  /* Soporte para Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Soporte para Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+}
+.rem {font-size: 1rem;}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(MaterialIcons-Regular.ttf) format('truetype');
+}
