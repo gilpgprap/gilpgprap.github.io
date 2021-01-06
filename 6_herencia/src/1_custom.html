@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+    <title>Custom Elements</title>
+    <style>
+      figura-web {
+        position: fixed;
+        font-size: 60px;
+      }
+    </style>
+    <script>
+      /* Todos los custom elements heredan de la clase
+       * HTMLElement. */
+      class FiguraWeb extends HTMLElement {
+        /** Método que se ejecuta al agregar el
+         * element a la página. Casi funciona como un
+         * constructor. */
+        connectedCallback() {
+          this.x = 0;
+          /* Los atributos de HTML se recuperan con
+           * this.getAttribute(nombre del atributo) */
+          this.y =
+            parseInt(this.getAttribute("y"), 10);
+          this.velocidad = parseInt(
+            this.getAttribute("velocidad"), 10);
+        }
+        muévete() {
+          this.style.right = `${this.x}px`;
+          this.style.top = `${this.y}px`;
+          this.x = (this.x + this.velocidad) %
+            window.innerWidth;
+        }
+      }
+      /* Define la etiqueta y la clase que lo
+       * implementa. */
+      customElements.define("figura-web", FiguraWeb);
+    </script>
+  </head>
+  <body>
+    <h1>Custom Elements</h1>
+    <figura-web id="fantasma" y="0" velocidad="20">
+      👻
+    </figura-web>
+    <figura-web id="sonrisa" y="100" velocidad="10">
+      😁
+    </figura-web>
+    <footer>
+      <p>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</p>
+    </footer>
+    <script>
+      setInterval(() => {
+        fantasma.muévete();
+        sonrisa.muévete();
+      }, 120);
+    </script>
+  </body>
+</html>
