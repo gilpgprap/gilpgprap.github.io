@@ -14,13 +14,11 @@ class MiNav extends HTMLElement {
         <li><a href="/5_clases">Clases</a></li>
         <li><a href="/6_herencia">Herencia</a></li>
         <li><a href="/7_arreglos">Arreglos</a></li>
-        <li><a href="/8_ops_arr">Operaciones sobre Arreglos</a></li>
-        <li><a href="/9_arr_av">Arreglos Avanzados</a></li>
-        <li><a href="/10_asociaciones">Asociaciones</a></li>
-        <li><a href="/11_polimorfismo">Polimorfismo</a></li>
-        <li><a href="/12_excepciones">Excepciones</a></li>
-        <li><a href="/13_form_val">Formulario con Validaciones</a></li>
-        <li><a href="/14_patrones">Patrones de Diseño</a></li>
+        <li><a href="/8_asociaciones">Asociaciones</a></li>
+        <li><a href="/9_polimorfismo">Polimorfismo</a></li>
+        <li><a href="/10_excepciones">Excepciones</a></li>
+        <li><a href="/11_form_val">Formulario con Validaciones</a></li>
+        <li><a href="/12_patrones">Patrones de Diseño</a></li>
       </ol>`;
   }
 }
