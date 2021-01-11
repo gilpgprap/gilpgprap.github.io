@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Asociaciones</title>
+    <script>
+      /** Devuelve un número aleatorio entre el valor
+       * menor y el valor mayor.
+       * @param {number} menor el menor valor que se
+       *  puede generar
+       * @param {number} mayor el mayor valor que se
+       *  puede generar
+       * @returns {number} un número aleatorio entre
+       *  menor y mayor. */
+      function aleatorio(menor, mayor) {
+        /* Math.floor(x): elimina los decimales.
+         * Math.random(): genera un número aleatorio
+         *                >= 0 y < 1. */
+        return menor + Math.floor(
+          Math.random() * (mayor - menor + 1));
+      }
+      class PerroWeb extends HTMLElement {
+        connectedCallback() {
+          this.x = 0;
+          this.y = 0;
+          this.innerHTML = /* html */ `🐕`;
+          this.style.position = "fixed";
+          this.style.fontSize = "2rem";
+          this.style.right = `${this.x}px`;
+          this.style.bottom = `${this.y}px`;
+        }
+        muévete() {
+          this.x = (this.x + 30) % window.innerWidth;
+          this.style.right = `${this.x}px`;
+        }
+      }
+      customElements.define("perro-web", PerroWeb);
+      class ÁguilaWeb extends HTMLElement {
+        connectedCallback() {
+          this.x = aleatorio(0,
+            Math.floor(window.innerWidth));
+          this.y = aleatorio(0,
+            Math.floor(window.innerHeight));
+          this.innerHTML = /* html */ `🦅`;
+          this.style.position = "fixed";
+          this.style.fontSize = "2.5rem";
+          this.style.left = `${this.x}px`;
+          this.style.top = `${this.y}px`;
+        }
+        muévete() {
+          this.y = (this.y + 10) % window.innerHeight;
+          this.style.top = `${this.y}px`;
+        }
+      }
+      customElements.define("aguila-web", ÁguilaWeb);
+      class ControladorWeb extends HTMLElement {
+        connectedCallback() {
+          this.muévete = this.muévete.bind(this);
+          this.innerHTML = /* html */
+            `<button
+              onclick="this.parentElement.muévete();">
+              Mueve
+            </button>`;
+          this.perro = new PerroWeb();
+          this.águilas =
+            [new ÁguilaWeb(), new ÁguilaWeb()];
+          this.append(this.perro);
+          for (let águila of this.águilas) {
+            this.append(águila);
+          }
+        }
+        muévete() {
+          this.perro.muévete();
+          for (let águila of this.águilas) {
+            águila.muévete();
+          }
+        }
+      }
+      customElements.define("controlador-web",
+        ControladorWeb);
+    </script>
+  </head>
+  <body>
+    <h1>Ejemplo de Asociaciones</h1>
+    <controlador-web></controlador-web>
+    <footer>
+      <p>&copy; 2020 Gilberto Pacheco Gallegos.</p>
+    </footer>
+  </body>
+</html>

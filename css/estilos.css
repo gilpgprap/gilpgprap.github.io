@@ -168,6 +168,10 @@ figure img {
   max-width: 100%;
 }
 
+img.dc {
+  width: 100%;
+}
+
 .resaltado {
   background-color: rgb(255, 255, 89);
 }

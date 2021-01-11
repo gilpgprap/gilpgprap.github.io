@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>Clases Abstractas</h1>
+      <div class="marco-lectura">
+        <p>
+          <a href="http://pythontutor.com/javascript.html#code=class%20Deportista%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%7D%0A%20%20pres%C3%A9ntate%28%29%20%7B%0A%20%20%20%20console.log%28%60Hola.%20Soy%20%24%7Bthis.nombre%7D.%60%29%3B%0A%20%20%7D%0A%20%20/**%20%40abstract%20*/%0A%20%20anota%28%29%20%7B%20throw%20new%20Error%28%22abstract%22%29%3B%20%7D%0A%7D%0Aclass%20Basketbolista%20extends%20Deportista%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20super%28nombre%29%3B%0A%20%20%7D%0A%20%20/**%20%40override%20*/%0A%20%20anota%28%29%20%7B%20console.log%28%22Encesto.%22%29%3B%20%7D%0A%7D%0Aclass%20Futbolista%20extends%20Deportista%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20super%28nombre%29%3B%0A%20%20%7D%0A%20%20/**%20%40override%20*/%0A%20%20anota%28%29%20%7B%20console.log%28%22Anoto%20gol.%22%29%3B%20%7D%0A%7D%0Aconst%20deportistas%20%3D%0A%20%20%5Bnew%20Basketbolista%28%22LeBron%22%29,%20new%20Futbolista%28%22Lionel%22%29%5D%3B%0Afor%20%28const%20deportista%20of%20deportistas%29%20%7B%0A%20%20deportista.pres%C3%A9ntate%28%29%3B%0A%20%20deportista.anota%28%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            target="_blank">Programa animado de clases abstractas.</a>
+        </p>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>
