@@ -17,8 +17,7 @@ class MiNav extends HTMLElement {
         <li><a href="/8_asociaciones">Asociaciones</a></li>
         <li><a href="/9_polimorfismo">Polimorfismo</a></li>
         <li><a href="/10_excepciones">Excepciones</a></li>
-        <li><a href="/11_form_val">Formulario con Validaciones</a></li>
-        <li><a href="/12_patrones">Patrones de Diseño</a></li>
+        <li><a href="/11_patrones">Patrones de Diseño</a></li>
       </ol>`;
   }
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Excepciones Anidadas</title>
+  </head>
+  <body>
+    <h1>Ejemplo de Excepciones Anidadas</h1>
+    <pre><output id="salida"></output></pre>
+    <footer>
+      <p>&copy; 2021 Gilberto Pacheco Gallegos.</p>
+    </footer>
+    <script>
+      try {
+        salida.value += "Empezamos.\n";
+        fallo();
+        salida.value += "No me ignores.\n";
+      } catch (e) {
+        salida.value += e.message + "\n";
+      }
+      salida.value += "Terminamos.";
+      function fallo() {
+        salida.value += "¿Fallaremos?\n";
+        throw new Error("Fallamos");
+        salida.value += "Tampoco me ignores.\n";
+      }
+    </script>
+  </body>
+</html>

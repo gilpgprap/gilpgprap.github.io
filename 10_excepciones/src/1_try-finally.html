@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de try-finally</title>
+  </head>
+  <body>
+    <h1>Ejemplo de try-finally</h1>
+    <!--
+      El tipo de elemento "pre" respeta espacios y
+      saltos de línea.
+    -->
+    <pre><output id="salida"></output></pre>
+    <footer>
+      <p>&copy; 2021 Gilberto Pacheco Gallegos.</p>
+    </footer>
+    <script>
+      try {
+        /* \n dentro de un texto de JavaScript es un
+         * salto de línea. */
+        salida.value += "Sin error.\n";
+      } finally {
+        salida.value += "Si se ejecuta.\n";
+      }
+      salida.value +=
+        "Continuamos porque no hay falla.\n";
+      try {
+        throw new Error("A volar.");
+        salida.value += "Esto no se ejecuta.\n";
+      } finally {
+        salida.value +=
+          "Se ejecuta, pero no normaliza el flujo.\n";
+      }
+      salida.value +=
+        "Esta instrucción no se realiza.";
+    </script>
+  </body>
+</html>

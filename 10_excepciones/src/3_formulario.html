@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+    <title>Validaciones</title>
+  </head>
+  <body>
+    <h1>Validaciones</h1>
+    <!--
+      El tipo de elemento "input" es un campo de
+      captura de texto.
+    -->
+    <p><label>a <input id=inA></label></p>
+    <p><label>b <input id=inB></label></p>
+    <p>
+      <button onclick="divide();">Dividir</button>
+    </p>
+    <p><output id=outSalida></output></p>
+    <footer>
+      <p>&copy; 2020 Gilberto Pacheco Gallegos.</p>
+    </footer>
+    <script>
+      /** Valida que se cumpla una condición y si no,
+       * lanza una excepción.
+       * @param {any} cond condición que se debe
+       *  cumplir.
+       * @param {string} mensaje mensaje que lleva
+       *  la excepción que se lanza cuando la
+       *  condición no se cumple.
+       * @throws {Error} cuando la condición no se
+       *  cumple. */
+       function valida(cond, mensaje) {
+        if (!cond) {
+          throw new Error(mensaje);
+        }
+      }
+      function divide() {
+        try {
+          /* El atributo "value" de un "input" se
+           * puede usar desde JavaScript y desde HTML.
+           * Es el texto capturado en el elemento.
+           * Si el texto es una cadena vacía o no
+           * representa un númeto, el valor devuelto
+           * por "parseFloat" es NaN (o sea no es un
+           * número). */
+          const a = parseFloat(inA.value);
+          const b = parseFloat(inB.value);
+          // Debe cumplirse que a sea un número.
+          valida(!isNaN(a),
+            "El valor de a debe ser un número.");
+          // Debe cumplirse que b sea un número.
+          valida(!isNaN(b),
+            "El valor de b debe ser un número.");
+          // Debe cumplirse que b sea diferente de 0.
+          valida(b !== 0,
+            "El valor de b no puede ser 0.");
+          const resultado = a / b;
+          outSalida.value = resultado;
+        } catch (e) {
+          console.log(e);
+          outSalida.value = e.message;
+        }
+      }
+    </script>
+  </body>
+</html>
