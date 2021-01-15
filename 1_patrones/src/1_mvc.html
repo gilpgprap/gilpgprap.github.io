@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Patrón MVC</title>
+  </head>
+  <script>
+    //@ts-check
+    class ModeloSaludo {
+      constructor() {
+        this._nombre1 = "";
+        this._nombre2 = "";
+        this._salida = "";
+      }
+      get nombre1() {
+        return this._nombre1;
+      }
+      set nombre1(nombre1) {
+        this._nombre1 = nombre1;
+        window.dispatchEvent(new CustomEvent("nombre1", { detail: nombre1 }));
+      }
+      get nombre2() {
+        return this._nombre2;
+      }
+      set nombre2(nombre2) {
+        this._nombre2 = nombre2;
+        window.dispatchEvent(new CustomEvent("nombre2", { detail: nombre2 }));
+      }
+      get salida() {
+        return this._salida;
+      }
+      set salida(salida) {
+        this._salida = salida;
+        window.dispatchEvent(new CustomEvent("salida", { detail: salida }));
+      }
+    }
+    class CtrlSaludo {
+      /** @param {ModeloSaludo} modelo */
+      saluda(modelo) {
+        modelo.salida = `Saludos a ${modelo.nombre1} y a ${modelo.nombre2}.`;
+      }
+    }
+    customElements.define("vista-saludo", class extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = /*html*/
+          `<form id="forma">
+            <h1>Patrón MVC</h1>
+            <p><output id="salida"></output></p>
+            <p>
+              <input type="text" id="nombre1" required placeholder="Nombre 1">
+            </p>
+            <p>
+              <input type="text" id="nombre2" required placeholder="Nombre 2">
+            </p>
+            <p><button type="submit">Saludar</button></p>
+            <footer>Copyright &copy; 2020 Gilberto Pacheco Gallegos.</footer>
+          </form>`;
+        this.modelo = new ModeloSaludo();
+        this.controlador = new CtrlSaludo();
+        //@ts-ignore
+        nombre1.addEventListener("input",
+          evt => this.modelo.nombre1 = evt.target.value.trim());
+        //@ts-ignore
+        nombre2.addEventListener("input",
+          evt => this.modelo.nombre2 = evt.target.value.trim());
+        //@ts-ignore
+        forma.addEventListener("submit",
+          evt => {
+            evt.preventDefault();
+            this.controlador.saluda(this.modelo);
+          });
+        //@ts-ignore
+        window.addEventListener("salida", evt => salida.value = evt.detail);
+      }
+    });
+  </script>
+  <body>
+    <vista-saludo></vista-saludo>
+  </body>
+</html>

@@ -9,15 +9,10 @@ class MiNav extends HTMLElement {
       <ol>
         <li><a href="/index.html">Inicio</a></li>
         <li><a href="/2_sw.html">Software a Instalar</a></li>
-        <li><a href="/3_funciones">Funciones Mejoradas</a></li>
-        <li><a href="/4_obj_basicos">Objetos Básicos</a></li>
-        <li><a href="/5_clases">Clases</a></li>
-        <li><a href="/6_herencia">Herencia</a></li>
-        <li><a href="/7_arreglos">Arreglos</a></li>
-        <li><a href="/8_asociaciones">Asociaciones</a></li>
-        <li><a href="/9_polimorfismo">Polimorfismo</a></li>
-        <li><a href="/10_excepciones">Excepciones</a></li>
-        <li><a href="/11_patrones">Patrones de Diseño</a></li>
+        <li><a href="/1_patrones">Patrones de Diseño</a></li>
+        <li><a href="/2_promesas">Promesas</a></li>
+        <li><a href="/3_met_arrs">Métodos de Arreglos</a></li>
+        <li><a href="/4_arrs_av">Arreglos Avanzados</a></li>
       </ol>`;
   }
 }

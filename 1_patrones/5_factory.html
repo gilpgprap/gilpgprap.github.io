@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>Patrón Abstract Factory</h1>
+      <div class="marco-lectura">
+        <p>Es un mecanismo para crear objetos de una forma dinámica.</p>
+        <p>
+          <a href="https://es.wikipedia.org/wiki/Abstract_Factory"
+            target="_blank">Explicación en Wikipedia.</a>
+        </p>
+        <p>
+          <a href="https://www.oodesign.com/abstract-factory-pattern.html"
+            target="_blank">Explicación en oodesign.</a>
+        </p>
+        <p>
+          <a href="http://pythontutor.com/javascript.html#code=/**%20%40interface%20*/%0Aclass%20Saludos%20%7B%0A%20%20saluda%28%29%20%7B%20throw%20new%20Error%28%22Interfaz%22%29%3B%20%7D%0A%7D%0A/**%20%40interface%20*/%0Aclass%20FabricaSaludos%20%7B%0A%20%20/**%20%40returns%20%7BSaludos%7D%20*/%0A%20%20saludos%28%29%20%7B%20throw%20new%20Error%28%22Interfaz%22%29%3B%20%7D%0A%7D%0A/**%20%40implements%20%7BSaludos%7D%20*/%0Aclass%20SaludosEnEspa%C3%B1ol%20%7B%0A%20%20/**%20%40override%20*/%0A%20%20saluda%28%29%20%7B%0A%20%20%20%20console.log%28%22Hola%22%29%3B%0A%20%20%7D%0A%7D%0A/**%20%40implements%20%7BSaludos%7D%20*/%0Aclass%20SaludosEnIngl%C3%A9s%20%7B%0A%20%20/**%20%40override%20*/%0A%20%20saluda%28%29%20%7B%0A%20%20%20%20console.log%28%22Hi%22%29%3B%0A%20%20%7D%0A%7D%0A/**%20%40implements%20%7BFabricaSaludos%7D%20*/%0Aclass%20FabricaSaludosEnEspa%C3%B1ol%20%7B%0A%20%20/**%20%40returns%20%7BSaludos%7D%0A%20%20%20*%20%40override%20*/%0A%20%20saludos%28%29%20%7B%0A%20%20%20%20return%20new%20SaludosEnEspa%C3%B1ol%28%29%3B%0A%20%20%7D%0A%7D%0A/**%20%40implements%20%7BFabricaSaludos%7D%20*/%0Aclass%20FabricaSaludosEnIngl%C3%A9s%20%7B%0A%20%20/**%20%40returns%20%7BSaludos%7D%0A%20%20%20*%20%40override%20*/%0A%20%20saludos%28%29%20%7B%0A%20%20%20%20return%20new%20SaludosEnIngl%C3%A9s%28%29%3B%0A%20%20%7D%0A%7D%0A/**%20%40param%20%7BFabricaSaludos%7D%20f%C3%A1brica%20*/%0Afunction%20saluda%28f%C3%A1brica%29%20%7B%0A%20%20const%20saludos%20%3D%20f%C3%A1brica.saludos%28%29%3B%0A%20%20saludos.saluda%28%29%3B%0A%7D%0Asaluda%28new%20FabricaSaludosEnEspa%C3%B1ol%28%29%29%3B%0Asaluda%28new%20FabricaSaludosEnIngl%C3%A9s%28%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+            target="_blank">
+            Programa animado de patrón abstract factory.
+          </a>
+        </p>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>
